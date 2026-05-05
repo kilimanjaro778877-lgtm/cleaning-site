@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pristyne — професійне прибирання у Києві, Дніпрі, Львові, Харкові</title>
+  <meta name="description" content="Замовте професійне прибирання та хімчистку від Pristyne. Працюємо у Києві, Дніпрі, Львові, Харкові. Гарантія результату, понад 12 000 задоволених клієнтів." />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Pristyne — клінінг, що повертає час" />
+  <meta property="og:description" content="Прибирання, хімчистка диванів, миття вікон. 4 міста України. Гарантія." />
+  <meta property="og:type" content="website" />
+
+  <!-- Schema.org LocalBusiness -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Pristyne",
+    "description": "Професійна клінінгова компанія",
+    "areaServed": ["Київ", "Дніпро", "Львів", "Харків"],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "1483"
+    }
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Manrope', 'system-ui', 'sans-serif'] },
+          colors: {
+            brand: {
+              50:  '#f0fdf6',
+              100: '#dcfceb',
+              200: '#bbf7d3',
+              500: '#10b981',
+              600: '#059669',
+              700: '#047857',
+              800: '#065f46',
+              900: '#064e3b',
+            },
+            accent: {
+              500: '#f59e0b',
+              600: '#d97706',
+            },
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Manrope', system-ui, sans-serif; }
+    .gradient-hero {
+      background: radial-gradient(ellipse at top right, rgba(16,185,129,0.08), transparent 50%),
+                  radial-gradient(ellipse at bottom left, rgba(245,158,11,0.05), transparent 50%);
+    }
+  </style>
+</head>
+<body class="bg-stone-50 text-slate-900 antialiased">
+
+  <!-- ─── NAV ───────────────────────────────────────────── -->
+  <header class="sticky top-0 z-50 bg-white/80 backdrop-blur border-b border-slate-200/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-2 font-bold text-xl">
+        <span class="w-8 h-8 rounded-xl bg-brand-600 flex items-center justify-center text-white text-lg">✦</span>
+        <span>Pristyne</span>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-700">
+        <a href="#services" class="hover:text-brand-600 transition">Послуги</a>
+        <a href="#cities" class="hover:text-brand-600 transition">Міста</a>
+        <a href="#how" class="hover:text-brand-600 transition">Як працюємо</a>
+        <a href="#trust" class="hover:text-brand-600 transition">Відгуки</a>
+        <a href="#faq" class="hover:text-brand-600 transition">FAQ</a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <a href="tel:+380000000000" class="hidden sm:block text-sm font-semibold text-slate-900 hover:text-brand-600">
+          +38 (000) 000-00-00
+        </a>
+        <a href="#order" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-brand-600 hover:bg-brand-700 text-white font-semibold text-sm transition">
+          Замовити
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ─── HERO ──────────────────────────────────────────── -->
+  <section class="gradient-hero">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 pt-20 pb-24 lg:pt-28 lg:pb-32">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-100 text-brand-800 text-xs font-semibold mb-6">
+            <span class="w-2 h-2 rounded-full bg-brand-500 animate-pulse"></span>
+            Працюємо у 4 містах України
+          </div>
+
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.05]">
+            Чистота, що
+            <span class="text-brand-600">повертає час</span>
+          </h1>
+
+          <p class="mt-6 text-lg text-slate-600 max-w-xl leading-relaxed">
+            Професійне прибирання та хімчистка вдома, в офісі, після ремонту.
+            Замовлення за 60 секунд — приїдемо вже сьогодні.
+          </p>
+
+          <div class="mt-8 flex flex-col sm:flex-row gap-3">
+            <a href="#order" class="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full bg-brand-600 hover:bg-brand-700 text-white font-semibold transition shadow-lg shadow-brand-600/20">
+              Замовити прибирання
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+            </a>
+            <a href="#services" class="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full bg-white hover:bg-slate-50 text-slate-900 font-semibold transition border border-slate-200">
+              Подивитись послуги
+            </a>
+          </div>
+
+          <div class="mt-10 grid grid-cols-3 gap-6 max-w-lg">
+            <div>
+              <div class="text-3xl font-extrabold text-slate-900">5+</div>
+              <div class="text-sm text-slate-500 mt-1">років досвіду</div>
+            </div>
+            <div>
+              <div class="text-3xl font-extrabold text-slate-900">12k+</div>
+              <div class="text-sm text-slate-500 mt-1">задоволених клієнтів</div>
+            </div>
+            <div>
+              <div class="text-3xl font-extrabold text-slate-900">4.9 ★</div>
+              <div class="text-sm text-slate-500 mt-1">у Google</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero illustration / placeholder -->
+        <div class="relative">
+          <div class="aspect-[4/5] bg-gradient-to-br from-brand-100 to-stone-200 rounded-3xl overflow-hidden shadow-2xl shadow-brand-900/10 flex items-center justify-center">
+            <div class="text-center p-8">
+              <div class="text-7xl mb-4">🧼</div>
+              <p class="text-slate-600 text-sm">[Фото бригади на об'єкті]</p>
+            </div>
+          </div>
+          <div class="absolute -bottom-6 -left-6 bg-white rounded-2xl shadow-xl p-5 max-w-xs">
+            <div class="flex items-center gap-3">
+              <div class="w-12 h-12 rounded-full bg-brand-100 flex items-center justify-center text-brand-700 text-xl">⚡</div>
+              <div>
+                <div class="font-bold text-slate-900">Виїзд за 2 години</div>
+                <div class="text-xs text-slate-500">У робочий день з 8:00 до 21:00</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── SERVICES ──────────────────────────────────────── -->
+  <section id="services" class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="max-w-2xl">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight">
+          Послуги, які <span class="text-brand-600">економлять час</span>
+        </h2>
+        <p class="mt-4 text-lg text-slate-600">
+          Все, що потрібно для чистоти вдома та в офісі. Від щотижневого підтримання до глибокої хімчистки.
+        </p>
+      </div>
+
+      <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Service card template -->
+        <a href="services/himchistka-divana.html" class="group bg-stone-50 hover:bg-brand-50 border border-slate-200 hover:border-brand-300 rounded-2xl p-6 transition">
+          <div class="w-12 h-12 rounded-xl bg-brand-600 group-hover:scale-110 flex items-center justify-center text-white text-xl transition">🛋</div>
+          <h3 class="mt-5 font-bold text-lg text-slate-900">Хімчистка диванів</h3>
+          <p class="mt-2 text-sm text-slate-600">Глибоке очищення меблів від плям, пилу, запахів. Сушка 2-4 години.</p>
+          <div class="mt-4 text-sm font-semibold text-brand-700">від 1 100 ₴ →</div>
+        </a>
+
+        <a href="#order" class="group bg-stone-50 hover:bg-brand-50 border border-slate-200 hover:border-brand-300 rounded-2xl p-6 transition">
+          <div class="w-12 h-12 rounded-xl bg-brand-600 group-hover:scale-110 flex items-center justify-center text-white text-xl transition">✨</div>
+          <h3 class="mt-5 font-bold text-lg text-slate-900">Генеральне прибирання</h3>
+          <p class="mt-2 text-sm text-slate-600">Повний цикл після ремонту, переїзду чи раз на сезон. До останнього шва.</p>
+          <div class="mt-4 text-sm font-semibold text-brand-700">від 3 500 ₴ →</div>
+        </a>
+
+        <a href="#order" class="group bg-stone-50 hover:bg-brand-50 border border-slate-200 hover:border-brand-300 rounded-2xl p-6 transition">
+          <div class="w-12 h-12 rounded-xl bg-brand-600 group-hover:scale-110 flex items-center justify-center text-white text-xl transition">🧹</div>
+          <h3 class="mt-5 font-bold text-lg text-slate-900">Підтримуюче прибирання</h3>
+          <p class="mt-2 text-sm text-slate-600">Регулярна чистота: щотижня, раз на 2 тижні, або на ваш графік.</p>
+          <div class="mt-4 text-sm font-semibold text-brand-700">від 2 500 ₴ →</div>
+        </a>
+
+        <a href="#order" class="group bg-stone-50 hover:bg-brand-50 border border-slate-200 hover:border-brand-300 rounded-2xl p-6 transition">
+          <div class="w-12 h-12 rounded-xl bg-brand-600 group-hover:scale-110 flex items-center justify-center text-white text-xl transition">🪟</div>
+          <h3 class="mt-5 font-bold text-lg text-slate-900">Миття вікон</h3>
+          <p class="mt-2 text-sm text-slate-600">Скло, рами, підвіконня. Без розводів, з обох боків. Усі поверхи.</p>
+          <div class="mt-4 text-sm font-semibold text-brand-700">від 350 ₴/вікно →</div>
+        </a>
+
+        <a href="#order" class="group bg-stone-50 hover:bg-brand-50 border border-slate-200 hover:border-brand-300 rounded-2xl p-6 transition">
+          <div class="w-12 h-12 rounded-xl bg-brand-600 group-hover:scale-110 flex items-center justify-center text-white text-xl transition">🍳</div>
+          <h3 class="mt-5 font-bold text-lg text-slate-900">Прибирання кухні</h3>
+          <p class="mt-2 text-sm text-slate-600">Духовка, плита, витяжка, шафки зсередини. Жир йде з першого разу.</p>
+          <div class="mt-4 text-sm font-semibold text-brand-700">від 1 800 ₴ →</div>
+        </a>
+
+        <a href="#order" class="group bg-stone-50 hover:bg-brand-50 border border-slate-200 hover:border-brand-300 rounded-2xl p-6 transition">
+          <div class="w-12 h-12 rounded-xl bg-brand-600 group-hover:scale-110 flex items-center justify-center text-white text-xl transition">🛁</div>
+          <h3 class="mt-5 font-bold text-lg text-slate-900">Прибирання ванної</h3>
+          <p class="mt-2 text-sm text-slate-600">Вапняний наліт, плитка, шви. Душова кабіна як нова.</p>
+          <div class="mt-4 text-sm font-semibold text-brand-700">від 1 300 ₴ →</div>
+        </a>
+
+        <a href="#order" class="group bg-stone-50 hover:bg-brand-50 border border-slate-200 hover:border-brand-300 rounded-2xl p-6 transition">
+          <div class="w-12 h-12 rounded-xl bg-brand-600 group-hover:scale-110 flex items-center justify-center text-white text-xl transition">🛏</div>
+          <h3 class="mt-5 font-bold text-lg text-slate-900">Хімчистка матраців</h3>
+          <p class="mt-2 text-sm text-slate-600">Без алергенів, кліщів, плям. Безпечно для дітей і алергіків.</p>
+          <div class="mt-4 text-sm font-semibold text-brand-700">від 550 ₴ →</div>
+        </a>
+
+        <a href="#order" class="group bg-stone-50 hover:bg-brand-50 border border-slate-200 hover:border-brand-300 rounded-2xl p-6 transition">
+          <div class="w-12 h-12 rounded-xl bg-brand-600 group-hover:scale-110 flex items-center justify-center text-white text-xl transition">🏗</div>
+          <h3 class="mt-5 font-bold text-lg text-slate-900">Прибирання після ремонту</h3>
+          <p class="mt-2 text-sm text-slate-600">Будівельний пил, фарба, клей. Готуємо квартиру до заселення.</p>
+          <div class="mt-4 text-sm font-semibold text-brand-700">від 4 500 ₴ →</div>
+        </a>
+
+        <a href="#order" class="group bg-stone-50 hover:bg-brand-50 border border-slate-200 hover:border-brand-300 rounded-2xl p-6 transition">
+          <div class="w-12 h-12 rounded-xl bg-brand-600 group-hover:scale-110 flex items-center justify-center text-white text-xl transition">🏢</div>
+          <h3 class="mt-5 font-bold text-lg text-slate-900">Клінінг офісів</h3>
+          <p class="mt-2 text-sm text-slate-600">Щодня, щотижня, по графіку. Для команди від 5 осіб.</p>
+          <div class="mt-4 text-sm font-semibold text-brand-700">індивідуально →</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── HOW IT WORKS ──────────────────────────────────── -->
+  <section id="how" class="py-24 bg-stone-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="text-center max-w-2xl mx-auto">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight">Як ми працюємо</h2>
+        <p class="mt-4 text-lg text-slate-600">Без сюрпризів. Прозоро від замовлення до результату.</p>
+      </div>
+
+      <div class="mt-16 grid md:grid-cols-4 gap-8">
+        <div class="relative">
+          <div class="w-14 h-14 rounded-2xl bg-brand-600 flex items-center justify-center text-white font-bold text-xl">1</div>
+          <h3 class="mt-5 font-bold text-lg">Заявка</h3>
+          <p class="mt-2 text-slate-600 text-sm">Залишаєте телефон через форму або одразу пишете в Telegram.</p>
+        </div>
+        <div class="relative">
+          <div class="w-14 h-14 rounded-2xl bg-brand-600 flex items-center justify-center text-white font-bold text-xl">2</div>
+          <h3 class="mt-5 font-bold text-lg">Розрахунок</h3>
+          <p class="mt-2 text-slate-600 text-sm">Менеджер уточнює деталі, фіксує ціну. Без прихованих доплат.</p>
+        </div>
+        <div class="relative">
+          <div class="w-14 h-14 rounded-2xl bg-brand-600 flex items-center justify-center text-white font-bold text-xl">3</div>
+          <h3 class="mt-5 font-bold text-lg">Робота</h3>
+          <p class="mt-2 text-slate-600 text-sm">Бригада приїжджає у домовлений час зі своїм обладнанням і хімією.</p>
+        </div>
+        <div class="relative">
+          <div class="w-14 h-14 rounded-2xl bg-brand-600 flex items-center justify-center text-white font-bold text-xl">4</div>
+          <h3 class="mt-5 font-bold text-lg">Гарантія</h3>
+          <p class="mt-2 text-slate-600 text-sm">Не сподобалось — переробимо безкоштовно. Гроші повертаємо.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── CITIES ────────────────────────────────────────── -->
+  <section id="cities" class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="max-w-2xl">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight">
+          Працюємо у <span class="text-brand-600">4 містах</span>
+        </h2>
+        <p class="mt-4 text-lg text-slate-600">Виберіть своє місто — побачите доступні послуги та ціни саме для вас.</p>
+      </div>
+
+      <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <a href="#" class="group bg-gradient-to-br from-brand-600 to-brand-800 rounded-2xl p-8 text-white hover:shadow-2xl hover:shadow-brand-900/30 transition">
+          <div class="text-3xl mb-4">🏛</div>
+          <div class="text-2xl font-extrabold">Київ</div>
+          <div class="mt-2 text-brand-100 text-sm">Усі райони, виїзд за 2 години</div>
+        </a>
+        <a href="#" class="group bg-white border border-slate-200 hover:border-brand-300 rounded-2xl p-8 hover:shadow-xl transition">
+          <div class="text-3xl mb-4">🌉</div>
+          <div class="text-2xl font-extrabold">Дніпро</div>
+          <div class="mt-2 text-slate-500 text-sm">Центр, лівий, правий берег</div>
+        </a>
+        <a href="#" class="group bg-white border border-slate-200 hover:border-brand-300 rounded-2xl p-8 hover:shadow-xl transition">
+          <div class="text-3xl mb-4">🏰</div>
+          <div class="text-2xl font-extrabold">Львів</div>
+          <div class="mt-2 text-slate-500 text-sm">Усі райони, історичний центр</div>
+        </a>
+        <a href="#" class="group bg-white border border-slate-200 hover:border-brand-300 rounded-2xl p-8 hover:shadow-xl transition">
+          <div class="text-3xl mb-4">🌆</div>
+          <div class="text-2xl font-extrabold">Харків</div>
+          <div class="mt-2 text-slate-500 text-sm">Усі райони, після обстрілів</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── TRUST / REVIEWS ──────────────────────────────── -->
+  <section id="trust" class="py-24 bg-stone-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="text-center max-w-2xl mx-auto">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight">Чому нам довіряють</h2>
+      </div>
+
+      <div class="mt-12 grid md:grid-cols-3 gap-6">
+        <div class="bg-white rounded-2xl p-8 border border-slate-200">
+          <div class="flex gap-1 text-amber-400 text-xl">★★★★★</div>
+          <p class="mt-4 text-slate-700 leading-relaxed">"Після ремонту все було сіре від пилу. За 6 годин — квартира блищить. Чесна ціна, ввічливі хлопці. Замовляю ще."</p>
+          <div class="mt-6 flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-brand-100 flex items-center justify-center font-bold text-brand-700">О</div>
+            <div>
+              <div class="font-semibold text-sm">Олена К.</div>
+              <div class="text-xs text-slate-500">Київ, Печерськ</div>
+            </div>
+          </div>
+        </div>
+        <div class="bg-white rounded-2xl p-8 border border-slate-200">
+          <div class="flex gap-1 text-amber-400 text-xl">★★★★★</div>
+          <p class="mt-4 text-slate-700 leading-relaxed">"Викликала хімчистку дивана — кіт пошкодив тканину. Не вірила, що відмиють. Тепер як новий. Дякую!"</p>
+          <div class="mt-6 flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-brand-100 flex items-center justify-center font-bold text-brand-700">М</div>
+            <div>
+              <div class="font-semibold text-sm">Марія Т.</div>
+              <div class="text-xs text-slate-500">Дніпро</div>
+            </div>
+          </div>
+        </div>
+        <div class="bg-white rounded-2xl p-8 border border-slate-200">
+          <div class="flex gap-1 text-amber-400 text-xl">★★★★★</div>
+          <p class="mt-4 text-slate-700 leading-relaxed">"Замовляємо щотижня для офісу. Завжди вчасно, завжди якісно. Ніколи не було потреби переробляти."</p>
+          <div class="mt-6 flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-brand-100 flex items-center justify-center font-bold text-brand-700">А</div>
+            <div>
+              <div class="font-semibold text-sm">Андрій В.</div>
+              <div class="text-xs text-slate-500">Львів, IT-офіс</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-12 flex flex-wrap justify-center gap-8 items-center text-slate-500">
+        <div class="text-center">
+          <div class="text-3xl font-extrabold text-slate-900">4.9 ★</div>
+          <div class="text-xs mt-1">Google · 1483 відгуки</div>
+        </div>
+        <div class="text-center">
+          <div class="text-3xl font-extrabold text-slate-900">5.0 ★</div>
+          <div class="text-xs mt-1">Facebook · 399 відгуків</div>
+        </div>
+        <div class="text-center">
+          <div class="text-3xl font-extrabold text-slate-900">98%</div>
+          <div class="text-xs mt-1">Повторні клієнти</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── ORDER FORM ───────────────────────────────────── -->
+  <section id="order" class="py-24 bg-gradient-to-br from-brand-700 to-brand-900 text-white">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 text-center">
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight">
+        Залиште заявку — передзвонимо за 5 хвилин
+      </h2>
+      <p class="mt-4 text-lg text-brand-100">
+        Розрахуємо вартість, погодимо час. Жодних спам-дзвінків після.
+      </p>
+
+      <form class="mt-10 bg-white rounded-3xl p-6 sm:p-8 text-slate-900 text-left shadow-2xl">
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-sm font-semibold mb-2">Ваше ім'я</label>
+            <input type="text" required class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:border-brand-500 focus:ring-2 focus:ring-brand-100 outline-none transition" placeholder="Олена" />
+          </div>
+          <div>
+            <label class="block text-sm font-semibold mb-2">Телефон</label>
+            <input type="tel" required class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:border-brand-500 focus:ring-2 focus:ring-brand-100 outline-none transition" placeholder="+380 50 123 45 67" />
+          </div>
+          <div>
+            <label class="block text-sm font-semibold mb-2">Місто</label>
+            <select class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:border-brand-500 focus:ring-2 focus:ring-brand-100 outline-none transition bg-white">
+              <option>Київ</option>
+              <option>Дніпро</option>
+              <option>Львів</option>
+              <option>Харків</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-sm font-semibold mb-2">Послуга</label>
+            <select class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:border-brand-500 focus:ring-2 focus:ring-brand-100 outline-none transition bg-white">
+              <option>Генеральне прибирання</option>
+              <option>Підтримуюче прибирання</option>
+              <option>Хімчистка диванів</option>
+              <option>Хімчистка матраців</option>
+              <option>Прибирання після ремонту</option>
+              <option>Миття вікон</option>
+              <option>Прибирання кухні</option>
+              <option>Прибирання ванної</option>
+              <option>Клінінг офісу</option>
+              <option>Інше</option>
+            </select>
+          </div>
+        </div>
+        <div class="mt-4">
+          <label class="block text-sm font-semibold mb-2">Деталі (необов'язково)</label>
+          <textarea rows="3" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:border-brand-500 focus:ring-2 focus:ring-brand-100 outline-none transition" placeholder="Площа, поверх, особливості об'єкту..."></textarea>
+        </div>
+        <button type="submit" class="mt-6 w-full px-7 py-4 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-bold text-lg transition shadow-lg shadow-brand-600/30">
+          Замовити прибирання
+        </button>
+        <p class="mt-3 text-xs text-slate-500 text-center">
+          Натискаючи кнопку, ви погоджуєтесь з обробкою персональних даних
+        </p>
+      </form>
+    </div>
+  </section>
+
+  <!-- ─── FAQ ──────────────────────────────────────────── -->
+  <section id="faq" class="py-24 bg-white">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6">
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-center">Часті питання</h2>
+
+      <div class="mt-12 space-y-4">
+        <details class="group bg-stone-50 rounded-2xl border border-slate-200 overflow-hidden">
+          <summary class="flex items-center justify-between p-6 cursor-pointer font-semibold list-none">
+            Скільки коштує прибирання моєї квартири?
+            <span class="text-brand-600 transition group-open:rotate-45 text-2xl">+</span>
+          </summary>
+          <div class="px-6 pb-6 text-slate-600">
+            Ціна залежить від площі та виду прибирання. Підтримуюче — від 50 ₴/м², генеральне — від 70 ₴/м². Точна ціна — після короткого дзвінка з менеджером.
+          </div>
+        </details>
+
+        <details class="group bg-stone-50 rounded-2xl border border-slate-200 overflow-hidden">
+          <summary class="flex items-center justify-between p-6 cursor-pointer font-semibold list-none">
+            Чи привозите ви хімію та обладнання?
+            <span class="text-brand-600 transition group-open:rotate-45 text-2xl">+</span>
+          </summary>
+          <div class="px-6 pb-6 text-slate-600">
+            Так, повністю своя професійна хімія Clinex та Karpax, пилососи, пароочисники, телескопні швабри. Вам не треба нічого готувати.
+          </div>
+        </details>
+
+        <details class="group bg-stone-50 rounded-2xl border border-slate-200 overflow-hidden">
+          <summary class="flex items-center justify-between p-6 cursor-pointer font-semibold list-none">
+            Що робити, якщо результат не сподобається?
+            <span class="text-brand-600 transition group-open:rotate-45 text-2xl">+</span>
+          </summary>
+          <div class="px-6 pb-6 text-slate-600">
+            Переробимо безкоштовно протягом 24 годин. Якщо проблема залишиться — повернемо гроші повністю. Гарантія прописана у договорі.
+          </div>
+        </details>
+
+        <details class="group bg-stone-50 rounded-2xl border border-slate-200 overflow-hidden">
+          <summary class="flex items-center justify-between p-6 cursor-pointer font-semibold list-none">
+            Як швидко ви приїдете?
+            <span class="text-brand-600 transition group-open:rotate-45 text-2xl">+</span>
+          </summary>
+          <div class="px-6 pb-6 text-slate-600">
+            У робочий день з 8:00 до 21:00 — у середньому 2 години після підтвердження. Завчасно — на будь-яку зручну дату.
+          </div>
+        </details>
+
+        <details class="group bg-stone-50 rounded-2xl border border-slate-200 overflow-hidden">
+          <summary class="flex items-center justify-between p-6 cursor-pointer font-semibold list-none">
+            Чи безпечна ваша хімія для дітей та тварин?
+            <span class="text-brand-600 transition group-open:rotate-45 text-2xl">+</span>
+          </summary>
+          <div class="px-6 pb-6 text-slate-600">
+            Так. Уся хімія сертифікована, після прибирання залишків немає. Можна заходити одразу після завершення робіт. Для алергіків і алергіків — додаткова обробка без запахів.
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FOOTER ───────────────────────────────────────── -->
+  <footer class="bg-slate-900 text-slate-400 py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="grid md:grid-cols-4 gap-10">
+        <div class="md:col-span-2">
+          <div class="flex items-center gap-2 font-bold text-xl text-white">
+            <span class="w-8 h-8 rounded-xl bg-brand-600 flex items-center justify-center text-lg">✦</span>
+            Pristyne
+          </div>
+          <p class="mt-4 text-sm max-w-md">
+            Професійна клінінгова компанія. Працюємо у Києві, Дніпрі, Львові, Харкові з 2021 року.
+          </p>
+          <div class="mt-6 flex gap-3">
+            <a href="#" class="w-10 h-10 rounded-full bg-slate-800 hover:bg-brand-600 flex items-center justify-center transition">📷</a>
+            <a href="#" class="w-10 h-10 rounded-full bg-slate-800 hover:bg-brand-600 flex items-center justify-center transition">📘</a>
+            <a href="#" class="w-10 h-10 rounded-full bg-slate-800 hover:bg-brand-600 flex items-center justify-center transition">✉</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="font-bold text-white mb-4">Послуги</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="services/himchistka-divana.html" class="hover:text-white">Хімчистка диванів</a></li>
+            <li><a href="#" class="hover:text-white">Генеральне прибирання</a></li>
+            <li><a href="#" class="hover:text-white">Миття вікон</a></li>
+            <li><a href="#" class="hover:text-white">Клінінг офісів</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-bold text-white mb-4">Контакти</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="tel:+380000000000" class="hover:text-white">+38 (000) 000-00-00</a></li>
+            <li><a href="mailto:hello@pristyne.ua" class="hover:text-white">hello@pristyne.ua</a></li>
+            <li>Київ · Дніпро · Львів · Харків</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-12 pt-8 border-t border-slate-800 text-xs text-slate-500 flex flex-col sm:flex-row justify-between gap-3">
+        <div>© 2026 Pristyne. Усі права захищені.</div>
+        <div class="flex gap-5">
+          <a href="#" class="hover:text-white">Договір оферти</a>
+          <a href="#" class="hover:text-white">Політика конфіденційності</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
