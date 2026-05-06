@@ -787,6 +787,26 @@
   (function() {
     // ─── Service catalog ───────────────────────────────────────────────
     const SERVICES = {
+      generalna: {
+        name: 'Генеральне прибирання',
+        icon: '✨',
+        short: 'Глибока чистка раз на сезон',
+        priceLabel: 'від 70 ₴/м²',
+        description: 'Глибоке прибирання після ремонту, переїзду або раз на сезон. Усе — від плінтусів до люстр, від петель шафок до підвіконь.',
+        needsCalc: true,
+        unit: 'м²',
+        sliderLabel: 'Площа квартири',
+        slider: { min: 30, max: 200, default: 70, step: 1, mid: 100 },
+        rates: [
+          { max: 70,  rate: 70, min: 3500 },
+          { max: 90,  rate: 80 },
+          { max: 999, rate: 85 },
+        ],
+        rateNote: 'Точна сума — після фото або огляду бригадира',
+        windowsSeparate: true,
+        quickButtons: [50, 80, 120],
+        detailLink: 'services/generalna-prybyrannia.html',
+      },
       pidtrymuyuche: {
         name: 'Підтримуюче прибирання',
         icon: '🧹',
@@ -807,26 +827,6 @@
         windowsSeparate: true,
         quickButtons: [40, 70, 120],
         detailLink: 'services/pidtrymuyuche-prybyrannia.html',
-      },
-      generalna: {
-        name: 'Генеральне прибирання',
-        icon: '✨',
-        short: 'Глибока чистка раз на сезон',
-        priceLabel: 'від 70 ₴/м²',
-        description: 'Глибоке прибирання після ремонту, переїзду або раз на сезон. Усе — від плінтусів до люстр, від петель шафок до підвіконь.',
-        needsCalc: true,
-        unit: 'м²',
-        sliderLabel: 'Площа квартири',
-        slider: { min: 30, max: 200, default: 70, step: 1, mid: 100 },
-        rates: [
-          { max: 70,  rate: 70, min: 3500 },
-          { max: 90,  rate: 80 },
-          { max: 999, rate: 85 },
-        ],
-        rateNote: 'Точна сума — після фото або огляду бригадира',
-        windowsSeparate: true,
-        quickButtons: [50, 80, 120],
-        detailLink: 'services/generalna-prybyrannia.html',
       },
       vikna: {
         name: 'Миття вікон',
@@ -936,7 +936,7 @@
     });
 
     // ─── State / refs ─────────────────────────────────────────────────
-    let currentKey = 'pidtrymuyuche';
+    let currentKey = 'generalna';
     const refs = {
       icon: document.getElementById('sd-icon'),
       title: document.getElementById('sd-title'),
@@ -1052,7 +1052,7 @@
     }
 
     refs.areaSlider.addEventListener('input', updatePrice);
-    selectService('pidtrymuyuche', false);
+    selectService('generalna', false);
 
     // ─── Order form ──────────────────────────────────────────────────
     const HANDLER_URL = 'https://cleaning-form-handler.onrender.com/api/order';
