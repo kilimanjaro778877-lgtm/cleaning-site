@@ -309,10 +309,7 @@
             </select>
           </div>
           <div>
-            <label class="block text-sm font-semibold mb-2 text-zinc-300">Площа квартири</label>
-            <select name="details" class="w-full px-4 py-3 rounded-xl bg-ink-700 border border-ink-600 focus:border-gold-400 outline-none text-zinc-100">
-              <option>до 50 м²</option><option>51–70 м²</option><option>71–90 м²</option><option>понад 90 м²</option>
-            </select>
+            <label class="block text-sm font-semibold mb-2 text-zinc-300">Площа квартири, м²</label><input type="number" name="details" min="20" max="500" placeholder="наприклад, 67" class="w-full px-4 py-3 rounded-xl bg-ink-700 border border-ink-600 focus:border-gold-400 focus:ring-2 focus:ring-gold-400/20 outline-none transition text-warm-100" />
           </div>
         </div>
         <button type="submit" class="btn-3d mt-6 w-full" style="border-radius:0.75rem;padding:0.875rem;font-size:1rem">
@@ -373,8 +370,8 @@
         document.getElementById('pg-price').textContent=fmt(calc(a));
         document.getElementById('pg-note').textContent=tier(a).rate+' ₴/м²';
         sl.style.setProperty('--p',((a-30)/170*100)+'%');
-      // sync to form area select
-      var sel=document.querySelector("select[name=details]");if(sel){if(a<=50)sel.value="до 50 м²";else if(a<=80)sel.value="51–80 м²";else if(a<=120)sel.value="81–120 м²";else sel.value="понад 120 м²";}
+      // sync exact area to form input
+      var inp=document.querySelector("input[name=details]");if(inp)inp.value=a;
       }
       sl.addEventListener('input',upd); upd();
     })();

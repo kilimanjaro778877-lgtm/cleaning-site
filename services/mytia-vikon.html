@@ -354,8 +354,8 @@
         document.getElementById('pg-area').textContent=a;
         document.getElementById('pg-price').textContent=fmt(calc(a));
         sl.style.setProperty('--p',((a-1)/59*100)+'%');
-      // sync to form area select
-      var sel=document.querySelector("select[name=details]");if(sel){if(a<=50)sel.value="до 50 м²";else if(a<=80)sel.value="51–80 м²";else if(a<=120)sel.value="81–120 м²";else sel.value="понад 120 м²";}
+      // sync exact area to form input
+      var inp=document.querySelector("input[name=details]");if(inp)inp.value=a;
       }
       sl.addEventListener('input',upd); upd();
     })();
