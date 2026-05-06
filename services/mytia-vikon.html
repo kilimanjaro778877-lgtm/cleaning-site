@@ -78,6 +78,21 @@
       -webkit-background-clip: text; background-clip: text; color: transparent;
       display: inline-block; padding: 0 0.18em 0.35em 0.05em; line-height: 1.4;
     }
+    input[type=range].calc-slider {
+      -webkit-appearance: none; width: 100%; height: 6px; border-radius: 3px;
+      background: linear-gradient(to right, #f4c027 var(--p, 12%), #262629 var(--p, 12%)); outline: none;
+    }
+    input[type=range].calc-slider::-webkit-slider-thumb {
+      -webkit-appearance: none; appearance: none;
+      width: 26px; height: 26px; border-radius: 50%; background: #f4c027;
+      cursor: pointer; border: 4px solid #0a0a0b;
+      box-shadow: 0 0 0 2px #f4c027, 0 4px 12px rgba(244,192,39,0.4);
+    }
+    input[type=range].calc-slider::-moz-range-thumb {
+      width: 26px; height: 26px; border-radius: 50%; background: #f4c027;
+      cursor: pointer; border: 4px solid #0a0a0b;
+      box-shadow: 0 0 0 2px #f4c027, 0 4px 12px rgba(244,192,39,0.4);
+    }
   </style>
 </head>
 <body class="bg-ink-900 text-zinc-100 antialiased">
@@ -175,8 +190,37 @@
     </div>
   </section>
 
+  <!-- CALCULATOR -->
+  <section class="py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+      <div class="text-center max-w-2xl mx-auto">
+        <h2 class="font-display text-4xl sm:text-5xl font-black tracking-tight">Порахуй <span class="gold-gradient-text italic">вартість</span></h2>
+        <p class="mt-4 text-zinc-400">Вкажи загальну площу скла — побачиш ціну моментально</p>
+      </div>
+      <div class="mt-12 bg-ink-800 border border-ink-600 rounded-3xl p-8">
+        <div class="flex items-center justify-between mb-4">
+          <span class="text-sm font-semibold text-zinc-300">Площа вікон:</span>
+          <span class="font-display text-3xl font-black text-gold-400"><span id="pg-area">8</span> м²</span>
+        </div>
+        <input id="pg-slider" type="range" min="1" max="60" value="8" step="1" class="calc-slider" />
+        <div class="flex justify-between text-xs text-zinc-600 mt-2">
+          <span>1 м²</span><span>30 м²</span><span>60 м²</span>
+        </div>
+        <div class="mt-8 bg-ink-900 border border-gold-400/30 rounded-2xl p-6 text-center">
+          <div class="text-sm uppercase tracking-wider text-gold-400 font-bold">Орієнтовна вартість</div>
+          <div class="mt-2 flex items-baseline justify-center gap-2">
+            <span class="font-display text-5xl sm:text-6xl font-black text-zinc-100" id="pg-price">800</span>
+            <span class="text-2xl font-bold text-zinc-400">₴</span>
+          </div>
+          <p id="pg-note" class="mt-2 text-sm text-zinc-500">80 ₴/м²</p>
+          <a href="#order" class="inline-flex items-center justify-center gap-2 mt-5 px-7 py-3 rounded-xl bg-gold-400 hover:bg-gold-300 text-ink-900 font-bold transition shadow-lg shadow-gold-500/30">Замовити за цю ціну</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- PRICE -->
-  <section id="price" class="py-20">
+  <section id="price" class="py-20 bg-ink-800">
     <div class="max-w-4xl mx-auto px-4 sm:px-6">
       <div class="text-center max-w-2xl mx-auto">
         <h2 class="font-display text-4xl sm:text-5xl font-black tracking-tight">Прозорі <span class="gold-gradient-text italic">ціни</span></h2>
@@ -278,6 +322,21 @@
   </footer>
 
   <script>
+    // Calculator
+    (function() {
+      const RATES = [{max:9999,rate:80,min:800}];
+      function calc(a) { return Math.max(a*80, 800); }
+      function fmt(n) { return n.toLocaleString('uk-UA').replace(/,/g,' '); }
+      const sl=document.getElementById('pg-slider');
+      function upd() {
+        const a=parseInt(sl.value);
+        document.getElementById('pg-area').textContent=a;
+        document.getElementById('pg-price').textContent=fmt(calc(a));
+        sl.style.setProperty('--p',((a-1)/59*100)+'%');
+      }
+      sl.addEventListener('input',upd); upd();
+    })();
+
     const HANDLER_URL = 'https://cleaning-form-handler.onrender.com/api/order';
     const form = document.getElementById('order-form');
     const submitBtn = form.querySelector('button[type=submit]');
