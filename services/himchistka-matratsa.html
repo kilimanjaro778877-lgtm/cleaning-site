@@ -26,7 +26,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet" />
   <script src="https://cdn.tailwindcss.com"></script>
   <script>tailwind.config={theme:{extend:{fontFamily:{sans:['Manrope','system-ui','sans-serif'],display:['"Playfair Display"','Georgia','serif']},colors:{ink:{900:'#02020f',800:'#06061c',700:'#0b0b2a',600:'#121238',500:'#1a1a4a'},gold:{50:'#eeeeff',100:'#ccccff',200:'#9999ff',300:'#6666ff',400:'#0000FF',500:'#0000cc',600:'#000099',700:'#000066'}}}}}</script>
-  <style>html{scroll-behavior:smooth}body{font-family:'Manrope',system-ui,sans-serif}.gold-gradient-text{background:linear-gradient(135deg,#FFFAFA 0%,#8888ff 50%,#0000FF 100%);-webkit-background-clip:text;background-clip:text;color:transparent;display:inline-block;padding:0 0.18em 0.35em 0.05em;line-height:1.4}</style>
+  <style>html{scroll-behavior:smooth}body{font-family:'Manrope',system-ui,sans-serif;background-color:#03040f;background-image:radial-gradient(rgba(102,128,255,0.09) 1px,transparent 1px);background-size:26px 26px;color:#FFFAFA;line-height:1.65}.gold-gradient-text{background:linear-gradient(135deg,#FFFAFA 0%,#b3bbff 50%,#99aaff 100%);-webkit-background-clip:text;background-clip:text;color:transparent;display:inline-block;padding:0 0.18em 0.35em 0.05em;line-height:1.4}</style>
 </head>
 <body class="bg-ink-900 text-zinc-100 antialiased">
   <header class="sticky top-0 z-50 bg-ink-900/90 backdrop-blur-lg border-b border-ink-700">
@@ -35,13 +35,13 @@
         <span class="w-9 h-9 rounded-xl bg-gradient-to-br from-gold-300 to-gold-500 flex items-center justify-center text-ink-900 font-black text-lg">CC</span>
         <span>Clean-<span class="text-gold-400">Clean</span></span>
       </a>
-      <a href="#order" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gold-400 hover:bg-gold-300 text-ink-900 font-bold text-sm">Замовити</a>
+      <a href="#order" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gold-400 hover:bg-gold-300 text-white font-bold text-sm">Замовити</a>
     </div>
   </header>
   <div class="max-w-7xl mx-auto px-4 sm:px-6 pt-6">
     <nav class="text-sm text-zinc-500">
       <a href="../index.html" class="hover:text-gold-400">Головна</a><span class="mx-2">/</span>
-      <a href="../index.html#services" class="hover:text-gold-400">Послуги</a><span class="mx-2">/</span>
+      <a href="../index.html#services" class="hover:text-warm-100 transition">Послуги</a><a href="../prices.html" class="hover:text-warm-100 transition">Ціни</a><a href="../blog.html" class="hover:text-warm-100 transition">Блог</a><a href="../faq.html" class="hover:text-warm-100 transition">FAQ</a><span class="mx-2">/</span>
       <span class="text-zinc-100">Хімчистка матраців</span>
     </nav>
   </div>
@@ -53,7 +53,7 @@
           <h1 class="font-display text-5xl sm:text-6xl lg:text-7xl font-black tracking-tight leading-[1.0]">Хімчистка матраців<span class="gold-gradient-text italic"> без кліщів</span></h1>
           <p class="mt-6 text-lg text-zinc-400 max-w-xl leading-relaxed">Видаляємо пилових кліщів, плями, запахи. Безпечна хімія — підходить для дитячих матраців. Сушка 3-4 год вдома.</p>
           <div class="mt-8 flex flex-col sm:flex-row gap-3">
-            <a href="#order" class="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full bg-gold-400 hover:bg-gold-300 text-ink-900 font-bold transition shadow-xl shadow-gold-500/30">Замовити хімчистку<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
+            <a href="#order" class="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full bg-gold-400 hover:bg-gold-300 text-white font-bold transition shadow-xl shadow-gold-500/30">Замовити хімчистку<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
           </div>
           <div class="mt-10 grid grid-cols-3 gap-6 max-w-lg">
             <div><div class="font-display text-2xl font-extrabold text-gold-400">від 300 ₴</div><div class="text-sm text-zinc-500 mt-1">дитячий</div></div>
@@ -131,7 +131,7 @@
           <div><label class="block text-sm font-semibold mb-2 text-zinc-300">Місто</label><select name="city" class="w-full px-4 py-3 rounded-xl bg-ink-700 border border-ink-600 focus:border-gold-400 outline-none text-zinc-100"><option>Київ</option><option>Дніпро</option><option>Львів</option><option>Харків</option></select></div>
           <div><label class="block text-sm font-semibold mb-2 text-zinc-300">Тип матраця</label><select name="details" class="w-full px-4 py-3 rounded-xl bg-ink-700 border border-ink-600 focus:border-gold-400 outline-none text-zinc-100"><option>Дитячий</option><option>Одномісний</option><option>Полуторний</option><option>Двоспальний</option></select></div>
         </div>
-        <button type="submit" class="mt-6 w-full px-7 py-4 rounded-xl bg-gold-400 hover:bg-gold-300 text-ink-900 font-bold text-lg transition shadow-lg shadow-gold-500/30">Замовити хімчистку матраця</button>
+        <button type="submit" class="mt-6 w-full px-7 py-4 rounded-xl bg-gold-400 hover:bg-gold-300 text-white font-bold text-lg transition shadow-lg shadow-gold-500/30">Замовити хімчистку матраця</button>
       </form>
     </div>
   </section>

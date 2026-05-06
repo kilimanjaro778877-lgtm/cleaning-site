@@ -56,8 +56,8 @@
             display: ['"Playfair Display"', 'Georgia', 'serif'],
           },
           colors: {
-            ink: { 900: '#0a0a0b', 800: '#121214', 700: '#1a1a1d', 600: '#262629', 500: '#3a3a3f' },
-            gold: { 50:'#fef9e7', 100:'#fdf2c8', 200:'#fbe590', 300:'#f7d04d', 400:'#f4c027', 500:'#d4a017', 600:'#a37809', 700:'#7a5a08' },
+            ink: { 900: '#03040f', 800: '#07091e', 700: '#0d1030', 600: '#151840', 500: '#1e2254' },
+            gold: { 50:'#f0f2ff', 100:'#d6dbff', 200:'#c4ccff', 300:'#aab4ff', 400:'#99aaff', 500:'#6680ff', 600:'#4455dd', 700:'#2233bb' },
           },
         },
       },
@@ -65,9 +65,10 @@
   </script>
   <style>
     html { scroll-behavior: smooth; }
-    body { font-family: 'Manrope', system-ui, sans-serif; }
+    body { font-family: 'Manrope', system-ui, sans-serif; background-color: #03040f; background-image: radial-gradient(rgba(102,128,255,0.09) 1px,transparent 1px); background-size: 26px 26px; color: #FFFAFA; line-height: 1.65; }
+    h1,h2,h3{letter-spacing:-0.02em;color:#FFFAFA;overflow:visible}
     .gold-gradient-text {
-      background: linear-gradient(135deg, #f4c027 0%, #d4a017 50%, #f4c027 100%);
+      background: linear-gradient(135deg, #FFFAFA 0%, #b3bbff 50%, #99aaff 100%);
       -webkit-background-clip: text; background-clip: text; color: transparent;
     }
   </style>
@@ -81,17 +82,17 @@
         <span class="w-9 h-9 rounded-xl bg-gradient-to-br from-gold-300 to-gold-500 flex items-center justify-center text-ink-900 font-black text-lg">CC</span>
         <span>Clean-<span class="text-gold-400">Clean</span></span>
       </a>
-      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-zinc-400">
-        <a href="../index.html#calculator" class="hover:text-gold-400">Калькулятор</a>
-        <a href="../index.html#services" class="hover:text-gold-400">Послуги</a>
-        <a href="../index.html#extras" class="hover:text-gold-400">Допуслуги</a>
-        <a href="../index.html#cities" class="hover:text-gold-400">Міста</a>
+      <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-zinc-400">
+        <a 
+        <a href="../index.html#services" class="hover:text-warm-100 transition">Послуги</a><a href="../prices.html" class="hover:text-warm-100 transition">Ціни</a><a href="../blog.html" class="hover:text-warm-100 transition">Блог</a><a href="../faq.html" class="hover:text-warm-100 transition">FAQ</a>
+        <a 
+        
       </nav>
       <div class="flex items-center gap-3">
         <a href="tel:+380731312228" class="hidden sm:block text-sm font-semibold hover:text-gold-400">
           +38 073 131 22 28
         </a>
-        <a href="#order" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gold-400 hover:bg-gold-300 text-ink-900 font-bold text-sm shadow-lg shadow-gold-500/20">
+        <a href="#order" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gold-400 hover:bg-gold-300 text-white font-bold text-sm shadow-lg shadow-gold-500/20">
           Замовити
         </a>
       </div>
@@ -103,7 +104,7 @@
     <nav class="text-sm text-zinc-500">
       <a href="../index.html" class="hover:text-gold-400">Головна</a>
       <span class="mx-2">/</span>
-      <a href="../index.html#services" class="hover:text-gold-400">Послуги</a>
+      <a href="../index.html#services" class="hover:text-warm-100 transition">Послуги</a><a href="../prices.html" class="hover:text-warm-100 transition">Ціни</a><a href="../blog.html" class="hover:text-warm-100 transition">Блог</a><a href="../faq.html" class="hover:text-warm-100 transition">FAQ</a>
       <span class="mx-2">/</span>
       <span class="text-zinc-100 font-medium">Хімчистка диванів</span>
     </nav>
@@ -127,7 +128,7 @@
           </p>
 
           <div class="mt-8 flex flex-col sm:flex-row gap-3">
-            <a href="#order" class="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full bg-gold-400 hover:bg-gold-300 text-ink-900 font-bold transition shadow-xl shadow-gold-500/30">
+            <a href="#order" class="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full bg-gold-400 hover:bg-gold-300 text-white font-bold transition shadow-xl shadow-gold-500/30">
               Замовити хімчистку
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
             </a>
@@ -274,7 +275,7 @@
           <label class="block text-sm font-semibold mb-2 text-zinc-300">Опис плям (необов'язково)</label>
           <textarea rows="3" name="details" class="w-full px-4 py-3 rounded-xl bg-ink-700 border border-ink-600 focus:border-gold-400 focus:ring-2 focus:ring-gold-400/20 outline-none text-zinc-100" placeholder="Кров, кава, запах тварин..."></textarea>
         </div>
-        <button type="submit" class="mt-6 w-full px-7 py-4 rounded-xl bg-gold-400 hover:bg-gold-300 text-ink-900 font-bold text-lg transition shadow-lg shadow-gold-500/30">
+        <button type="submit" class="mt-6 w-full px-7 py-4 rounded-xl bg-gold-400 hover:bg-gold-300 text-white font-bold text-lg transition shadow-lg shadow-gold-500/30">
           Замовити хімчистку
         </button>
       </form>
