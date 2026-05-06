@@ -601,8 +601,15 @@
         <div>
           <h4 class="font-bold text-zinc-100 mb-4">Послуги</h4>
           <ul class="space-y-2 text-sm">
+            <li><a href="services/generalna-prybyrannia.html" class="hover:text-gold-400">Генеральне прибирання</a></li>
+            <li><a href="services/pidtrymuyuche-prybyrannia.html" class="hover:text-gold-400">Підтримуюче прибирання</a></li>
             <li><a href="services/himchistka-divana.html" class="hover:text-gold-400">Хімчистка диванів</a></li>
-            <li><a href="#services" class="hover:text-gold-400">Усі послуги</a></li>
+            <li><a href="services/himchistka-matratsa.html" class="hover:text-gold-400">Хімчистка матраців</a></li>
+            <li><a href="services/mytia-vikon.html" class="hover:text-gold-400">Миття вікон</a></li>
+            <li><a href="services/prybyrannia-kukhni.html" class="hover:text-gold-400">Прибирання кухні</a></li>
+            <li><a href="services/prybyrannia-vannoi.html" class="hover:text-gold-400">Прибирання ванної</a></li>
+            <li><a href="services/pislia-remontu.html" class="hover:text-gold-400">Після ремонту</a></li>
+            <li><a href="services/klinig-ofisiv.html" class="hover:text-gold-400">Клінінг офісів</a></li>
           </ul>
         </div>
         <div>
@@ -648,6 +655,7 @@
         rateNote: 'Точна сума — після фото або огляду бригадира',
         windowsSeparate: true,
         quickButtons: [40, 70, 120],
+        detailLink: 'services/pidtrymuyuche-prybyrannia.html',
       },
       generalna: {
         name: 'Генеральне прибирання',
@@ -667,6 +675,7 @@
         rateNote: 'Точна сума — після фото або огляду бригадира',
         windowsSeparate: true,
         quickButtons: [50, 80, 120],
+        detailLink: 'services/generalna-prybyrannia.html',
       },
       vikna: {
         name: 'Миття вікон',
@@ -684,6 +693,7 @@
         rateNote: 'Точна сума — після фото або огляду бригадира',
         windowsSeparate: false,
         quickButtons: [4, 10, 20],
+        detailLink: 'services/mytia-vikon.html',
       },
       himchystka_divan: {
         name: 'Хімчистка диванів',
@@ -705,6 +715,7 @@
         needsCalc: false,
         fixedPrice: 'від 550 ₴',
         fixedNote: 'Дитячий від 300 ₴ · полуторний від 800 ₴ · двоспальний від 1100 ₴',
+        detailLink: 'services/himchistka-matratsa.html',
       },
       kuhnia: {
         name: 'Прибирання кухні',
@@ -715,6 +726,7 @@
         needsCalc: false,
         fixedPrice: 'від 1 800 ₴',
         fixedNote: 'до 6м² від 1800 ₴ · до 10м² від 2400 ₴ · до 20м² від 3100 ₴',
+        detailLink: 'services/prybyrannia-kukhni.html',
       },
       vannoi: {
         name: 'Прибирання ванної',
@@ -725,6 +737,7 @@
         needsCalc: false,
         fixedPrice: 'від 1 300 ₴',
         fixedNote: 'до 5м² від 1300 ₴ · до 10м² від 1800 ₴ · до 20м² від 2600 ₴',
+        detailLink: 'services/prybyrannia-vannoi.html',
       },
       pislya_remontu: {
         name: 'Прибирання після ремонту',
@@ -735,6 +748,7 @@
         needsCalc: false,
         fixedPrice: 'від 4 500 ₴',
         fixedNote: 'Від площі квартири та ступеня забруднення',
+        detailLink: 'services/pislia-remontu.html',
       },
       ofice: {
         name: 'Клінінг офісів',
@@ -745,6 +759,7 @@
         needsCalc: false,
         fixedPrice: 'Індивідуально',
         fixedNote: 'Розрахунок після короткого дзвінка з менеджером',
+        detailLink: 'services/klinig-ofisiv.html',
       },
     };
 
@@ -761,6 +776,7 @@
             <div class="service-name font-bold text-zinc-100">${s.name}</div>
             <div class="text-xs text-zinc-500 mt-1">${s.short}</div>
             <div class="text-sm font-bold text-gold-400 mt-2">${s.priceLabel}</div>
+            ${s.detailLink ? `<a href="${s.detailLink}" class="inline-flex items-center gap-1 text-xs text-zinc-500 hover:text-gold-400 mt-2 font-medium transition" onclick="event.stopPropagation()">Детальніше <svg class='w-3 h-3' fill='none' stroke='currentColor' viewBox='0 0 24 24'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2.5' d='M9 5l7 7-7 7'/></svg></a>` : ''}
           </div>
         </div>
       `;
