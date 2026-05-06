@@ -53,7 +53,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Raleway:wght@600;700;800;900&display=swap" rel="stylesheet" />
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -61,7 +61,7 @@
         extend: {
           fontFamily: {
             sans: ['Manrope', 'system-ui', 'sans-serif'],
-            display: ['"Playfair Display"', 'Georgia', 'serif'],
+            display: ['Raleway', 'system-ui', 'sans-serif'],
           },
           colors: {
             ink: { 900: '#03040f', 800: '#07091e', 700: '#0d1030', 600: '#151840', 500: '#1e2254' },
@@ -315,7 +315,7 @@
             </select>
           </div>
         </div>
-        <button type="submit" class="mt-6 w-full px-7 py-4 rounded-xl bg-gold-400 hover:bg-gold-300 text-white font-bold text-lg transition shadow-lg shadow-gold-500/30">
+        <button type="submit" class="btn-3d mt-6 w-full" style="border-radius:0.75rem;padding:0.875rem;font-size:1rem">
           Замовити генеральне прибирання
         </button>
       </form>
@@ -373,6 +373,8 @@
         document.getElementById('pg-price').textContent=fmt(calc(a));
         document.getElementById('pg-note').textContent=tier(a).rate+' ₴/м²';
         sl.style.setProperty('--p',((a-30)/170*100)+'%');
+      // sync to form area select
+      var sel=document.querySelector("select[name=details]");if(sel){if(a<=50)sel.value="до 50 м²";else if(a<=80)sel.value="51–80 м²";else if(a<=120)sel.value="81–120 м²";else sel.value="понад 120 м²";}
       }
       sl.addEventListener('input',upd); upd();
     })();
@@ -391,10 +393,10 @@
         const resp = await fetch(HANDLER_URL, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) });
         if (!resp.ok) throw new Error('http ' + resp.status);
         submitBtn.textContent = '✅ Заявку прийнято! Передзвонимо.';
-        submitBtn.classList.remove('bg-gold-400', 'hover:bg-gold-300');
-        submitBtn.classList.add('bg-emerald-500');
+        submitBtn.style.background='#059669';
+        
         form.reset();
-        setTimeout(() => { submitBtn.disabled = false; submitBtn.textContent = originalText; submitBtn.classList.add('bg-gold-400', 'hover:bg-gold-300'); submitBtn.classList.remove('bg-emerald-500'); }, 6000);
+        setTimeout(() => { submitBtn.disabled = false; submitBtn.textContent = originalText; submitBtn.style.background='';  }, 6000);
       } catch (err) {
         submitBtn.disabled = false; submitBtn.textContent = originalText;
         alert('Помилка надсилання. Спробуйте ще раз або зателефонуйте.');
