@@ -728,30 +728,43 @@
 
     function format(n) { return n.toLocaleString('uk-UA').replace(/,/g, ' '); }
 
+    function currentTier(area, rates) {
+      return rates.find(t => area <= t.max) || rates[rates.length - 1];
+    }
+
     function calcPrice(area, rates) {
-      // Прогрессивний розрахунок: кожен діапазон рахується за своєю ставкою.
-      // Мінімалка з першого тиру застосовується лише для дуже малих площ.
-      let price = 0;
-      let prev = 0;
-      for (const t of rates) {
-        const upTo = Math.min(area, t.max);
-        if (upTo > prev) {
-          price += (upTo - prev) * t.rate;
-          prev = upTo;
-        }
-        if (area <= t.max) break;
-      }
+      // Плоский тариф: вся площа множиться на ставку того діапазону,
+      // в який потрапив поточний метраж. Мінімалка з першого тиру.
+      const tier = currentTier(area, rates);
+      const price = area * tier.rate;
       const firstMin = rates[0].min || 0;
       return Math.max(price, firstMin);
+    }
+
+    function tierLabel(tier, rates) {
+      const idx = rates.indexOf(tier);
+      if (idx === -1) return '';
+      // Якщо це останній тариф і він покриває "усе вище" — пишемо "понад N м²"
+      const isLast = idx === rates.length - 1;
+      const prevMax = idx > 0 ? rates[idx - 1].max : null;
+      if (isLast && tier.max >= 500 && prevMax) return 'понад ' + prevMax + ' м²';
+      return 'до ' + tier.max + ' м²';
     }
 
     function updatePrice() {
       const s = SERVICES[currentKey];
       if (!s.needsCalc) return;
       const area = parseInt(refs.areaSlider.value, 10);
+      const tier = currentTier(area, s.rates);
       const price = calcPrice(area, s.rates);
       refs.areaValue.textContent = area;
       refs.priceValue.textContent = format(price);
+      // Динамічна підпись з поточною ставкою
+      if (s.rates.length > 1) {
+        refs.priceNote.textContent = `Зараз ${tier.rate} ₴/м² (${tierLabel(tier, s.rates)}) · ${s.rateNote.toLowerCase()}`;
+      } else {
+        refs.priceNote.textContent = s.rateNote;
+      }
       // slider fill
       const range = s.slider.max - s.slider.min;
       const pct = ((area - s.slider.min) / range) * 100;
