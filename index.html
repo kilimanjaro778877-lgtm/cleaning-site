@@ -776,7 +776,7 @@
             <div class="service-name font-bold text-zinc-100">${s.name}</div>
             <div class="text-xs text-zinc-500 mt-1">${s.short}</div>
             <div class="text-sm font-bold text-gold-400 mt-2">${s.priceLabel}</div>
-            ${s.detailLink ? `<a href="${s.detailLink}" class="inline-flex items-center gap-1 text-xs text-zinc-500 hover:text-gold-400 mt-2 font-medium transition" onclick="event.stopPropagation()">Детальніше <svg class='w-3 h-3' fill='none' stroke='currentColor' viewBox='0 0 24 24'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2.5' d='M9 5l7 7-7 7'/></svg></a>` : ''}
+            ${s.detailLink ? `<a href="${s.detailLink}" class="inline-flex items-center gap-1 text-xs text-gold-400/70 hover:text-gold-400 mt-2 font-semibold transition px-2.5 py-1 rounded-full border border-gold-400/20 hover:border-gold-400/50 bg-gold-400/5 hover:bg-gold-400/10" onclick="event.stopPropagation()">Детальніше <svg class='w-3 h-3' fill='none' stroke='currentColor' viewBox='0 0 24 24'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2.5' d='M9 5l7 7-7 7'/></svg></a>` : ''}
           </div>
         </div>
       `;
