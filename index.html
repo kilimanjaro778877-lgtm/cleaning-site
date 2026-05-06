@@ -3,20 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pristyne — професійне прибирання у Києві, Дніпрі, Львові, Харкові</title>
-  <meta name="description" content="Замовте професійне прибирання та хімчистку від Pristyne. Працюємо у Києві, Дніпрі, Львові, Харкові. Гарантія результату, понад 12 000 задоволених клієнтів." />
+  <title>Clean-Clean — професійне прибирання у Києві, Дніпрі, Львові, Харкові</title>
+  <meta name="description" content="Замовте професійне прибирання та хімчистку від Clean-Clean. Працюємо у Києві, Дніпрі, Львові, Харкові. Гарантія результату, понад 12 000 задоволених клієнтів." />
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Pristyne — клінінг, що повертає час" />
+  <meta property="og:title" content="Clean-Clean — клінінг, що повертає час" />
   <meta property="og:description" content="Прибирання, хімчистка диванів, миття вікон. 4 міста України. Гарантія." />
   <meta property="og:type" content="website" />
 
-  <!-- Schema.org LocalBusiness -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "name": "Pristyne",
+    "name": "Clean-Clean",
     "description": "Професійна клінінгова компанія",
     "areaServed": ["Київ", "Дніпро", "Львів", "Харків"],
     "aggregateRating": {
@@ -29,28 +27,36 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet" />
 
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
         extend: {
-          fontFamily: { sans: ['Manrope', 'system-ui', 'sans-serif'] },
+          fontFamily: {
+            sans: ['Manrope', 'system-ui', 'sans-serif'],
+            display: ['"Playfair Display"', 'Georgia', 'serif'],
+          },
           colors: {
-            brand: {
-              50:  '#f0fdf6',
-              100: '#dcfceb',
-              200: '#bbf7d3',
-              500: '#10b981',
-              600: '#059669',
-              700: '#047857',
-              800: '#065f46',
-              900: '#064e3b',
+            ink: {
+              900: '#0a0a0b',
+              800: '#121214',
+              700: '#1a1a1d',
+              600: '#262629',
+              500: '#3a3a3f',
             },
-            accent: {
-              500: '#f59e0b',
-              600: '#d97706',
+            gold: {
+              50:  '#fef9e7',
+              100: '#fdf2c8',
+              200: '#fbe590',
+              300: '#f7d04d',
+              400: '#f4c027',
+              500: '#d4a017',
+              600: '#a37809',
+              700: '#7a5a08',
+              800: '#5c4506',
+              900: '#3d2e04',
             },
           },
         },
@@ -62,339 +68,679 @@
     html { scroll-behavior: smooth; }
     body { font-family: 'Manrope', system-ui, sans-serif; }
     .gradient-hero {
-      background: radial-gradient(ellipse at top right, rgba(16,185,129,0.08), transparent 50%),
-                  radial-gradient(ellipse at bottom left, rgba(245,158,11,0.05), transparent 50%);
+      background:
+        radial-gradient(ellipse at top right, rgba(244,192,39,0.08), transparent 50%),
+        radial-gradient(ellipse at bottom left, rgba(244,192,39,0.04), transparent 50%),
+        #0a0a0b;
+    }
+    .gold-gradient-text {
+      background: linear-gradient(135deg, #f4c027 0%, #d4a017 50%, #f4c027 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    /* Custom slider */
+    input[type=range].calc-slider {
+      -webkit-appearance: none;
+      width: 100%;
+      height: 6px;
+      border-radius: 3px;
+      background: linear-gradient(to right, #f4c027 var(--p, 50%), #262629 var(--p, 50%));
+      outline: none;
+    }
+    input[type=range].calc-slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: #f4c027;
+      cursor: pointer;
+      border: 4px solid #0a0a0b;
+      box-shadow: 0 0 0 2px #f4c027, 0 4px 12px rgba(244,192,39,0.4);
+    }
+    input[type=range].calc-slider::-moz-range-thumb {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: #f4c027;
+      cursor: pointer;
+      border: 4px solid #0a0a0b;
+      box-shadow: 0 0 0 2px #f4c027, 0 4px 12px rgba(244,192,39,0.4);
     }
   </style>
 </head>
-<body class="bg-stone-50 text-slate-900 antialiased">
+<body class="bg-ink-900 text-zinc-100 antialiased">
 
-  <!-- ─── NAV ───────────────────────────────────────────── -->
-  <header class="sticky top-0 z-50 bg-white/80 backdrop-blur border-b border-slate-200/60">
+  <!-- ─── NAV ─────────────────────────────────────── -->
+  <header class="sticky top-0 z-50 bg-ink-900/90 backdrop-blur-lg border-b border-ink-700">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
       <a href="/" class="flex items-center gap-2 font-bold text-xl">
-        <span class="w-8 h-8 rounded-xl bg-brand-600 flex items-center justify-center text-white text-lg">✦</span>
-        <span>Pristyne</span>
+        <span class="w-9 h-9 rounded-xl bg-gradient-to-br from-gold-300 to-gold-500 flex items-center justify-center text-ink-900 font-black text-lg">CC</span>
+        <span class="tracking-tight">Clean-<span class="text-gold-400">Clean</span></span>
       </a>
 
-      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-700">
-        <a href="#services" class="hover:text-brand-600 transition">Послуги</a>
-        <a href="#cities" class="hover:text-brand-600 transition">Міста</a>
-        <a href="#how" class="hover:text-brand-600 transition">Як працюємо</a>
-        <a href="#trust" class="hover:text-brand-600 transition">Відгуки</a>
-        <a href="#faq" class="hover:text-brand-600 transition">FAQ</a>
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-zinc-400">
+        <a href="#calculator" class="hover:text-gold-400 transition">Калькулятор</a>
+        <a href="#services" class="hover:text-gold-400 transition">Послуги</a>
+        <a href="#extras" class="hover:text-gold-400 transition">Допуслуги</a>
+        <a href="#cities" class="hover:text-gold-400 transition">Міста</a>
+        <a href="#trust" class="hover:text-gold-400 transition">Відгуки</a>
       </nav>
 
       <div class="flex items-center gap-3">
-        <a href="tel:+380000000000" class="hidden sm:block text-sm font-semibold text-slate-900 hover:text-brand-600">
+        <a href="tel:+380000000000" class="hidden sm:block text-sm font-semibold text-zinc-100 hover:text-gold-400 transition">
           +38 (000) 000-00-00
         </a>
-        <a href="#order" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-brand-600 hover:bg-brand-700 text-white font-semibold text-sm transition">
+        <a href="#order" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gold-400 hover:bg-gold-300 text-ink-900 font-bold text-sm transition shadow-lg shadow-gold-500/20">
           Замовити
         </a>
       </div>
     </div>
   </header>
 
-  <!-- ─── HERO ──────────────────────────────────────────── -->
+  <!-- ─── HERO ─────────────────────────────────────── -->
   <section class="gradient-hero">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 pt-20 pb-24 lg:pt-28 lg:pb-32">
       <div class="grid lg:grid-cols-2 gap-12 items-center">
         <div>
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-100 text-brand-800 text-xs font-semibold mb-6">
-            <span class="w-2 h-2 rounded-full bg-brand-500 animate-pulse"></span>
-            Працюємо у 4 містах України
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold-400/10 border border-gold-400/30 text-gold-400 text-xs font-semibold mb-6">
+            <span class="w-2 h-2 rounded-full bg-gold-400 animate-pulse"></span>
+            4 міста України · виїзд за 2 години
           </div>
 
-          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.05]">
+          <h1 class="font-display text-5xl sm:text-6xl lg:text-7xl font-black tracking-tight leading-[1.0]">
             Чистота, що
-            <span class="text-brand-600">повертає час</span>
+            <span class="gold-gradient-text italic">повертає час</span>
           </h1>
 
-          <p class="mt-6 text-lg text-slate-600 max-w-xl leading-relaxed">
+          <p class="mt-6 text-lg text-zinc-400 max-w-xl leading-relaxed">
             Професійне прибирання та хімчистка вдома, в офісі, після ремонту.
             Замовлення за 60 секунд — приїдемо вже сьогодні.
           </p>
 
           <div class="mt-8 flex flex-col sm:flex-row gap-3">
-            <a href="#order" class="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full bg-brand-600 hover:bg-brand-700 text-white font-semibold transition shadow-lg shadow-brand-600/20">
-              Замовити прибирання
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+            <a href="#calculator" class="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full bg-gold-400 hover:bg-gold-300 text-ink-900 font-bold transition shadow-xl shadow-gold-500/30">
+              Розрахувати ціну
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
             </a>
-            <a href="#services" class="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full bg-white hover:bg-slate-50 text-slate-900 font-semibold transition border border-slate-200">
+            <a href="#services" class="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full bg-ink-700 hover:bg-ink-600 text-zinc-100 font-semibold transition border border-ink-600">
               Подивитись послуги
             </a>
           </div>
 
-          <div class="mt-10 grid grid-cols-3 gap-6 max-w-lg">
+          <div class="mt-12 grid grid-cols-3 gap-6 max-w-lg">
             <div>
-              <div class="text-3xl font-extrabold text-slate-900">5+</div>
-              <div class="text-sm text-slate-500 mt-1">років досвіду</div>
+              <div class="text-3xl font-extrabold text-gold-400">5+</div>
+              <div class="text-sm text-zinc-500 mt-1">років досвіду</div>
             </div>
             <div>
-              <div class="text-3xl font-extrabold text-slate-900">12k+</div>
-              <div class="text-sm text-slate-500 mt-1">задоволених клієнтів</div>
+              <div class="text-3xl font-extrabold text-gold-400">12k+</div>
+              <div class="text-sm text-zinc-500 mt-1">клієнтів</div>
             </div>
             <div>
-              <div class="text-3xl font-extrabold text-slate-900">4.9 ★</div>
-              <div class="text-sm text-slate-500 mt-1">у Google</div>
+              <div class="text-3xl font-extrabold text-gold-400">4.9★</div>
+              <div class="text-sm text-zinc-500 mt-1">у Google</div>
             </div>
           </div>
         </div>
 
-        <!-- Hero illustration / placeholder -->
         <div class="relative">
-          <div class="aspect-[4/5] bg-gradient-to-br from-brand-100 to-stone-200 rounded-3xl overflow-hidden shadow-2xl shadow-brand-900/10 flex items-center justify-center">
-            <div class="text-center p-8">
-              <div class="text-7xl mb-4">🧼</div>
-              <p class="text-slate-600 text-sm">[Фото бригади на об'єкті]</p>
-            </div>
+          <div class="aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl shadow-gold-500/10 ring-1 ring-gold-400/20">
+            <img src="https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?w=900&auto=format&fit=crop&q=80"
+                 alt="Професійне прибирання"
+                 class="w-full h-full object-cover" />
           </div>
-          <div class="absolute -bottom-6 -left-6 bg-white rounded-2xl shadow-xl p-5 max-w-xs">
+          <div class="absolute -bottom-6 -left-6 bg-ink-800 border border-ink-600 rounded-2xl shadow-xl shadow-ink-900 p-5 max-w-xs">
             <div class="flex items-center gap-3">
-              <div class="w-12 h-12 rounded-full bg-brand-100 flex items-center justify-center text-brand-700 text-xl">⚡</div>
+              <div class="w-12 h-12 rounded-full bg-gold-400/15 flex items-center justify-center text-gold-400 text-xl">⚡</div>
               <div>
-                <div class="font-bold text-slate-900">Виїзд за 2 години</div>
-                <div class="text-xs text-slate-500">У робочий день з 8:00 до 21:00</div>
+                <div class="font-bold text-zinc-100">Виїзд за 2 години</div>
+                <div class="text-xs text-zinc-400">Робочий день 8:00–21:00</div>
               </div>
             </div>
           </div>
+          <div class="absolute -top-6 -right-6 bg-ink-800 border border-ink-600 rounded-2xl shadow-xl shadow-ink-900 p-4">
+            <div class="flex items-center gap-2">
+              <div class="text-gold-400 text-2xl">★★★★★</div>
+              <div class="text-sm font-bold">1483 відгуки</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ─── SERVICES ──────────────────────────────────────── -->
-  <section id="services" class="py-24 bg-white">
+  <!-- ─── CALCULATOR ──────────────────────────────── -->
+  <section id="calculator" class="py-24 bg-ink-800">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6">
+      <div class="text-center max-w-2xl mx-auto">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold-400/10 border border-gold-400/30 text-gold-400 text-xs font-semibold mb-6">
+          🧮 Швидкий розрахунок
+        </div>
+        <h2 class="font-display text-4xl sm:text-5xl font-black tracking-tight">
+          Дізнайтесь <span class="gold-gradient-text italic">ціну</span> прибирання
+        </h2>
+        <p class="mt-4 text-lg text-zinc-400">Перетягніть повзунок — побачите ціну моментально.</p>
+      </div>
+
+      <!-- Type tabs -->
+      <div class="mt-12 flex flex-wrap justify-center gap-3">
+        <button data-calc-tab="pidtrymuyuche" class="calc-tab active px-6 py-3 rounded-full font-semibold text-sm transition">
+          Підтримуюче прибирання
+        </button>
+        <button data-calc-tab="kvartyry" class="calc-tab px-6 py-3 rounded-full font-semibold text-sm transition">
+          Прибирання квартир
+        </button>
+        <button data-calc-tab="generalna" class="calc-tab px-6 py-3 rounded-full font-semibold text-sm transition">
+          Генеральне прибирання
+        </button>
+      </div>
+
+      <!-- Calculator card -->
+      <div class="mt-10 bg-gradient-to-br from-ink-700 to-ink-800 border border-ink-600 rounded-3xl p-8 sm:p-12 shadow-2xl shadow-black/50">
+        <div class="grid lg:grid-cols-2 gap-10 items-center">
+          <!-- Slider side -->
+          <div>
+            <div class="flex items-baseline gap-3">
+              <span class="text-sm text-zinc-400">Площа квартири:</span>
+              <span id="area-value" class="font-display text-5xl font-black text-gold-400">60</span>
+              <span class="text-2xl text-zinc-300 font-bold">м²</span>
+            </div>
+
+            <div class="mt-8">
+              <input id="area-slider" type="range" min="30" max="200" value="60" step="5" class="calc-slider" />
+              <div class="flex justify-between text-xs text-zinc-500 mt-3">
+                <span>30 м²</span>
+                <span>100 м²</span>
+                <span>200 м²</span>
+              </div>
+            </div>
+
+            <div class="mt-8 grid grid-cols-3 gap-3">
+              <button data-area="40" class="quick-area py-3 rounded-xl bg-ink-600 hover:bg-ink-500 text-sm font-semibold transition">40 м²</button>
+              <button data-area="70" class="quick-area py-3 rounded-xl bg-ink-600 hover:bg-ink-500 text-sm font-semibold transition">70 м²</button>
+              <button data-area="120" class="quick-area py-3 rounded-xl bg-ink-600 hover:bg-ink-500 text-sm font-semibold transition">120 м²</button>
+            </div>
+          </div>
+
+          <!-- Price side -->
+          <div class="bg-ink-900 border border-gold-400/30 rounded-2xl p-8 text-center relative overflow-hidden">
+            <div class="absolute -top-10 -right-10 w-32 h-32 bg-gold-400/10 rounded-full blur-3xl"></div>
+            <div class="relative">
+              <div class="text-sm uppercase tracking-wider text-gold-400 font-bold">Ваша ціна</div>
+              <div class="mt-3 flex items-baseline justify-center gap-2">
+                <span class="font-display text-6xl sm:text-7xl font-black text-zinc-100" id="price-value">3 000</span>
+                <span class="text-2xl font-bold text-zinc-400">₴</span>
+              </div>
+              <p id="price-note" class="mt-3 text-sm text-zinc-500">від 50 ₴/м²</p>
+
+              <a href="#order" class="mt-8 inline-flex w-full items-center justify-center gap-2 px-7 py-4 rounded-xl bg-gold-400 hover:bg-gold-300 text-ink-900 font-bold transition shadow-lg shadow-gold-500/30">
+                Замовити за цю ціну
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+              </a>
+              <p class="mt-3 text-xs text-zinc-500">Точну суму погодимо після короткого дзвінка</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p class="mt-6 text-sm text-zinc-500 text-center max-w-2xl mx-auto">
+        💡 Орієнтовна ціна. Може змінитися на ±10% залежно від ступеня забруднення, висоти стелі та особливостей об'єкту.
+      </p>
+    </div>
+  </section>
+
+  <style>
+    .calc-tab { background: #262629; color: #a1a1aa; }
+    .calc-tab:hover { background: #3a3a3f; color: #f4f4f5; }
+    .calc-tab.active { background: #f4c027; color: #0a0a0b; box-shadow: 0 8px 20px -4px rgba(244,192,39,0.4); }
+  </style>
+
+  <!-- ─── SERVICES ─────────────────────────────────── -->
+  <section id="services" class="py-24">
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
       <div class="max-w-2xl">
-        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight">
-          Послуги, які <span class="text-brand-600">економлять час</span>
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold-400/10 border border-gold-400/30 text-gold-400 text-xs font-semibold mb-6">
+          Послуги
+        </div>
+        <h2 class="font-display text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight">
+          Все, що потрібно для <span class="gold-gradient-text italic">чистоти</span>
         </h2>
-        <p class="mt-4 text-lg text-slate-600">
-          Все, що потрібно для чистоти вдома та в офісі. Від щотижневого підтримання до глибокої хімчистки.
+        <p class="mt-4 text-lg text-zinc-400">
+          Від щотижневого підтримання до глибокої хімчистки. Своя професійна хімія Clinex та Karpax.
         </p>
       </div>
 
-      <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <!-- Service card template -->
-        <a href="services/himchistka-divana.html" class="group bg-stone-50 hover:bg-brand-50 border border-slate-200 hover:border-brand-300 rounded-2xl p-6 transition">
-          <div class="w-12 h-12 rounded-xl bg-brand-600 group-hover:scale-110 flex items-center justify-center text-white text-xl transition">🛋</div>
-          <h3 class="mt-5 font-bold text-lg text-slate-900">Хімчистка диванів</h3>
-          <p class="mt-2 text-sm text-slate-600">Глибоке очищення меблів від плям, пилу, запахів. Сушка 2-4 години.</p>
-          <div class="mt-4 text-sm font-semibold text-brand-700">від 1 100 ₴ →</div>
+      <div class="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <a href="services/himchistka-divana.html" class="group relative bg-ink-800 hover:bg-ink-700 border border-ink-600 hover:border-gold-400/50 rounded-2xl overflow-hidden transition">
+          <div class="aspect-[16/10] overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&auto=format&fit=crop&q=80"
+                 alt="Хімчистка диванів" class="w-full h-full object-cover group-hover:scale-105 transition duration-700" />
+          </div>
+          <div class="p-6">
+            <h3 class="font-bold text-xl">Хімчистка диванів</h3>
+            <p class="mt-2 text-sm text-zinc-400">Глибоке очищення меблів від плям, пилу, запахів. Сушка 2-4 години.</p>
+            <div class="mt-4 flex items-center justify-between">
+              <span class="text-gold-400 font-bold">від 1 100 ₴</span>
+              <span class="text-zinc-500 group-hover:text-gold-400 transition">→</span>
+            </div>
+          </div>
         </a>
 
-        <a href="#order" class="group bg-stone-50 hover:bg-brand-50 border border-slate-200 hover:border-brand-300 rounded-2xl p-6 transition">
-          <div class="w-12 h-12 rounded-xl bg-brand-600 group-hover:scale-110 flex items-center justify-center text-white text-xl transition">✨</div>
-          <h3 class="mt-5 font-bold text-lg text-slate-900">Генеральне прибирання</h3>
-          <p class="mt-2 text-sm text-slate-600">Повний цикл після ремонту, переїзду чи раз на сезон. До останнього шва.</p>
-          <div class="mt-4 text-sm font-semibold text-brand-700">від 3 500 ₴ →</div>
+        <a href="#order" class="group relative bg-ink-800 hover:bg-ink-700 border border-ink-600 hover:border-gold-400/50 rounded-2xl overflow-hidden transition">
+          <div class="aspect-[16/10] overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=600&auto=format&fit=crop&q=80"
+                 alt="Генеральне прибирання" class="w-full h-full object-cover group-hover:scale-105 transition duration-700" />
+          </div>
+          <div class="p-6">
+            <h3 class="font-bold text-xl">Генеральне прибирання</h3>
+            <p class="mt-2 text-sm text-zinc-400">Повний цикл після ремонту, переїзду чи раз на сезон.</p>
+            <div class="mt-4 flex items-center justify-between">
+              <span class="text-gold-400 font-bold">від 3 500 ₴</span>
+              <span class="text-zinc-500 group-hover:text-gold-400 transition">→</span>
+            </div>
+          </div>
         </a>
 
-        <a href="#order" class="group bg-stone-50 hover:bg-brand-50 border border-slate-200 hover:border-brand-300 rounded-2xl p-6 transition">
-          <div class="w-12 h-12 rounded-xl bg-brand-600 group-hover:scale-110 flex items-center justify-center text-white text-xl transition">🧹</div>
-          <h3 class="mt-5 font-bold text-lg text-slate-900">Підтримуюче прибирання</h3>
-          <p class="mt-2 text-sm text-slate-600">Регулярна чистота: щотижня, раз на 2 тижні, або на ваш графік.</p>
-          <div class="mt-4 text-sm font-semibold text-brand-700">від 2 500 ₴ →</div>
+        <a href="#order" class="group relative bg-ink-800 hover:bg-ink-700 border border-ink-600 hover:border-gold-400/50 rounded-2xl overflow-hidden transition">
+          <div class="aspect-[16/10] overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1584622781564-1d987f7333c1?w=600&auto=format&fit=crop&q=80"
+                 alt="Підтримуюче прибирання" class="w-full h-full object-cover group-hover:scale-105 transition duration-700" />
+          </div>
+          <div class="p-6">
+            <h3 class="font-bold text-xl">Підтримуюче прибирання</h3>
+            <p class="mt-2 text-sm text-zinc-400">Регулярна чистота: щотижня, раз на 2 тижні, або на ваш графік.</p>
+            <div class="mt-4 flex items-center justify-between">
+              <span class="text-gold-400 font-bold">від 2 500 ₴</span>
+              <span class="text-zinc-500 group-hover:text-gold-400 transition">→</span>
+            </div>
+          </div>
         </a>
 
-        <a href="#order" class="group bg-stone-50 hover:bg-brand-50 border border-slate-200 hover:border-brand-300 rounded-2xl p-6 transition">
-          <div class="w-12 h-12 rounded-xl bg-brand-600 group-hover:scale-110 flex items-center justify-center text-white text-xl transition">🪟</div>
-          <h3 class="mt-5 font-bold text-lg text-slate-900">Миття вікон</h3>
-          <p class="mt-2 text-sm text-slate-600">Скло, рами, підвіконня. Без розводів, з обох боків. Усі поверхи.</p>
-          <div class="mt-4 text-sm font-semibold text-brand-700">від 350 ₴/вікно →</div>
+        <a href="#order" class="group relative bg-ink-800 hover:bg-ink-700 border border-ink-600 hover:border-gold-400/50 rounded-2xl overflow-hidden transition">
+          <div class="aspect-[16/10] overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?w=600&auto=format&fit=crop&q=80"
+                 alt="Миття вікон" class="w-full h-full object-cover group-hover:scale-105 transition duration-700" />
+          </div>
+          <div class="p-6">
+            <h3 class="font-bold text-xl">Миття вікон</h3>
+            <p class="mt-2 text-sm text-zinc-400">Скло, рами, підвіконня. Без розводів, з обох боків.</p>
+            <div class="mt-4 flex items-center justify-between">
+              <span class="text-gold-400 font-bold">від 350 ₴/вікно</span>
+              <span class="text-zinc-500 group-hover:text-gold-400 transition">→</span>
+            </div>
+          </div>
         </a>
 
-        <a href="#order" class="group bg-stone-50 hover:bg-brand-50 border border-slate-200 hover:border-brand-300 rounded-2xl p-6 transition">
-          <div class="w-12 h-12 rounded-xl bg-brand-600 group-hover:scale-110 flex items-center justify-center text-white text-xl transition">🍳</div>
-          <h3 class="mt-5 font-bold text-lg text-slate-900">Прибирання кухні</h3>
-          <p class="mt-2 text-sm text-slate-600">Духовка, плита, витяжка, шафки зсередини. Жир йде з першого разу.</p>
-          <div class="mt-4 text-sm font-semibold text-brand-700">від 1 800 ₴ →</div>
+        <a href="#order" class="group relative bg-ink-800 hover:bg-ink-700 border border-ink-600 hover:border-gold-400/50 rounded-2xl overflow-hidden transition">
+          <div class="aspect-[16/10] overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?w=600&auto=format&fit=crop&q=80"
+                 alt="Прибирання кухні" class="w-full h-full object-cover group-hover:scale-105 transition duration-700" />
+          </div>
+          <div class="p-6">
+            <h3 class="font-bold text-xl">Прибирання кухні</h3>
+            <p class="mt-2 text-sm text-zinc-400">Духовка, плита, витяжка, шафки зсередини. Жир йде з першого разу.</p>
+            <div class="mt-4 flex items-center justify-between">
+              <span class="text-gold-400 font-bold">від 1 800 ₴</span>
+              <span class="text-zinc-500 group-hover:text-gold-400 transition">→</span>
+            </div>
+          </div>
         </a>
 
-        <a href="#order" class="group bg-stone-50 hover:bg-brand-50 border border-slate-200 hover:border-brand-300 rounded-2xl p-6 transition">
-          <div class="w-12 h-12 rounded-xl bg-brand-600 group-hover:scale-110 flex items-center justify-center text-white text-xl transition">🛁</div>
-          <h3 class="mt-5 font-bold text-lg text-slate-900">Прибирання ванної</h3>
-          <p class="mt-2 text-sm text-slate-600">Вапняний наліт, плитка, шви. Душова кабіна як нова.</p>
-          <div class="mt-4 text-sm font-semibold text-brand-700">від 1 300 ₴ →</div>
+        <a href="#order" class="group relative bg-ink-800 hover:bg-ink-700 border border-ink-600 hover:border-gold-400/50 rounded-2xl overflow-hidden transition">
+          <div class="aspect-[16/10] overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1620626011761-996317b8d101?w=600&auto=format&fit=crop&q=80"
+                 alt="Прибирання ванної" class="w-full h-full object-cover group-hover:scale-105 transition duration-700" />
+          </div>
+          <div class="p-6">
+            <h3 class="font-bold text-xl">Прибирання ванної</h3>
+            <p class="mt-2 text-sm text-zinc-400">Вапняний наліт, плитка, шви. Душова кабіна як нова.</p>
+            <div class="mt-4 flex items-center justify-between">
+              <span class="text-gold-400 font-bold">від 1 300 ₴</span>
+              <span class="text-zinc-500 group-hover:text-gold-400 transition">→</span>
+            </div>
+          </div>
         </a>
 
-        <a href="#order" class="group bg-stone-50 hover:bg-brand-50 border border-slate-200 hover:border-brand-300 rounded-2xl p-6 transition">
-          <div class="w-12 h-12 rounded-xl bg-brand-600 group-hover:scale-110 flex items-center justify-center text-white text-xl transition">🛏</div>
-          <h3 class="mt-5 font-bold text-lg text-slate-900">Хімчистка матраців</h3>
-          <p class="mt-2 text-sm text-slate-600">Без алергенів, кліщів, плям. Безпечно для дітей і алергіків.</p>
-          <div class="mt-4 text-sm font-semibold text-brand-700">від 550 ₴ →</div>
+        <a href="#order" class="group relative bg-ink-800 hover:bg-ink-700 border border-ink-600 hover:border-gold-400/50 rounded-2xl overflow-hidden transition">
+          <div class="aspect-[16/10] overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1631679706909-1844bbd07221?w=600&auto=format&fit=crop&q=80"
+                 alt="Хімчистка матраців" class="w-full h-full object-cover group-hover:scale-105 transition duration-700" />
+          </div>
+          <div class="p-6">
+            <h3 class="font-bold text-xl">Хімчистка матраців</h3>
+            <p class="mt-2 text-sm text-zinc-400">Без алергенів, кліщів, плям. Безпечно для дітей і алергіків.</p>
+            <div class="mt-4 flex items-center justify-between">
+              <span class="text-gold-400 font-bold">від 550 ₴</span>
+              <span class="text-zinc-500 group-hover:text-gold-400 transition">→</span>
+            </div>
+          </div>
         </a>
 
-        <a href="#order" class="group bg-stone-50 hover:bg-brand-50 border border-slate-200 hover:border-brand-300 rounded-2xl p-6 transition">
-          <div class="w-12 h-12 rounded-xl bg-brand-600 group-hover:scale-110 flex items-center justify-center text-white text-xl transition">🏗</div>
-          <h3 class="mt-5 font-bold text-lg text-slate-900">Прибирання після ремонту</h3>
-          <p class="mt-2 text-sm text-slate-600">Будівельний пил, фарба, клей. Готуємо квартиру до заселення.</p>
-          <div class="mt-4 text-sm font-semibold text-brand-700">від 4 500 ₴ →</div>
+        <a href="#order" class="group relative bg-ink-800 hover:bg-ink-700 border border-ink-600 hover:border-gold-400/50 rounded-2xl overflow-hidden transition">
+          <div class="aspect-[16/10] overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1558211583-d26f610c1eb1?w=600&auto=format&fit=crop&q=80"
+                 alt="Прибирання після ремонту" class="w-full h-full object-cover group-hover:scale-105 transition duration-700" />
+          </div>
+          <div class="p-6">
+            <h3 class="font-bold text-xl">Прибирання після ремонту</h3>
+            <p class="mt-2 text-sm text-zinc-400">Будівельний пил, фарба, клей. Готуємо квартиру до заселення.</p>
+            <div class="mt-4 flex items-center justify-between">
+              <span class="text-gold-400 font-bold">від 4 500 ₴</span>
+              <span class="text-zinc-500 group-hover:text-gold-400 transition">→</span>
+            </div>
+          </div>
         </a>
 
-        <a href="#order" class="group bg-stone-50 hover:bg-brand-50 border border-slate-200 hover:border-brand-300 rounded-2xl p-6 transition">
-          <div class="w-12 h-12 rounded-xl bg-brand-600 group-hover:scale-110 flex items-center justify-center text-white text-xl transition">🏢</div>
-          <h3 class="mt-5 font-bold text-lg text-slate-900">Клінінг офісів</h3>
-          <p class="mt-2 text-sm text-slate-600">Щодня, щотижня, по графіку. Для команди від 5 осіб.</p>
-          <div class="mt-4 text-sm font-semibold text-brand-700">індивідуально →</div>
+        <a href="#order" class="group relative bg-ink-800 hover:bg-ink-700 border border-ink-600 hover:border-gold-400/50 rounded-2xl overflow-hidden transition">
+          <div class="aspect-[16/10] overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&auto=format&fit=crop&q=80"
+                 alt="Клінінг офісів" class="w-full h-full object-cover group-hover:scale-105 transition duration-700" />
+          </div>
+          <div class="p-6">
+            <h3 class="font-bold text-xl">Клінінг офісів</h3>
+            <p class="mt-2 text-sm text-zinc-400">Щодня, щотижня, по графіку. Для команди від 5 осіб.</p>
+            <div class="mt-4 flex items-center justify-between">
+              <span class="text-gold-400 font-bold">індивідуально</span>
+              <span class="text-zinc-500 group-hover:text-gold-400 transition">→</span>
+            </div>
+          </div>
         </a>
       </div>
     </div>
   </section>
 
-  <!-- ─── HOW IT WORKS ──────────────────────────────────── -->
-  <section id="how" class="py-24 bg-stone-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6">
-      <div class="text-center max-w-2xl mx-auto">
-        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight">Як ми працюємо</h2>
-        <p class="mt-4 text-lg text-slate-600">Без сюрпризів. Прозоро від замовлення до результату.</p>
-      </div>
-
-      <div class="mt-16 grid md:grid-cols-4 gap-8">
-        <div class="relative">
-          <div class="w-14 h-14 rounded-2xl bg-brand-600 flex items-center justify-center text-white font-bold text-xl">1</div>
-          <h3 class="mt-5 font-bold text-lg">Заявка</h3>
-          <p class="mt-2 text-slate-600 text-sm">Залишаєте телефон через форму або одразу пишете в Telegram.</p>
-        </div>
-        <div class="relative">
-          <div class="w-14 h-14 rounded-2xl bg-brand-600 flex items-center justify-center text-white font-bold text-xl">2</div>
-          <h3 class="mt-5 font-bold text-lg">Розрахунок</h3>
-          <p class="mt-2 text-slate-600 text-sm">Менеджер уточнює деталі, фіксує ціну. Без прихованих доплат.</p>
-        </div>
-        <div class="relative">
-          <div class="w-14 h-14 rounded-2xl bg-brand-600 flex items-center justify-center text-white font-bold text-xl">3</div>
-          <h3 class="mt-5 font-bold text-lg">Робота</h3>
-          <p class="mt-2 text-slate-600 text-sm">Бригада приїжджає у домовлений час зі своїм обладнанням і хімією.</p>
-        </div>
-        <div class="relative">
-          <div class="w-14 h-14 rounded-2xl bg-brand-600 flex items-center justify-center text-white font-bold text-xl">4</div>
-          <h3 class="mt-5 font-bold text-lg">Гарантія</h3>
-          <p class="mt-2 text-slate-600 text-sm">Не сподобалось — переробимо безкоштовно. Гроші повертаємо.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ─── CITIES ────────────────────────────────────────── -->
-  <section id="cities" class="py-24 bg-white">
+  <!-- ─── EXTRAS ─────────────────────────────────── -->
+  <section id="extras" class="py-24 bg-ink-800">
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
       <div class="max-w-2xl">
-        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight">
-          Працюємо у <span class="text-brand-600">4 містах</span>
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold-400/10 border border-gold-400/30 text-gold-400 text-xs font-semibold mb-6">
+          Допуслуги
+        </div>
+        <h2 class="font-display text-4xl sm:text-5xl font-black tracking-tight">
+          Додайте до прибирання <span class="gold-gradient-text italic">точково</span>
         </h2>
-        <p class="mt-4 text-lg text-slate-600">Виберіть своє місто — побачите доступні послуги та ціни саме для вас.</p>
+        <p class="mt-4 text-lg text-zinc-400">Не хочете замовляти повну генералку — додайте лише потрібне.</p>
+      </div>
+
+      <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+        <div class="bg-ink-700 border border-ink-600 hover:border-gold-400/40 rounded-xl p-5 transition group">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-3">
+              <span class="text-2xl">🍳</span>
+              <span class="font-semibold">Духовка</span>
+            </div>
+            <span class="font-bold text-gold-400">600 ₴</span>
+          </div>
+        </div>
+        <div class="bg-ink-700 border border-ink-600 hover:border-gold-400/40 rounded-xl p-5 transition group">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-3">
+              <span class="text-2xl">❄️</span>
+              <span class="font-semibold">Холодильник</span>
+            </div>
+            <span class="font-bold text-gold-400">500 ₴</span>
+          </div>
+        </div>
+        <div class="bg-ink-700 border border-ink-600 hover:border-gold-400/40 rounded-xl p-5 transition group">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-3">
+              <span class="text-2xl">💨</span>
+              <span class="font-semibold">Витяжка</span>
+            </div>
+            <span class="font-bold text-gold-400">500 ₴</span>
+          </div>
+        </div>
+        <div class="bg-ink-700 border border-ink-600 hover:border-gold-400/40 rounded-xl p-5 transition group">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-3">
+              <span class="text-2xl">🍲</span>
+              <span class="font-semibold">Шафки зсередини</span>
+            </div>
+            <span class="font-bold text-gold-400">600 ₴</span>
+          </div>
+        </div>
+        <div class="bg-ink-700 border border-ink-600 hover:border-gold-400/40 rounded-xl p-5 transition group">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-3">
+              <span class="text-2xl">🌀</span>
+              <span class="font-semibold">Мікрохвильовка</span>
+            </div>
+            <span class="font-bold text-gold-400">350 ₴</span>
+          </div>
+        </div>
+        <div class="bg-ink-700 border border-ink-600 hover:border-gold-400/40 rounded-xl p-5 transition group">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-3">
+              <span class="text-2xl">🍽</span>
+              <span class="font-semibold">Миття посуду</span>
+            </div>
+            <span class="font-bold text-gold-400">350 ₴</span>
+          </div>
+        </div>
+        <div class="bg-ink-700 border border-ink-600 hover:border-gold-400/40 rounded-xl p-5 transition group">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-3">
+              <span class="text-2xl">🚿</span>
+              <span class="font-semibold">Душова кабіна</span>
+            </div>
+            <span class="font-bold text-gold-400">400 ₴</span>
+          </div>
+        </div>
+        <div class="bg-ink-700 border border-ink-600 hover:border-gold-400/40 rounded-xl p-5 transition group">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-3">
+              <span class="text-2xl">🧱</span>
+              <span class="font-semibold">Плитка/шви</span>
+            </div>
+            <span class="font-bold text-gold-400">600 ₴</span>
+          </div>
+        </div>
+        <div class="bg-ink-700 border border-ink-600 hover:border-gold-400/40 rounded-xl p-5 transition group">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-3">
+              <span class="text-2xl">🌅</span>
+              <span class="font-semibold">Балкон</span>
+            </div>
+            <span class="font-bold text-gold-400">від 600 ₴</span>
+          </div>
+        </div>
+        <div class="bg-ink-700 border border-ink-600 hover:border-gold-400/40 rounded-xl p-5 transition group">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-3">
+              <span class="text-2xl">💡</span>
+              <span class="font-semibold">Світильники</span>
+            </div>
+            <span class="font-bold text-gold-400">350 ₴</span>
+          </div>
+        </div>
+        <div class="bg-ink-700 border border-ink-600 hover:border-gold-400/40 rounded-xl p-5 transition group">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-3">
+              <span class="text-2xl">🚪</span>
+              <span class="font-semibold">Гардеробна</span>
+            </div>
+            <span class="font-bold text-gold-400">350 ₴</span>
+          </div>
+        </div>
+        <div class="bg-ink-700 border border-ink-600 hover:border-gold-400/40 rounded-xl p-5 transition group">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-3">
+              <span class="text-2xl">📦</span>
+              <span class="font-semibold">Організація речей</span>
+            </div>
+            <span class="font-bold text-gold-400">350 ₴</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-12 text-center">
+        <a href="#order" class="inline-flex items-center gap-2 px-7 py-4 rounded-full bg-gold-400 hover:bg-gold-300 text-ink-900 font-bold transition shadow-xl shadow-gold-500/20">
+          Замовити зі знижкою
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── HOW IT WORKS ──────────────────────────── -->
+  <section class="py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="text-center max-w-2xl mx-auto">
+        <h2 class="font-display text-4xl sm:text-5xl font-black tracking-tight">Як ми <span class="gold-gradient-text italic">працюємо</span></h2>
+        <p class="mt-4 text-lg text-zinc-400">Без сюрпризів. Прозоро від замовлення до результату.</p>
+      </div>
+
+      <div class="mt-16 grid md:grid-cols-4 gap-6">
+        <div class="relative bg-ink-800 border border-ink-600 rounded-2xl p-6 hover:border-gold-400/40 transition">
+          <div class="absolute -top-4 -left-4 w-12 h-12 rounded-2xl bg-gold-400 text-ink-900 flex items-center justify-center font-black text-xl shadow-lg shadow-gold-500/30">1</div>
+          <h3 class="mt-4 font-bold text-lg">Заявка</h3>
+          <p class="mt-2 text-sm text-zinc-400">Залишаєте телефон через форму або одразу пишете в Telegram.</p>
+        </div>
+        <div class="relative bg-ink-800 border border-ink-600 rounded-2xl p-6 hover:border-gold-400/40 transition">
+          <div class="absolute -top-4 -left-4 w-12 h-12 rounded-2xl bg-gold-400 text-ink-900 flex items-center justify-center font-black text-xl shadow-lg shadow-gold-500/30">2</div>
+          <h3 class="mt-4 font-bold text-lg">Розрахунок</h3>
+          <p class="mt-2 text-sm text-zinc-400">Менеджер уточнює деталі, фіксує ціну. Без прихованих доплат.</p>
+        </div>
+        <div class="relative bg-ink-800 border border-ink-600 rounded-2xl p-6 hover:border-gold-400/40 transition">
+          <div class="absolute -top-4 -left-4 w-12 h-12 rounded-2xl bg-gold-400 text-ink-900 flex items-center justify-center font-black text-xl shadow-lg shadow-gold-500/30">3</div>
+          <h3 class="mt-4 font-bold text-lg">Робота</h3>
+          <p class="mt-2 text-sm text-zinc-400">Бригада приїжджає у домовлений час зі своїм обладнанням і хімією.</p>
+        </div>
+        <div class="relative bg-ink-800 border border-ink-600 rounded-2xl p-6 hover:border-gold-400/40 transition">
+          <div class="absolute -top-4 -left-4 w-12 h-12 rounded-2xl bg-gold-400 text-ink-900 flex items-center justify-center font-black text-xl shadow-lg shadow-gold-500/30">4</div>
+          <h3 class="mt-4 font-bold text-lg">Гарантія</h3>
+          <p class="mt-2 text-sm text-zinc-400">Не сподобалось — переробимо безкоштовно. Гроші повертаємо.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── CITIES ──────────────────────────────── -->
+  <section id="cities" class="py-24 bg-ink-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="max-w-2xl">
+        <h2 class="font-display text-4xl sm:text-5xl font-black tracking-tight">
+          Працюємо у <span class="gold-gradient-text italic">4 містах</span>
+        </h2>
+        <p class="mt-4 text-lg text-zinc-400">Виберіть своє місто — побачите доступні послуги та ціни саме для вас.</p>
       </div>
 
       <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-        <a href="#" class="group bg-gradient-to-br from-brand-600 to-brand-800 rounded-2xl p-8 text-white hover:shadow-2xl hover:shadow-brand-900/30 transition">
-          <div class="text-3xl mb-4">🏛</div>
-          <div class="text-2xl font-extrabold">Київ</div>
-          <div class="mt-2 text-brand-100 text-sm">Усі райони, виїзд за 2 години</div>
+        <a href="#" class="group bg-gradient-to-br from-gold-500 to-gold-700 rounded-2xl p-8 text-ink-900 hover:shadow-2xl hover:shadow-gold-500/30 hover:-translate-y-1 transition">
+          <div class="text-4xl mb-4">🏛</div>
+          <div class="text-2xl font-black">Київ</div>
+          <div class="mt-2 text-ink-900/80 text-sm font-medium">Усі райони, виїзд за 2 години</div>
         </a>
-        <a href="#" class="group bg-white border border-slate-200 hover:border-brand-300 rounded-2xl p-8 hover:shadow-xl transition">
-          <div class="text-3xl mb-4">🌉</div>
-          <div class="text-2xl font-extrabold">Дніпро</div>
-          <div class="mt-2 text-slate-500 text-sm">Центр, лівий, правий берег</div>
+        <a href="#" class="group bg-ink-700 border border-ink-600 hover:border-gold-400 rounded-2xl p-8 hover:-translate-y-1 transition">
+          <div class="text-4xl mb-4">🌉</div>
+          <div class="text-2xl font-black">Дніпро</div>
+          <div class="mt-2 text-zinc-400 text-sm">Центр, лівий і правий берег</div>
         </a>
-        <a href="#" class="group bg-white border border-slate-200 hover:border-brand-300 rounded-2xl p-8 hover:shadow-xl transition">
-          <div class="text-3xl mb-4">🏰</div>
-          <div class="text-2xl font-extrabold">Львів</div>
-          <div class="mt-2 text-slate-500 text-sm">Усі райони, історичний центр</div>
+        <a href="#" class="group bg-ink-700 border border-ink-600 hover:border-gold-400 rounded-2xl p-8 hover:-translate-y-1 transition">
+          <div class="text-4xl mb-4">🏰</div>
+          <div class="text-2xl font-black">Львів</div>
+          <div class="mt-2 text-zinc-400 text-sm">Усі райони, історичний центр</div>
         </a>
-        <a href="#" class="group bg-white border border-slate-200 hover:border-brand-300 rounded-2xl p-8 hover:shadow-xl transition">
-          <div class="text-3xl mb-4">🌆</div>
-          <div class="text-2xl font-extrabold">Харків</div>
-          <div class="mt-2 text-slate-500 text-sm">Усі райони, після обстрілів</div>
+        <a href="#" class="group bg-ink-700 border border-ink-600 hover:border-gold-400 rounded-2xl p-8 hover:-translate-y-1 transition">
+          <div class="text-4xl mb-4">🌆</div>
+          <div class="text-2xl font-black">Харків</div>
+          <div class="mt-2 text-zinc-400 text-sm">Усі райони міста</div>
         </a>
       </div>
     </div>
   </section>
 
-  <!-- ─── TRUST / REVIEWS ──────────────────────────────── -->
-  <section id="trust" class="py-24 bg-stone-50">
+  <!-- ─── TRUST ──────────────────────────────── -->
+  <section id="trust" class="py-24">
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
       <div class="text-center max-w-2xl mx-auto">
-        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight">Чому нам довіряють</h2>
+        <h2 class="font-display text-4xl sm:text-5xl font-black tracking-tight">Чому нам <span class="gold-gradient-text italic">довіряють</span></h2>
       </div>
 
       <div class="mt-12 grid md:grid-cols-3 gap-6">
-        <div class="bg-white rounded-2xl p-8 border border-slate-200">
-          <div class="flex gap-1 text-amber-400 text-xl">★★★★★</div>
-          <p class="mt-4 text-slate-700 leading-relaxed">"Після ремонту все було сіре від пилу. За 6 годин — квартира блищить. Чесна ціна, ввічливі хлопці. Замовляю ще."</p>
+        <div class="bg-ink-800 border border-ink-600 rounded-2xl p-8">
+          <div class="flex gap-1 text-gold-400 text-xl">★★★★★</div>
+          <p class="mt-4 text-zinc-300 leading-relaxed">"Після ремонту все було сіре від пилу. За 6 годин — квартира блищить. Чесна ціна, ввічливі хлопці. Замовляю ще."</p>
           <div class="mt-6 flex items-center gap-3">
-            <div class="w-10 h-10 rounded-full bg-brand-100 flex items-center justify-center font-bold text-brand-700">О</div>
+            <div class="w-10 h-10 rounded-full bg-gold-400/15 border border-gold-400/30 flex items-center justify-center font-bold text-gold-400">О</div>
             <div>
               <div class="font-semibold text-sm">Олена К.</div>
-              <div class="text-xs text-slate-500">Київ, Печерськ</div>
+              <div class="text-xs text-zinc-500">Київ, Печерськ</div>
             </div>
           </div>
         </div>
-        <div class="bg-white rounded-2xl p-8 border border-slate-200">
-          <div class="flex gap-1 text-amber-400 text-xl">★★★★★</div>
-          <p class="mt-4 text-slate-700 leading-relaxed">"Викликала хімчистку дивана — кіт пошкодив тканину. Не вірила, що відмиють. Тепер як новий. Дякую!"</p>
+        <div class="bg-ink-800 border border-ink-600 rounded-2xl p-8">
+          <div class="flex gap-1 text-gold-400 text-xl">★★★★★</div>
+          <p class="mt-4 text-zinc-300 leading-relaxed">"Викликала хімчистку дивана — кіт пошкодив тканину. Не вірила, що відмиють. Тепер як новий. Дякую!"</p>
           <div class="mt-6 flex items-center gap-3">
-            <div class="w-10 h-10 rounded-full bg-brand-100 flex items-center justify-center font-bold text-brand-700">М</div>
+            <div class="w-10 h-10 rounded-full bg-gold-400/15 border border-gold-400/30 flex items-center justify-center font-bold text-gold-400">М</div>
             <div>
               <div class="font-semibold text-sm">Марія Т.</div>
-              <div class="text-xs text-slate-500">Дніпро</div>
+              <div class="text-xs text-zinc-500">Дніпро</div>
             </div>
           </div>
         </div>
-        <div class="bg-white rounded-2xl p-8 border border-slate-200">
-          <div class="flex gap-1 text-amber-400 text-xl">★★★★★</div>
-          <p class="mt-4 text-slate-700 leading-relaxed">"Замовляємо щотижня для офісу. Завжди вчасно, завжди якісно. Ніколи не було потреби переробляти."</p>
+        <div class="bg-ink-800 border border-ink-600 rounded-2xl p-8">
+          <div class="flex gap-1 text-gold-400 text-xl">★★★★★</div>
+          <p class="mt-4 text-zinc-300 leading-relaxed">"Замовляємо щотижня для офісу. Завжди вчасно, завжди якісно. Ніколи не було потреби переробляти."</p>
           <div class="mt-6 flex items-center gap-3">
-            <div class="w-10 h-10 rounded-full bg-brand-100 flex items-center justify-center font-bold text-brand-700">А</div>
+            <div class="w-10 h-10 rounded-full bg-gold-400/15 border border-gold-400/30 flex items-center justify-center font-bold text-gold-400">А</div>
             <div>
               <div class="font-semibold text-sm">Андрій В.</div>
-              <div class="text-xs text-slate-500">Львів, IT-офіс</div>
+              <div class="text-xs text-zinc-500">Львів, IT-офіс</div>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="mt-12 flex flex-wrap justify-center gap-8 items-center text-slate-500">
+      <div class="mt-14 flex flex-wrap justify-center gap-10 items-center">
         <div class="text-center">
-          <div class="text-3xl font-extrabold text-slate-900">4.9 ★</div>
-          <div class="text-xs mt-1">Google · 1483 відгуки</div>
+          <div class="font-display text-4xl font-black text-gold-400">4.9 ★</div>
+          <div class="text-xs mt-1 text-zinc-500">Google · 1483 відгуки</div>
         </div>
         <div class="text-center">
-          <div class="text-3xl font-extrabold text-slate-900">5.0 ★</div>
-          <div class="text-xs mt-1">Facebook · 399 відгуків</div>
+          <div class="font-display text-4xl font-black text-gold-400">5.0 ★</div>
+          <div class="text-xs mt-1 text-zinc-500">Facebook · 399 відгуків</div>
         </div>
         <div class="text-center">
-          <div class="text-3xl font-extrabold text-slate-900">98%</div>
-          <div class="text-xs mt-1">Повторні клієнти</div>
+          <div class="font-display text-4xl font-black text-gold-400">98%</div>
+          <div class="text-xs mt-1 text-zinc-500">Повертаються знову</div>
+        </div>
+        <div class="text-center">
+          <div class="font-display text-4xl font-black text-gold-400">12k+</div>
+          <div class="text-xs mt-1 text-zinc-500">Виконаних замовлень</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ─── ORDER FORM ───────────────────────────────────── -->
-  <section id="order" class="py-24 bg-gradient-to-br from-brand-700 to-brand-900 text-white">
-    <div class="max-w-3xl mx-auto px-4 sm:px-6 text-center">
-      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight">
-        Залиште заявку — передзвонимо за 5 хвилин
+  <!-- ─── ORDER FORM ──────────────────────────── -->
+  <section id="order" class="py-24 bg-gradient-to-br from-ink-800 to-ink-900 relative overflow-hidden">
+    <div class="absolute top-0 right-0 w-96 h-96 bg-gold-400/5 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-0 left-0 w-96 h-96 bg-gold-500/5 rounded-full blur-3xl"></div>
+
+    <div class="relative max-w-3xl mx-auto px-4 sm:px-6 text-center">
+      <h2 class="font-display text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight">
+        Залиште заявку — <span class="gold-gradient-text italic">передзвонимо за 5 хв</span>
       </h2>
-      <p class="mt-4 text-lg text-brand-100">
+      <p class="mt-4 text-lg text-zinc-400">
         Розрахуємо вартість, погодимо час. Жодних спам-дзвінків після.
       </p>
 
-      <form class="mt-10 bg-white rounded-3xl p-6 sm:p-8 text-slate-900 text-left shadow-2xl">
+      <form id="order-form" class="mt-10 bg-ink-800 border border-ink-600 rounded-3xl p-6 sm:p-8 text-left shadow-2xl shadow-black/50">
         <div class="grid sm:grid-cols-2 gap-4">
           <div>
-            <label class="block text-sm font-semibold mb-2">Ваше ім'я</label>
-            <input type="text" required class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:border-brand-500 focus:ring-2 focus:ring-brand-100 outline-none transition" placeholder="Олена" />
+            <label class="block text-sm font-semibold mb-2 text-zinc-300">Ваше ім'я</label>
+            <input type="text" name="name" required class="w-full px-4 py-3 rounded-xl bg-ink-700 border border-ink-600 focus:border-gold-400 focus:ring-2 focus:ring-gold-400/20 outline-none transition text-zinc-100" placeholder="Олена" />
           </div>
           <div>
-            <label class="block text-sm font-semibold mb-2">Телефон</label>
-            <input type="tel" required class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:border-brand-500 focus:ring-2 focus:ring-brand-100 outline-none transition" placeholder="+380 50 123 45 67" />
+            <label class="block text-sm font-semibold mb-2 text-zinc-300">Телефон</label>
+            <input type="tel" name="phone" required class="w-full px-4 py-3 rounded-xl bg-ink-700 border border-ink-600 focus:border-gold-400 focus:ring-2 focus:ring-gold-400/20 outline-none transition text-zinc-100" placeholder="+380 50 123 45 67" />
           </div>
           <div>
-            <label class="block text-sm font-semibold mb-2">Місто</label>
-            <select class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:border-brand-500 focus:ring-2 focus:ring-brand-100 outline-none transition bg-white">
+            <label class="block text-sm font-semibold mb-2 text-zinc-300">Місто</label>
+            <select name="city" class="w-full px-4 py-3 rounded-xl bg-ink-700 border border-ink-600 focus:border-gold-400 focus:ring-2 focus:ring-gold-400/20 outline-none transition text-zinc-100">
               <option>Київ</option>
               <option>Дніпро</option>
               <option>Львів</option>
@@ -402,10 +748,11 @@
             </select>
           </div>
           <div>
-            <label class="block text-sm font-semibold mb-2">Послуга</label>
-            <select class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:border-brand-500 focus:ring-2 focus:ring-brand-100 outline-none transition bg-white">
-              <option>Генеральне прибирання</option>
+            <label class="block text-sm font-semibold mb-2 text-zinc-300">Послуга</label>
+            <select name="service" class="w-full px-4 py-3 rounded-xl bg-ink-700 border border-ink-600 focus:border-gold-400 focus:ring-2 focus:ring-gold-400/20 outline-none transition text-zinc-100">
               <option>Підтримуюче прибирання</option>
+              <option>Генеральне прибирання</option>
+              <option>Прибирання квартир</option>
               <option>Хімчистка диванів</option>
               <option>Хімчистка матраців</option>
               <option>Прибирання після ремонту</option>
@@ -418,126 +765,208 @@
           </div>
         </div>
         <div class="mt-4">
-          <label class="block text-sm font-semibold mb-2">Деталі (необов'язково)</label>
-          <textarea rows="3" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:border-brand-500 focus:ring-2 focus:ring-brand-100 outline-none transition" placeholder="Площа, поверх, особливості об'єкту..."></textarea>
+          <label class="block text-sm font-semibold mb-2 text-zinc-300">Деталі (необов'язково)</label>
+          <textarea rows="3" name="details" class="w-full px-4 py-3 rounded-xl bg-ink-700 border border-ink-600 focus:border-gold-400 focus:ring-2 focus:ring-gold-400/20 outline-none transition text-zinc-100" placeholder="Площа, поверх, особливості об'єкту..."></textarea>
         </div>
-        <button type="submit" class="mt-6 w-full px-7 py-4 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-bold text-lg transition shadow-lg shadow-brand-600/30">
+        <button type="submit" class="mt-6 w-full px-7 py-4 rounded-xl bg-gold-400 hover:bg-gold-300 text-ink-900 font-bold text-lg transition shadow-lg shadow-gold-500/30">
           Замовити прибирання
         </button>
-        <p class="mt-3 text-xs text-slate-500 text-center">
+        <p class="mt-3 text-xs text-zinc-500 text-center">
           Натискаючи кнопку, ви погоджуєтесь з обробкою персональних даних
         </p>
       </form>
     </div>
   </section>
 
-  <!-- ─── FAQ ──────────────────────────────────────────── -->
-  <section id="faq" class="py-24 bg-white">
+  <!-- ─── FAQ ──────────────────────────────────── -->
+  <section class="py-24 bg-ink-800">
     <div class="max-w-3xl mx-auto px-4 sm:px-6">
-      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-center">Часті питання</h2>
+      <h2 class="font-display text-4xl sm:text-5xl font-black tracking-tight text-center">Часті <span class="gold-gradient-text italic">питання</span></h2>
 
-      <div class="mt-12 space-y-4">
-        <details class="group bg-stone-50 rounded-2xl border border-slate-200 overflow-hidden">
+      <div class="mt-12 space-y-3">
+        <details class="group bg-ink-700 border border-ink-600 hover:border-gold-400/40 rounded-2xl overflow-hidden transition">
           <summary class="flex items-center justify-between p-6 cursor-pointer font-semibold list-none">
             Скільки коштує прибирання моєї квартири?
-            <span class="text-brand-600 transition group-open:rotate-45 text-2xl">+</span>
+            <span class="text-gold-400 transition group-open:rotate-45 text-2xl">+</span>
           </summary>
-          <div class="px-6 pb-6 text-slate-600">
-            Ціна залежить від площі та виду прибирання. Підтримуюче — від 50 ₴/м², генеральне — від 70 ₴/м². Точна ціна — після короткого дзвінка з менеджером.
+          <div class="px-6 pb-6 text-zinc-400">
+            Скористайтесь калькулятором вище — побачите ціну моментально. Точна сума — після короткого дзвінка з менеджером.
           </div>
         </details>
 
-        <details class="group bg-stone-50 rounded-2xl border border-slate-200 overflow-hidden">
+        <details class="group bg-ink-700 border border-ink-600 hover:border-gold-400/40 rounded-2xl overflow-hidden transition">
           <summary class="flex items-center justify-between p-6 cursor-pointer font-semibold list-none">
             Чи привозите ви хімію та обладнання?
-            <span class="text-brand-600 transition group-open:rotate-45 text-2xl">+</span>
+            <span class="text-gold-400 transition group-open:rotate-45 text-2xl">+</span>
           </summary>
-          <div class="px-6 pb-6 text-slate-600">
-            Так, повністю своя професійна хімія Clinex та Karpax, пилососи, пароочисники, телескопні швабри. Вам не треба нічого готувати.
+          <div class="px-6 pb-6 text-zinc-400">
+            Так, повністю своя професійна хімія Clinex та Karpax, пилососи, пароочисники, телескопні швабри.
           </div>
         </details>
 
-        <details class="group bg-stone-50 rounded-2xl border border-slate-200 overflow-hidden">
+        <details class="group bg-ink-700 border border-ink-600 hover:border-gold-400/40 rounded-2xl overflow-hidden transition">
           <summary class="flex items-center justify-between p-6 cursor-pointer font-semibold list-none">
             Що робити, якщо результат не сподобається?
-            <span class="text-brand-600 transition group-open:rotate-45 text-2xl">+</span>
+            <span class="text-gold-400 transition group-open:rotate-45 text-2xl">+</span>
           </summary>
-          <div class="px-6 pb-6 text-slate-600">
-            Переробимо безкоштовно протягом 24 годин. Якщо проблема залишиться — повернемо гроші повністю. Гарантія прописана у договорі.
+          <div class="px-6 pb-6 text-zinc-400">
+            Переробимо безкоштовно протягом 24 годин. Якщо проблема залишиться — повернемо гроші повністю.
           </div>
         </details>
 
-        <details class="group bg-stone-50 rounded-2xl border border-slate-200 overflow-hidden">
+        <details class="group bg-ink-700 border border-ink-600 hover:border-gold-400/40 rounded-2xl overflow-hidden transition">
           <summary class="flex items-center justify-between p-6 cursor-pointer font-semibold list-none">
             Як швидко ви приїдете?
-            <span class="text-brand-600 transition group-open:rotate-45 text-2xl">+</span>
+            <span class="text-gold-400 transition group-open:rotate-45 text-2xl">+</span>
           </summary>
-          <div class="px-6 pb-6 text-slate-600">
-            У робочий день з 8:00 до 21:00 — у середньому 2 години після підтвердження. Завчасно — на будь-яку зручну дату.
+          <div class="px-6 pb-6 text-zinc-400">
+            У робочий день з 8:00 до 21:00 — у середньому 2 години після підтвердження.
           </div>
         </details>
 
-        <details class="group bg-stone-50 rounded-2xl border border-slate-200 overflow-hidden">
+        <details class="group bg-ink-700 border border-ink-600 hover:border-gold-400/40 rounded-2xl overflow-hidden transition">
           <summary class="flex items-center justify-between p-6 cursor-pointer font-semibold list-none">
             Чи безпечна ваша хімія для дітей та тварин?
-            <span class="text-brand-600 transition group-open:rotate-45 text-2xl">+</span>
+            <span class="text-gold-400 transition group-open:rotate-45 text-2xl">+</span>
           </summary>
-          <div class="px-6 pb-6 text-slate-600">
-            Так. Уся хімія сертифікована, після прибирання залишків немає. Можна заходити одразу після завершення робіт. Для алергіків і алергіків — додаткова обробка без запахів.
+          <div class="px-6 pb-6 text-zinc-400">
+            Так. Уся хімія сертифікована. Можна заходити одразу після завершення робіт.
           </div>
         </details>
       </div>
     </div>
   </section>
 
-  <!-- ─── FOOTER ───────────────────────────────────────── -->
-  <footer class="bg-slate-900 text-slate-400 py-16">
+  <!-- ─── FOOTER ───────────────────────────────── -->
+  <footer class="bg-ink-900 border-t border-ink-700 text-zinc-500 py-16">
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
       <div class="grid md:grid-cols-4 gap-10">
         <div class="md:col-span-2">
-          <div class="flex items-center gap-2 font-bold text-xl text-white">
-            <span class="w-8 h-8 rounded-xl bg-brand-600 flex items-center justify-center text-lg">✦</span>
-            Pristyne
-          </div>
+          <a href="/" class="flex items-center gap-2 font-bold text-xl text-zinc-100">
+            <span class="w-9 h-9 rounded-xl bg-gradient-to-br from-gold-300 to-gold-500 flex items-center justify-center text-ink-900 font-black text-lg">CC</span>
+            Clean-<span class="text-gold-400">Clean</span>
+          </a>
           <p class="mt-4 text-sm max-w-md">
             Професійна клінінгова компанія. Працюємо у Києві, Дніпрі, Львові, Харкові з 2021 року.
           </p>
-          <div class="mt-6 flex gap-3">
-            <a href="#" class="w-10 h-10 rounded-full bg-slate-800 hover:bg-brand-600 flex items-center justify-center transition">📷</a>
-            <a href="#" class="w-10 h-10 rounded-full bg-slate-800 hover:bg-brand-600 flex items-center justify-center transition">📘</a>
-            <a href="#" class="w-10 h-10 rounded-full bg-slate-800 hover:bg-brand-600 flex items-center justify-center transition">✉</a>
-          </div>
         </div>
 
         <div>
-          <h4 class="font-bold text-white mb-4">Послуги</h4>
+          <h4 class="font-bold text-zinc-100 mb-4">Послуги</h4>
           <ul class="space-y-2 text-sm">
-            <li><a href="services/himchistka-divana.html" class="hover:text-white">Хімчистка диванів</a></li>
-            <li><a href="#" class="hover:text-white">Генеральне прибирання</a></li>
-            <li><a href="#" class="hover:text-white">Миття вікон</a></li>
-            <li><a href="#" class="hover:text-white">Клінінг офісів</a></li>
+            <li><a href="services/himchistka-divana.html" class="hover:text-gold-400">Хімчистка диванів</a></li>
+            <li><a href="#services" class="hover:text-gold-400">Генеральне прибирання</a></li>
+            <li><a href="#services" class="hover:text-gold-400">Миття вікон</a></li>
+            <li><a href="#services" class="hover:text-gold-400">Клінінг офісів</a></li>
           </ul>
         </div>
 
         <div>
-          <h4 class="font-bold text-white mb-4">Контакти</h4>
+          <h4 class="font-bold text-zinc-100 mb-4">Контакти</h4>
           <ul class="space-y-2 text-sm">
-            <li><a href="tel:+380000000000" class="hover:text-white">+38 (000) 000-00-00</a></li>
-            <li><a href="mailto:hello@pristyne.ua" class="hover:text-white">hello@pristyne.ua</a></li>
+            <li><a href="tel:+380000000000" class="hover:text-gold-400">+38 (000) 000-00-00</a></li>
+            <li><a href="mailto:hello@clean-clean.ua" class="hover:text-gold-400">hello@clean-clean.ua</a></li>
             <li>Київ · Дніпро · Львів · Харків</li>
           </ul>
         </div>
       </div>
 
-      <div class="mt-12 pt-8 border-t border-slate-800 text-xs text-slate-500 flex flex-col sm:flex-row justify-between gap-3">
-        <div>© 2026 Pristyne. Усі права захищені.</div>
+      <div class="mt-12 pt-8 border-t border-ink-700 text-xs flex flex-col sm:flex-row justify-between gap-3">
+        <div>© 2026 Clean-Clean. Усі права захищені.</div>
         <div class="flex gap-5">
-          <a href="#" class="hover:text-white">Договір оферти</a>
-          <a href="#" class="hover:text-white">Політика конфіденційності</a>
+          <a href="#" class="hover:text-gold-400">Договір оферти</a>
+          <a href="#" class="hover:text-gold-400">Політика конфіденційності</a>
         </div>
       </div>
     </div>
   </footer>
+
+  <!-- ─── CALCULATOR JS ───────────────────────── -->
+  <script>
+    (function() {
+      const slider = document.getElementById('area-slider');
+      const areaDisplay = document.getElementById('area-value');
+      const priceDisplay = document.getElementById('price-value');
+      const priceNote = document.getElementById('price-note');
+      const tabs = document.querySelectorAll('[data-calc-tab]');
+      const quickBtns = document.querySelectorAll('[data-area]');
+      let currentType = 'pidtrymuyuche';
+
+      const rates = {
+        pidtrymuyuche: {
+          tiers: [
+            { max: 60,  rate: 50, min: 2500 },
+            { max: 90,  rate: 60, min: 4800 },
+            { max: 999, rate: 65, min: 7800 },
+          ],
+          note: 'від 50 ₴/м²',
+        },
+        kvartyry: {
+          tiers: [
+            { max: 60,  rate: 60, min: 3000 },
+            { max: 90,  rate: 70, min: 5500 },
+            { max: 999, rate: 75, min: 9000 },
+          ],
+          note: 'від 60 ₴/м²',
+        },
+        generalna: {
+          tiers: [
+            { max: 60,  rate: 70, min: 3500 },
+            { max: 90,  rate: 80, min: 6400 },
+            { max: 999, rate: 85, min: 10200 },
+          ],
+          note: 'від 70 ₴/м²',
+        },
+      };
+
+      function calc(area, type) {
+        const tier = rates[type].tiers.find(t => area <= t.max);
+        return Math.max(area * tier.rate, tier.min);
+      }
+
+      function format(n) {
+        return n.toLocaleString('uk-UA').replace(/,/g, ' ');
+      }
+
+      function update() {
+        const area = parseInt(slider.value, 10);
+        const price = calc(area, currentType);
+        areaDisplay.textContent = area;
+        priceDisplay.textContent = format(price);
+        priceNote.textContent = rates[currentType].note;
+        // slider fill
+        const pct = ((area - 30) / (200 - 30)) * 100;
+        slider.style.setProperty('--p', pct + '%');
+      }
+
+      slider.addEventListener('input', update);
+
+      tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          tabs.forEach(t => t.classList.remove('active'));
+          tab.classList.add('active');
+          currentType = tab.dataset.calcTab;
+          update();
+        });
+      });
+
+      quickBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          slider.value = btn.dataset.area;
+          update();
+        });
+      });
+
+      update();
+
+      // Order form — пока заглушка, потом подключим Telegram
+      const form = document.getElementById('order-form');
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        alert('Дякуємо! Передзвонимо протягом 5 хвилин.\n\n(Це демо — серверна частина для відправки в Telegram буде підключена наступним кроком.)');
+      });
+    })();
+  </script>
 
 </body>
 </html>
