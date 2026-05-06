@@ -51,17 +51,24 @@
         radial-gradient(ellipse at bottom left, rgba(244,192,39,0.03), transparent 50%),
         #0a0a0b;
     }
-    /* Fix descenders clipping in italic gradient text */
+    /* Fix clipping for italic + heavy gradient text:
+       - padding-bottom for descenders (ц, щ)
+       - padding-right for italic right-slant tail
+       - padding-left small to keep visual balance
+       - overflow visible so the box never crops glyphs */
     .gold-gradient-text {
       background: linear-gradient(135deg, #f4c027 0%, #d4a017 50%, #f4c027 100%);
       -webkit-background-clip: text; background-clip: text; color: transparent;
       display: inline-block;
-      padding-bottom: 0.35em;
+      padding: 0 0.18em 0.35em 0.05em;
       line-height: 1.4;
       vertical-align: baseline;
+      overflow: visible;
     }
     /* Headings containing gradient text need extra room too */
-    h1, h2, h3 { line-height: 1.25; }
+    h1, h2, h3 { line-height: 1.25; overflow: visible; }
+    /* Heavy italic non-gradient also slants — give it air */
+    .font-black.italic, .font-bold.italic { padding-right: 0.1em; }
 
     /* 3D primary button — золотая кнопка с подложкой */
     .btn-3d {
@@ -741,24 +748,15 @@
       return Math.max(price, firstMin);
     }
 
-    function tierLabel(tier, rates) {
-      const idx = rates.indexOf(tier);
-      if (idx === -1) return '';
-      // Якщо це останній тариф і він покриває "усе вище" — пишемо "понад N м²"
-      const isLast = idx === rates.length - 1;
-      const prevMax = idx > 0 ? rates[idx - 1].max : null;
-      if (isLast && tier.max >= 500 && prevMax) return 'понад ' + prevMax + ' м²';
-      return 'до ' + tier.max + ' м²';
-    }
-
     function updatePrice() {
       const s = SERVICES[currentKey];
       if (!s.needsCalc) return;
       const area = parseInt(refs.areaSlider.value, 10);
+      const tier = currentTier(area, s.rates);
       const price = calcPrice(area, s.rates);
       refs.areaValue.textContent = area;
       refs.priceValue.textContent = format(price);
-      refs.priceNote.textContent = s.rateNote;
+      refs.priceNote.textContent = tier.rate + ' ₴/м²';
       // slider fill
       const range = s.slider.max - s.slider.min;
       const pct = ((area - s.slider.min) / range) * 100;
