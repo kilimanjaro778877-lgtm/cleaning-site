@@ -97,8 +97,8 @@
             display: ['"Playfair Display"', 'Georgia', 'serif'],
           },
           colors: {
-            ink: { 900: '#02020f', 800: '#06061c', 700: '#0b0b2a', 600: '#121238', 500: '#1a1a4a' },
-            gold: { 50:'#eeeeff', 100:'#ccccff', 200:'#9999ff', 300:'#6666ff', 400:'#0000FF', 500:'#0000cc', 600:'#000099', 700:'#000066' },
+            ink: { 900: '#03040f', 800: '#07091e', 700: '#0d1030', 600: '#151840', 500: '#1e2254' },
+            gold: { 50:'#f0f2ff', 100:'#d6dbff', 200:'#c4ccff', 300:'#aab4ff', 400:'#99aaff', 500:'#6680ff', 600:'#4455dd', 700:'#2233bb' },
             warm: { 50:'#ffffff', 100:'#FFFAFA', 200:'rgba(255,250,250,0.75)', 300:'rgba(255,250,250,0.5)' },
           },
         },
@@ -110,8 +110,8 @@
     html { scroll-behavior: smooth; }
     body {
       font-family: 'Manrope', system-ui, sans-serif;
-      background-color: #02020f;
-      background-image: radial-gradient(rgba(0,0,255,0.09) 1px, transparent 1px);
+      background-color: #03040f;
+      background-image: radial-gradient(rgba(102,128,255,0.09) 1px, transparent 1px);
       background-size: 26px 26px;
       color: #FFFAFA;
       line-height: 1.65;
@@ -129,8 +129,8 @@
     }
     .gradient-bg {
       background:
-        radial-gradient(ellipse 70% 50% at top right, rgba(0,0,255,0.15), transparent),
-        radial-gradient(ellipse 60% 40% at bottom left, rgba(0,0,255,0.07), transparent),
+        radial-gradient(ellipse 70% 50% at top right, rgba(102,128,255,0.18), transparent),
+        radial-gradient(ellipse 60% 40% at bottom left, rgba(102,128,255,0.08), transparent),
         transparent;
     }
     /* Fix clipping for italic + heavy gradient text:
@@ -139,7 +139,7 @@
        - padding-left small to keep visual balance
        - overflow visible so the box never crops glyphs */
     .gold-gradient-text {
-      background: linear-gradient(135deg, #FFFAFA 0%, #8888ff 50%, #0000FF 100%);
+      background: linear-gradient(135deg, #FFFAFA 0%, #b3bbff 50%, #6680ff 100%);
       -webkit-background-clip: text; background-clip: text; color: transparent;
       display: inline-block;
       padding: 0 0.18em 0.35em 0.05em;
@@ -175,13 +175,13 @@
       padding: 1rem 1.75rem;
       font-weight: 800;
       color: #FFFAFA;
-      background: linear-gradient(180deg, #3333ff 0%, #0000FF 100%);
+      background: linear-gradient(180deg, #3355ff 0%, #0011ee 100%);
       border-radius: 9999px;
       box-shadow:
-        0 6px 0 #000066,
-        0 14px 28px -8px rgba(0,0,255,0.5),
-        inset 0 1px 0 rgba(255,255,255,0.2),
-        inset 0 -2px 0 rgba(0,0,102,0.4);
+        0 6px 0 #000088,
+        0 14px 28px -8px rgba(0,17,238,0.55),
+        inset 0 1px 0 rgba(255,255,255,0.25),
+        inset 0 -2px 0 rgba(0,0,120,0.4);
       transform: translateY(0);
       transition: all 0.15s cubic-bezier(0.34, 1.56, 0.64, 1);
       cursor: pointer;
@@ -190,8 +190,8 @@
     .btn-3d:hover {
       transform: translateY(-2px);
       box-shadow:
-        0 8px 0 #000066,
-        0 18px 36px -8px rgba(0,0,255,0.6),
+        0 8px 0 #1122aa,
+        0 18px 36px -8px rgba(102,128,255,0.6),
         inset 0 1px 0 rgba(255,255,255,0.25),
         inset 0 -2px 0 rgba(0,0,102,0.4);
     }
