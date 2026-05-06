@@ -258,7 +258,7 @@
           <div class="bg-ink-900 border border-gold-400/30 rounded-2xl p-8 text-center relative overflow-hidden">
             <div class="absolute -top-10 -right-10 w-32 h-32 bg-gold-400/10 rounded-full blur-3xl"></div>
             <div class="relative">
-              <div class="text-sm uppercase tracking-wider text-gold-400 font-bold">Ваша ціна</div>
+              <div class="text-sm uppercase tracking-wider text-gold-400 font-bold">Орієнтовна вартість</div>
               <div class="mt-3 flex items-baseline justify-center gap-2">
                 <span class="font-display text-5xl sm:text-6xl font-black text-zinc-100" id="price-value">3 000</span>
                 <span class="text-2xl font-bold text-zinc-400">₴</span>
@@ -575,10 +575,11 @@
         slider: { min: 30, max: 200, default: 60, step: 1, mid: 100 },
         rates: [
           { max: 60,  rate: 50, min: 2500 },
-          { max: 90,  rate: 60, min: 4800 },
-          { max: 999, rate: 65, min: 7800 },
+          { max: 90,  rate: 60 },
+          { max: 140, rate: 65 },
+          { max: 999, rate: 65 },
         ],
-        rateNote: 'від 50 ₴/м²',
+        rateNote: 'Точна сума — після фото або огляду бригадира',
         windowsSeparate: true,
         quickButtons: [40, 70, 120],
       },
@@ -591,15 +592,15 @@
         needsCalc: true,
         unit: 'м²',
         sliderLabel: 'Площа квартири',
-        slider: { min: 30, max: 200, default: 60, step: 1, mid: 100 },
+        slider: { min: 30, max: 200, default: 70, step: 1, mid: 100 },
         rates: [
-          { max: 60,  rate: 70, min: 3500 },
-          { max: 90,  rate: 80, min: 6400 },
-          { max: 999, rate: 85, min: 10200 },
+          { max: 70,  rate: 70, min: 3500 },
+          { max: 90,  rate: 80 },
+          { max: 999, rate: 85 },
         ],
-        rateNote: 'від 70 ₴/м²',
+        rateNote: 'Точна сума — після фото або огляду бригадира',
         windowsSeparate: true,
-        quickButtons: [40, 70, 120],
+        quickButtons: [50, 80, 120],
       },
       vikna: {
         name: 'Миття вікон',
@@ -614,7 +615,7 @@
         rates: [
           { max: 9999, rate: 80, min: 800 },
         ],
-        rateNote: 'від 80 ₴/м² площі вікна',
+        rateNote: 'Точна сума — після фото або огляду бригадира',
         windowsSeparate: false,
         quickButtons: [4, 10, 20],
       },
