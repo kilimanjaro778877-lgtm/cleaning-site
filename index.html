@@ -755,16 +755,10 @@
       const s = SERVICES[currentKey];
       if (!s.needsCalc) return;
       const area = parseInt(refs.areaSlider.value, 10);
-      const tier = currentTier(area, s.rates);
       const price = calcPrice(area, s.rates);
       refs.areaValue.textContent = area;
       refs.priceValue.textContent = format(price);
-      // Динамічна підпись з поточною ставкою
-      if (s.rates.length > 1) {
-        refs.priceNote.textContent = `Зараз ${tier.rate} ₴/м² (${tierLabel(tier, s.rates)}) · ${s.rateNote.toLowerCase()}`;
-      } else {
-        refs.priceNote.textContent = s.rateNote;
-      }
+      refs.priceNote.textContent = s.rateNote;
       // slider fill
       const range = s.slider.max - s.slider.min;
       const pct = ((area - s.slider.min) / range) * 100;
