@@ -960,11 +960,43 @@
 
       update();
 
-      // Order form — пока заглушка, потом подключим Telegram
+      // Order form — отправляет в Render handler → Telegram
+      const HANDLER_URL = 'https://cleaning-form-handler.onrender.com/api/order';
       const form = document.getElementById('order-form');
-      form.addEventListener('submit', (e) => {
+      const submitBtn = form.querySelector('button[type=submit]');
+      const originalText = submitBtn.textContent;
+
+      form.addEventListener('submit', async (e) => {
         e.preventDefault();
-        alert('Дякуємо! Передзвонимо протягом 5 хвилин.\n\n(Це демо — серверна частина для відправки в Telegram буде підключена наступним кроком.)');
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Відправляємо…';
+
+        const data = Object.fromEntries(new FormData(form));
+        data.page = location.href;
+
+        try {
+          const resp = await fetch(HANDLER_URL, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data),
+          });
+          if (!resp.ok) throw new Error('http ' + resp.status);
+          submitBtn.textContent = '✅ Заявку прийнято! Передзвонимо.';
+          submitBtn.classList.remove('bg-gold-400', 'hover:bg-gold-300');
+          submitBtn.classList.add('bg-emerald-500');
+          form.reset();
+          setTimeout(() => {
+            submitBtn.disabled = false;
+            submitBtn.textContent = originalText;
+            submitBtn.classList.add('bg-gold-400', 'hover:bg-gold-300');
+            submitBtn.classList.remove('bg-emerald-500');
+          }, 6000);
+        } catch (err) {
+          console.error('form error', err);
+          submitBtn.disabled = false;
+          submitBtn.textContent = originalText;
+          alert('Помилка надсилання. Спробуйте ще раз або зателефонуйте за номером згори.');
+        }
       });
     })();
   </script>
