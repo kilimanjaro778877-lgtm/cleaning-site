@@ -99,6 +99,7 @@
           colors: {
             ink: { 900: '#0a0a0b', 800: '#121214', 700: '#1a1a1d', 600: '#262629', 500: '#3a3a3f' },
             gold: { 50:'#fef9e7', 100:'#fdf2c8', 200:'#fbe590', 300:'#f7d04d', 400:'#f4c027', 500:'#d4a017', 600:'#a37809', 700:'#7a5a08' },
+            warm: { 50:'#f0ede8', 100:'#e8e4d8', 200:'#d4cfc4', 300:'#b8b2a5' },
           },
         },
       },
@@ -112,6 +113,8 @@
       background-color: #0a0a0b;
       background-image: radial-gradient(rgba(255,255,255,0.04) 1px, transparent 1px);
       background-size: 26px 26px;
+      color: #e8e4d8;
+      line-height: 1.65;
     }
     /* Subtle noise grain overlay */
     body::before {
@@ -144,10 +147,23 @@
       vertical-align: baseline;
       overflow: visible;
     }
-    /* Headings containing gradient text need extra room too */
-    h1, h2, h3 { line-height: 1.25; overflow: visible; }
+    /* Headings */
+    h1, h2, h3 {
+      line-height: 1.2;
+      overflow: visible;
+      letter-spacing: -0.025em;
+      color: #f0ede8;
+    }
     /* Heavy italic non-gradient also slants — give it air */
     .font-black.italic, .font-bold.italic { padding-right: 0.1em; }
+
+    /* Thin gold section divider */
+    .section-divider {
+      border: none;
+      height: 1px;
+      background: linear-gradient(to right, transparent, rgba(244,192,39,0.25), transparent);
+      margin: 0;
+    }
 
     /* 3D primary button — золотая кнопка с подложкой */
     .btn-3d {
@@ -186,6 +202,22 @@
         0 4px 8px rgba(0,0,0,0.3),
         inset 0 1px 0 rgba(255,255,255,0.4);
     }
+    /* Ghost / secondary buttons */
+    .btn-ghost {
+      display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+      padding: 0.875rem 1.75rem;
+      border: 1px solid rgba(244,192,39,0.4);
+      border-radius: 9999px;
+      color: #f4c027;
+      font-weight: 600;
+      transition: all 0.15s ease;
+      background: transparent;
+    }
+    .btn-ghost:hover {
+      border-color: rgba(244,192,39,0.75);
+      background: rgba(244,192,39,0.06);
+    }
+    .btn-ghost:active { transform: scale(0.98); }
 
     /* Service card icon */
     .icon-3d {
@@ -223,19 +255,20 @@
 
     /* Service selector cards */
     .service-card {
-      background: #121214;
-      border: 1px solid #262629;
-      transition: all 0.2s ease;
+      background: #111113;
+      border: 1px solid #1e1e21;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
       cursor: pointer;
     }
     .service-card:hover {
-      border-color: rgba(244,192,39,0.4);
+      border-color: rgba(244,192,39,0.35);
       transform: translateY(-2px);
+      box-shadow: 0 0 0 1px rgba(244,192,39,0.12), 0 12px 32px -8px rgba(0,0,0,0.5);
     }
     .service-card.active {
-      background: linear-gradient(135deg, rgba(244,192,39,0.15) 0%, rgba(212,160,23,0.08) 100%);
-      border-color: #f4c027;
-      box-shadow: 0 8px 24px -8px rgba(244,192,39,0.3);
+      background: linear-gradient(145deg, rgba(244,192,39,0.1) 0%, rgba(212,160,23,0.05) 100%);
+      border-color: rgba(244,192,39,0.6);
+      box-shadow: 0 0 0 1px rgba(244,192,39,0.2), 0 8px 32px -8px rgba(244,192,39,0.25);
     }
     .service-card.active .service-name { color: #f4c027; }
 
@@ -262,7 +295,7 @@
     }
   </style>
 </head>
-<body class="bg-ink-900 text-zinc-100 antialiased">
+<body class="bg-ink-900 text-warm-100 antialiased">
 
   <!-- ─── FLOAT CTA ──────────────────────────────── -->
   <div class="fixed bottom-6 right-5 z-50 flex flex-col gap-3">
@@ -471,6 +504,7 @@
   </section>
 
   <!-- ─── EXTRAS ─────────────────────────────────── -->
+  <hr class="section-divider" />
   <section id="extras" class="py-24 bg-ink-800">
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
       <div class="max-w-2xl">
@@ -567,6 +601,7 @@
   </section>
 
   <!-- ─── TRUST ──────────────────────────────── -->
+  <hr class="section-divider" />
   <section id="trust" class="py-24">
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
       <div class="text-center max-w-2xl mx-auto">
@@ -609,6 +644,7 @@
   </section>
 
   <!-- ─── FAQ ──────────────────────────────────── -->
+  <hr class="section-divider" />
   <section id="faq" class="py-24 bg-ink-800">
     <div class="max-w-3xl mx-auto px-4 sm:px-6">
       <h2 class="font-display text-4xl sm:text-5xl font-black tracking-tight text-center leading-[1.15]">Часті <span class="gold-gradient-text italic">питання</span></h2>
