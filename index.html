@@ -55,7 +55,81 @@
     .gold-gradient-text {
       background: linear-gradient(135deg, #f4c027 0%, #d4a017 50%, #f4c027 100%);
       -webkit-background-clip: text; background-clip: text; color: transparent;
-      display: inline-block; padding-bottom: 0.12em; line-height: 1.2;
+      display: inline-block;
+      padding-bottom: 0.35em;
+      line-height: 1.4;
+      vertical-align: baseline;
+    }
+    /* Headings containing gradient text need extra room too */
+    h1, h2, h3 { line-height: 1.25; }
+
+    /* 3D primary button — золотая кнопка с подложкой */
+    .btn-3d {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 1rem 1.75rem;
+      font-weight: 800;
+      color: #0a0a0b;
+      background: linear-gradient(180deg, #f7d04d 0%, #d4a017 100%);
+      border-radius: 9999px;
+      box-shadow:
+        0 6px 0 #7a5a08,
+        0 14px 28px -8px rgba(244,192,39,0.45),
+        inset 0 1px 0 rgba(255,255,255,0.5),
+        inset 0 -2px 0 rgba(122,90,8,0.3);
+      transform: translateY(0);
+      transition: all 0.15s cubic-bezier(0.34, 1.56, 0.64, 1);
+      cursor: pointer;
+      border: none;
+    }
+    .btn-3d:hover {
+      transform: translateY(-2px);
+      box-shadow:
+        0 8px 0 #7a5a08,
+        0 18px 36px -8px rgba(244,192,39,0.55),
+        inset 0 1px 0 rgba(255,255,255,0.6),
+        inset 0 -2px 0 rgba(122,90,8,0.3);
+    }
+    .btn-3d:active {
+      transform: translateY(4px);
+      box-shadow:
+        0 2px 0 #7a5a08,
+        0 4px 8px rgba(0,0,0,0.3),
+        inset 0 1px 0 rgba(255,255,255,0.4);
+    }
+
+    /* 3D-style emoji/icon — крупные эмодзи с тенью и наклоном */
+    .icon-3d {
+      display: inline-block;
+      font-size: 3rem;
+      line-height: 1;
+      filter:
+        drop-shadow(0 8px 16px rgba(244,192,39,0.25))
+        drop-shadow(0 4px 8px rgba(0,0,0,0.5));
+      transform: rotateZ(-6deg);
+      transition: transform 0.3s ease;
+    }
+    .service-card:hover .icon-3d,
+    .service-card.active .icon-3d {
+      transform: rotateZ(0deg) scale(1.1);
+    }
+
+    /* Floating 3D blob next to hero title */
+    .hero-3d {
+      font-size: 5rem;
+      line-height: 1;
+      display: inline-block;
+      filter:
+        drop-shadow(0 20px 40px rgba(244,192,39,0.3))
+        drop-shadow(0 10px 20px rgba(0,0,0,0.6));
+      animation: float 4s ease-in-out infinite;
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0) rotateZ(-6deg); }
+      50%      { transform: translateY(-10px) rotateZ(0deg); }
     }
 
     /* Service selector cards */
@@ -115,7 +189,7 @@
         <a href="tel:+380000000000" class="hidden sm:block text-sm font-semibold hover:text-gold-400 transition">
           +38 (000) 000-00-00
         </a>
-        <a href="#order" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gold-400 hover:bg-gold-300 text-ink-900 font-bold text-sm transition shadow-lg shadow-gold-500/20">
+        <a href="#order" class="btn-3d text-sm" style="padding:0.6rem 1.25rem">
           Замовити
         </a>
       </div>
@@ -129,10 +203,11 @@
         <span class="w-2 h-2 rounded-full bg-gold-400 animate-pulse"></span>
         Київ · Дніпро · Львів · Харків · виїзд за 2 години
       </div>
-      <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.15]">
+      <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight">
         Чистота, що <span class="gold-gradient-text italic">повертає час</span>
+        <span class="hero-3d ml-2">✨</span>
       </h1>
-      <p class="mt-3 text-base sm:text-lg text-zinc-400 max-w-2xl mx-auto">
+      <p class="mt-5 text-base sm:text-lg text-zinc-400 max-w-2xl mx-auto">
         Виберіть послугу — побачите ціну й відразу залишите заявку.
       </p>
     </div>
@@ -189,7 +264,7 @@
                 <span class="text-2xl font-bold text-zinc-400">₴</span>
               </div>
               <p id="price-note" class="mt-3 text-sm text-zinc-500">від 50 ₴/м²</p>
-              <a href="#order" class="mt-6 inline-flex w-full items-center justify-center gap-2 px-7 py-4 rounded-xl bg-gold-400 hover:bg-gold-300 text-ink-900 font-bold transition shadow-lg shadow-gold-500/30">
+              <a href="#order" class="btn-3d mt-6 w-full" style="border-radius: 0.75rem">
                 Замовити за цю ціну
               </a>
               <p class="mt-3 text-xs text-zinc-500">Точну суму погодимо після короткого дзвінка</p>
@@ -207,7 +282,7 @@
           <div class="text-sm uppercase tracking-wider text-gold-400 font-bold">Вартість послуги</div>
           <div class="mt-3 font-display text-5xl sm:text-6xl font-black text-gold-400" id="fixed-price">від 1 100 ₴</div>
           <p class="mt-3 text-sm text-zinc-500" id="fixed-note">Точну суму погодимо після огляду</p>
-          <a href="#order" class="mt-8 inline-flex items-center justify-center gap-2 px-7 py-4 rounded-xl bg-gold-400 hover:bg-gold-300 text-ink-900 font-bold transition shadow-lg shadow-gold-500/30">
+          <a href="#order" class="btn-3d mt-8" style="border-radius: 0.75rem">
             Замовити цю послугу
           </a>
         </div>
@@ -254,7 +329,7 @@
           <label class="block text-sm font-semibold mb-2 text-zinc-300">Деталі (необов'язково)</label>
           <textarea rows="3" name="details" class="w-full px-4 py-3 rounded-xl bg-ink-700 border border-ink-600 focus:border-gold-400 focus:ring-2 focus:ring-gold-400/20 outline-none transition text-zinc-100" placeholder="Площа, поверх, особливості об'єкту..."></textarea>
         </div>
-        <button type="submit" class="mt-6 w-full px-7 py-4 rounded-xl bg-gold-400 hover:bg-gold-300 text-ink-900 font-bold text-lg transition shadow-lg shadow-gold-500/30">
+        <button type="submit" class="btn-3d mt-6 w-full text-lg" style="border-radius: 0.75rem">
           Замовити прибирання
         </button>
         <p class="mt-3 text-xs text-zinc-500 text-center">
@@ -613,9 +688,9 @@
       card.className = 'service-card rounded-2xl p-5';
       card.dataset.service = key;
       card.innerHTML = `
-        <div class="flex items-start gap-3">
-          <div class="text-3xl">${s.icon}</div>
-          <div class="flex-1">
+        <div class="flex items-start gap-4">
+          <div class="icon-3d shrink-0">${s.icon}</div>
+          <div class="flex-1 min-w-0">
             <div class="service-name font-bold text-zinc-100">${s.name}</div>
             <div class="text-xs text-zinc-500 mt-1">${s.short}</div>
             <div class="text-sm font-bold text-gold-400 mt-2">${s.priceLabel}</div>
