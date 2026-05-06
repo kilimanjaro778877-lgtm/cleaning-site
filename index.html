@@ -507,25 +507,6 @@
         windowsSeparate: true,
         quickButtons: [40, 70, 120],
       },
-      kvartyry: {
-        name: 'Прибирання квартир',
-        icon: '🏠',
-        short: 'Стандартне разове прибирання',
-        priceLabel: 'від 60 ₴/м²',
-        description: 'Стандартне прибирання квартири перед заселенням, після гостей чи коли просто хочеться чистоти. Розова послуга без зобов\'язань.',
-        needsCalc: true,
-        unit: 'м²',
-        sliderLabel: 'Площа квартири',
-        slider: { min: 30, max: 200, default: 60, step: 1, mid: 100 },
-        rates: [
-          { max: 60,  rate: 60, min: 3000 },
-          { max: 90,  rate: 70, min: 5500 },
-          { max: 999, rate: 75, min: 9000 },
-        ],
-        rateNote: 'від 60 ₴/м²',
-        windowsSeparate: true,
-        quickButtons: [40, 70, 120],
-      },
       generalna: {
         name: 'Генеральне прибирання',
         icon: '✨',
@@ -672,8 +653,20 @@
     function format(n) { return n.toLocaleString('uk-UA').replace(/,/g, ' '); }
 
     function calcPrice(area, rates) {
-      const tier = rates.find(t => area <= t.max);
-      return Math.max(area * tier.rate, tier.min);
+      // Прогрессивний розрахунок: кожен діапазон рахується за своєю ставкою.
+      // Мінімалка з першого тиру застосовується лише для дуже малих площ.
+      let price = 0;
+      let prev = 0;
+      for (const t of rates) {
+        const upTo = Math.min(area, t.max);
+        if (upTo > prev) {
+          price += (upTo - prev) * t.rate;
+          prev = upTo;
+        }
+        if (area <= t.max) break;
+      }
+      const firstMin = rates[0].min || 0;
+      return Math.max(price, firstMin);
     }
 
     function updatePrice() {
