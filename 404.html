@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Сторінку не знайдено — Clean-Clean</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={theme:{extend:{fontFamily:{sans:['Manrope','system-ui','sans-serif'],display:['"Playfair Display"','Georgia','serif']},colors:{ink:{900:'#0a0a0b',800:'#121214',700:'#1a1a1d',600:'#262629'},gold:{300:'#f7d04d',400:'#f4c027',500:'#d4a017'}}}}}</script>
+  <style>
+    body {
+      font-family: 'Manrope', system-ui, sans-serif;
+      background-color: #0a0a0b;
+      background-image: radial-gradient(rgba(255,255,255,0.04) 1px, transparent 1px);
+      background-size: 26px 26px;
+    }
+    .gold-gradient-text {
+      background: linear-gradient(135deg, #f4c027 0%, #d4a017 50%, #f4c027 100%);
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+      display: inline-block; padding: 0 0.15em 0.3em 0.05em; line-height: 1.4;
+    }
+  </style>
+</head>
+<body class="text-zinc-100 antialiased min-h-screen flex flex-col">
+  <header class="border-b border-ink-700 bg-ink-900/90 backdrop-blur-lg">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center">
+      <a href="/cleaning-site/" class="flex items-center gap-2 font-bold text-xl">
+        <span class="w-9 h-9 rounded-xl bg-gradient-to-br from-gold-300 to-gold-500 flex items-center justify-center text-ink-900 font-black text-lg">CC</span>
+        <span>Clean-<span class="text-gold-400">Clean</span></span>
+      </a>
+    </div>
+  </header>
+
+  <main class="flex-1 flex items-center justify-center px-4">
+    <div class="text-center max-w-lg">
+      <div class="font-display text-8xl sm:text-9xl font-black text-gold-400/20 leading-none select-none">404</div>
+      <h1 class="font-display text-3xl sm:text-4xl font-black mt-4 tracking-tight">
+        Сторінку <span class="gold-gradient-text italic">не знайдено</span>
+      </h1>
+      <p class="mt-4 text-zinc-400 text-lg">Можливо, посилання застаріло або сторінку видалено.</p>
+      <div class="mt-10 flex flex-col sm:flex-row gap-3 justify-center">
+        <a href="/cleaning-site/" class="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full font-bold text-ink-900 transition shadow-xl shadow-gold-500/20"
+           style="background:linear-gradient(180deg,#f7d04d 0%,#d4a017 100%)">
+          На головну
+        </a>
+        <a href="/cleaning-site/#order" class="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full bg-ink-700 hover:bg-ink-600 text-zinc-100 font-semibold transition border border-ink-600">
+          Замовити прибирання
+        </a>
+      </div>
+      <div class="mt-10 text-sm text-zinc-600">
+        Або зателефонуйте нам: <a href="tel:+380731312228" class="text-gold-400 hover:text-gold-300">+38 073 131 22 28</a>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
