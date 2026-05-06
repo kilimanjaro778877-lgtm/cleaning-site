@@ -103,12 +103,28 @@
 
   <style>
     html { scroll-behavior: smooth; }
-    body { font-family: 'Manrope', system-ui, sans-serif; }
+    body {
+      font-family: 'Manrope', system-ui, sans-serif;
+      background-color: #0a0a0b;
+      background-image: radial-gradient(rgba(255,255,255,0.04) 1px, transparent 1px);
+      background-size: 26px 26px;
+    }
+    /* Subtle noise grain overlay */
+    body::before {
+      content: '';
+      position: fixed; inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
+      background-repeat: repeat;
+      background-size: 180px 180px;
+      opacity: 0.025;
+      pointer-events: none;
+      z-index: 9999;
+    }
     .gradient-bg {
       background:
-        radial-gradient(ellipse at top right, rgba(244,192,39,0.06), transparent 50%),
-        radial-gradient(ellipse at bottom left, rgba(244,192,39,0.03), transparent 50%),
-        #0a0a0b;
+        radial-gradient(ellipse 70% 50% at top right, rgba(244,192,39,0.07), transparent),
+        radial-gradient(ellipse 60% 40% at bottom left, rgba(244,192,39,0.04), transparent),
+        transparent;
     }
     /* Fix clipping for italic + heavy gradient text:
        - padding-bottom for descenders (ц, щ)
@@ -167,35 +183,38 @@
         inset 0 1px 0 rgba(255,255,255,0.4);
     }
 
-    /* 3D-style emoji/icon — крупные эмодзи с тенью и наклоном */
+    /* Service card icon */
     .icon-3d {
-      display: inline-block;
-      font-size: 3rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 2.5rem;
+      height: 2.5rem;
+      font-size: 1.25rem;
       line-height: 1;
-      filter:
-        drop-shadow(0 8px 16px rgba(244,192,39,0.25))
-        drop-shadow(0 4px 8px rgba(0,0,0,0.5));
-      transform: rotateZ(-6deg);
-      transition: transform 0.3s ease;
+      border-radius: 0.625rem;
+      background: rgba(244,192,39,0.1);
+      border: 1px solid rgba(244,192,39,0.2);
+      transition: background 0.2s ease, border-color 0.2s ease;
+      flex-shrink: 0;
     }
     .service-card:hover .icon-3d,
     .service-card.active .icon-3d {
-      transform: rotateZ(0deg) scale(1.1);
+      background: rgba(244,192,39,0.18);
+      border-color: rgba(244,192,39,0.45);
     }
 
-    /* Floating 3D blob next to hero title */
+    /* Hero accent */
     .hero-3d {
-      font-size: 5rem;
+      font-size: 3rem;
       line-height: 1;
       display: inline-block;
-      filter:
-        drop-shadow(0 20px 40px rgba(244,192,39,0.3))
-        drop-shadow(0 10px 20px rgba(0,0,0,0.6));
-      animation: float 4s ease-in-out infinite;
+      opacity: 0.85;
+      animation: float 5s ease-in-out infinite;
     }
     @keyframes float {
-      0%, 100% { transform: translateY(0) rotateZ(-6deg); }
-      50%      { transform: translateY(-10px) rotateZ(0deg); }
+      0%, 100% { transform: translateY(0); }
+      50%      { transform: translateY(-8px); }
     }
 
     /* Service selector cards */
