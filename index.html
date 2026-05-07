@@ -1089,8 +1089,19 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
       fetch('https://cleaning-form-handler.onrender.com/health', { method: 'GET' }).catch(() => {});
     }, { once: true });
 
+    const SUBMIT_KEY = 'cleanclean_lastSubmit';
+    const SUBMIT_BLOCK_MS = 24 * 60 * 60 * 1000; // 24h
+
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
+
+      // Anti-spam: block if same browser submitted within 24h
+      const last = localStorage.getItem(SUBMIT_KEY);
+      if (last && (Date.now() - parseInt(last)) < SUBMIT_BLOCK_MS) {
+        alert('Ви вже залишили заявку. Ми передзвонимо найближчим часом!');
+        return;
+      }
+
       submitBtn.disabled = true;
       submitBtn.innerHTML = '<svg class="animate-spin w-5 h-5" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="3" stroke-dasharray="32" stroke-dashoffset="12" opacity="0.3"/><path d="M12 2a10 10 0 0 1 10 10" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg> Відправляємо…';
 
@@ -1112,6 +1123,16 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
           resp = await doFetch();
         }
         if (!resp.ok) throw new Error('http ' + resp.status);
+
+        // Conversion confirmed — server received and forwarded to Telegram
+        localStorage.setItem(SUBMIT_KEY, Date.now().toString());
+        if (typeof ttq !== 'undefined') {
+          try { ttq.track('SubmitForm', { content_type: 'lead', content_name: data.service || 'cleaning_order' }); } catch(_) {}
+        }
+        if (typeof gtag === 'function') {
+          try { gtag('event', 'generate_lead', { service: data.service }); } catch(_) {}
+        }
+
         submitBtn.textContent = '✅ Заявку прийнято! Передзвонимо.';
         submitBtn.classList.remove('bg-gold-400', 'hover:bg-gold-300');
         submitBtn.classList.add('bg-emerald-500');
