@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://kilimanjaro778877-lgtm.github.io/cleaning-site/sitemap.xml
+Sitemap: https://clean-clean.com.ua/sitemap.xml
