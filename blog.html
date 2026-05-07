@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="uk">
 <head>
   <meta charset="UTF-8" />
@@ -35,6 +35,25 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
 }(window, document, 'ttq');
 </script>
 <!-- TikTok Pixel Code End -->
+<script>
+(function(){
+  if (typeof ttq === 'undefined') return;
+  try { ttq.track('ViewContent', { content_name: document.title, content_category: 'cleaning_service' }); } catch(_) {}
+  document.addEventListener('DOMContentLoaded', function(){
+    document.querySelectorAll('a[href*="#order"]').forEach(function(el){
+      el.addEventListener('click', function(){
+        try { ttq.track('AddToCart', { content_type: 'service', content_name: 'cleaning_inquiry' }); } catch(_) {}
+      }, { once: true });
+    });
+    var form = document.getElementById('order-form');
+    if (form) {
+      form.addEventListener('focusin', function(){
+        try { ttq.track('InitiateCheckout'); } catch(_) {}
+      }, { once: true });
+    }
+  });
+})();
+</script>
 </head>
 <body class="antialiased">
   <div aria-hidden="true"><div class="orb orb-1"></div><div class="orb orb-2"></div></div>
