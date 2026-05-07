@@ -1,0 +1,32 @@
+START: 05/07/2026 18:00:58
+ERR: vytiazhka attempt 1: Удаленный сервер возвратил ошибку: (429) Too Many Requests.
+ERR: vytiazhka attempt 2: Удаленный сервер возвратил ошибку: (429) Too Many Requests.
+ERR: vytiazhka attempt 3: Удаленный сервер возвратил ошибку: (429) Too Many Requests.
+ERR: vytiazhka attempt 4: Удаленный сервер возвратил ошибку: (429) Too Many Requests.
+ERR: vytiazhka attempt 5: Удаленный сервер возвратил ошибку: (429) Too Many Requests.
+FAILED: vytiazhka
+ERR: shafky attempt 1: Удаленный сервер возвратил ошибку: (429) Too Many Requests.
+ERR: shafky attempt 2: Удаленный сервер возвратил ошибку: (429) Too Many Requests.
+ERR: shafky attempt 3: Удаленный сервер возвратил ошибку: (429) Too Many Requests.
+ERR: shafky attempt 4: Удаленный сервер возвратил ошибку: (429) Too Many Requests.
+ERR: shafky attempt 5: Удаленный сервер возвратил ошибку: (429) Too Many Requests.
+FAILED: shafky
+SKIP: mikrokhvylovka already exists
+SKIP: mytia-posudu already exists
+SKIP: dushova already exists
+ERR: plytka attempt 1: Удаленный сервер возвратил ошибку: (429) Too Many Requests.
+ERR: plytka attempt 2: Удаленный сервер возвратил ошибку: (429) Too Many Requests.
+ERR: plytka attempt 3: Удаленный сервер возвратил ошибку: (429) Too Many Requests.
+ERR: plytka attempt 4: Удаленный сервер возвратил ошибку: (429) Too Many Requests.
+ERR: plytka attempt 5: Удаленный сервер возвратил ошибку: (429) Too Many Requests.
+FAILED: plytka
+SKIP: balkon already exists
+ERR: svitylnyky attempt 1: Удаленный сервер возвратил ошибку: (429) Too Many Requests.
+ERR: svitylnyky attempt 2: Удаленный сервер возвратил ошибку: (429) Too Many Requests.
+ERR: svitylnyky attempt 3: Удаленный сервер возвратил ошибку: (429) Too Many Requests.
+ERR: svitylnyky attempt 4: Удаленный сервер возвратил ошибку: (429) Too Many Requests.
+ERR: svitylnyky attempt 5: Удаленный сервер возвратил ошибку: (429) Too Many Requests.
+FAILED: svitylnyky
+SKIP: garderobna already exists
+SKIP: orhanizatsiia already exists
+DONE: 05/07/2026 18:07:42
