@@ -1097,12 +1097,20 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
       const data = Object.fromEntries(new FormData(form));
       data.page = location.href;
 
+      const postData = JSON.stringify(data);
+      const doFetch = () => fetch(HANDLER_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: postData,
+      });
+
       try {
-        const resp = await fetch(HANDLER_URL, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(data),
-        });
+        let resp = await doFetch();
+        if (!resp.ok) {
+          // Render cold-start: wait 3s and retry once
+          await new Promise(r => setTimeout(r, 3000));
+          resp = await doFetch();
+        }
         if (!resp.ok) throw new Error('http ' + resp.status);
         submitBtn.textContent = '✅ Заявку прийнято! Передзвонимо.';
         submitBtn.classList.remove('bg-gold-400', 'hover:bg-gold-300');
