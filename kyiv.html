@@ -32,16 +32,16 @@
     .btn-3d{display:inline-flex;align-items:center;justify-content:center;gap:0.5rem;padding:1rem 1.75rem;font-weight:800;color:#fff;background:#166534;border-radius:9999px;box-shadow:0 6px 0 #052e16,0 14px 28px -8px rgba(22,101,52,0.7),inset 0 1px 0 rgba(255,255,255,0.15),inset 0 -2px 0 rgba(5,46,22,0.5);transform:translateY(0);transition:all 0.15s cubic-bezier(0.34,1.56,0.64,1);border:none;cursor:pointer}
     .btn-3d:hover{transform:translateY(-2px);box-shadow:0 8px 0 #052e16,0 18px 36px -8px rgba(22,101,52,0.8),inset 0 1px 0 rgba(255,255,255,0.2)}
     .btn-3d:active{transform:translateY(4px)}
-    .city-card{background:#0d1030;border:1px solid #151840;border-radius:1rem;padding:1.5rem;transition:border-color 0.2s,box-shadow 0.2s,transform 0.2s}
-    .city-card:hover{border-color:rgba(34,197,94,0.4);transform:translateY(-2px);box-shadow:0 0 0 1px rgba(34,197,94,0.12),0 12px 32px -8px rgba(0,0,0,0.6)}
+    .city-card{background:#ffffff;border:1px solid #e5e7eb;border-radius:1rem;padding:1.5rem;transition:border-color 0.2s,box-shadow 0.2s,transform 0.2s}
+    .city-card:hover{border-color:rgba(34,197,94,0.4);transform:translateY(-2px);box-shadow:0 0 0 1px rgba(34,197,94,0.12),0 12px 32px -8px rgba(34,197,94,0.12)}
     .orb{position:fixed;border-radius:50%;pointer-events:none;z-index:0;filter:blur(80px);will-change:transform}
     .orb-1{width:600px;height:600px;background:radial-gradient(circle,rgba(34,197,94,0.12),rgba(51,85,255,0) 70%);top:-150px;right:-100px;animation:od1 16s ease-in-out infinite}
     .orb-2{width:450px;height:450px;background:radial-gradient(circle,rgba(34,197,94,0.08),rgba(100,51,255,0) 70%);bottom:-120px;left:-80px;animation:od2 20s ease-in-out infinite}
     @keyframes od1{0%,100%{transform:translate(0,0) scale(1)}35%{transform:translate(-50px,35px) scale(1.08)}70%{transform:translate(35px,-50px) scale(0.94)}}
     @keyframes od2{0%,100%{transform:translate(0,0) scale(1)}45%{transform:translate(60px,-35px) scale(1.1)}75%{transform:translate(-25px,45px) scale(0.93)}}
     header,section,footer,nav{position:relative;z-index:1}
-    input[type=range].calc-slider{-webkit-appearance:none;width:100%;height:6px;border-radius:3px;background:linear-gradient(to right,#22c55e var(--p,41%),#151840 var(--p,41%));outline:none}
-    input[type=range].calc-slider::-webkit-slider-thumb{-webkit-appearance:none;width:24px;height:24px;border-radius:50%;background:#22c55e;cursor:pointer;border:3px solid #03040f;box-shadow:0 0 0 2px #22c55e}
+    input[type=range].calc-slider{-webkit-appearance:none;width:100%;height:6px;border-radius:3px;background:linear-gradient(to right,#22c55e var(--p,41%),#e5e7eb var(--p,41%));outline:none}
+    input[type=range].calc-slider::-webkit-slider-thumb{-webkit-appearance:none;width:24px;height:24px;border-radius:50%;background:#22c55e;cursor:pointer;border:3px solid #ffffff;box-shadow:0 0 0 2px #22c55e}
   </style>
 <!-- Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=G-G33DY3N39L"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-G33DY3N39L");</script>
 <!-- TikTok Pixel Code Start -->
@@ -135,27 +135,27 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
         <a href="services/generalna-prybyrannia.html" class="city-card flex items-start gap-4">
           <div class="w-12 h-12 rounded-xl flex items-center justify-center text-xl shrink-0" style="background:rgba(34,197,94,0.12);border:1px solid rgba(34,197,94,0.3)">✨</div>
-          <div><div class="font-bold text-lg">Генеральне прибирання</div><div class="text-sm text-gray-500 mt-1">Від плінтусів до люстр. Від 70 ₴/м² (мін. 3 500 ₴)</div></div>
+          <div><div class="font-bold text-lg text-gray-900">Генеральне прибирання</div><div class="text-sm text-gray-500 mt-1">Від плінтусів до люстр. Від 70 ₴/м² (мін. 3 500 ₴)</div></div>
         </a>
         <a href="services/pidtrymuyuche-prybyrannia.html" class="city-card flex items-start gap-4">
           <div class="w-12 h-12 rounded-xl flex items-center justify-center text-xl shrink-0" style="background:rgba(34,197,94,0.12);border:1px solid rgba(34,197,94,0.3)">🧹</div>
-          <div><div class="font-bold text-lg">Підтримуюче прибирання</div><div class="text-sm text-gray-500 mt-1">Регулярна чистота. Від 50 ₴/м² (мін. 2 500 ₴)</div></div>
+          <div><div class="font-bold text-lg text-gray-900">Підтримуюче прибирання</div><div class="text-sm text-gray-500 mt-1">Регулярна чистота. Від 50 ₴/м² (мін. 2 500 ₴)</div></div>
         </a>
         <a href="services/mytia-vikon.html" class="city-card flex items-start gap-4">
           <div class="w-12 h-12 rounded-xl flex items-center justify-center text-xl shrink-0" style="background:rgba(34,197,94,0.12);border:1px solid rgba(34,197,94,0.3)">🪟</div>
-          <div><div class="font-bold text-lg">Миття вікон</div><div class="text-sm text-gray-500 mt-1">Без розводів. Від 80 ₴/м² скла</div></div>
+          <div><div class="font-bold text-lg text-gray-900">Миття вікон</div><div class="text-sm text-gray-500 mt-1">Без розводів. Від 80 ₴/м² скла</div></div>
         </a>
         <a href="services/himchistka-divana.html" class="city-card flex items-start gap-4">
           <div class="w-12 h-12 rounded-xl flex items-center justify-center text-xl shrink-0" style="background:rgba(34,197,94,0.12);border:1px solid rgba(34,197,94,0.3)">🛋</div>
-          <div><div class="font-bold text-lg">Хімчистка диванів</div><div class="text-sm text-gray-500 mt-1">Вдома. Від 1 100 ₴</div></div>
+          <div><div class="font-bold text-lg text-gray-900">Хімчистка диванів</div><div class="text-sm text-gray-500 mt-1">Вдома. Від 1 100 ₴</div></div>
         </a>
         <a href="services/pislia-remontu.html" class="city-card flex items-start gap-4">
           <div class="w-12 h-12 rounded-xl flex items-center justify-center text-xl shrink-0" style="background:rgba(34,197,94,0.12);border:1px solid rgba(34,197,94,0.3)">🏗</div>
-          <div><div class="font-bold text-lg">Після ремонту</div><div class="text-sm text-gray-500 mt-1">Під ключ. Від 4 500 ₴</div></div>
+          <div><div class="font-bold text-lg text-gray-900">Після ремонту</div><div class="text-sm text-gray-500 mt-1">Під ключ. Від 4 500 ₴</div></div>
         </a>
         <a href="services/klinig-ofisiv.html" class="city-card flex items-start gap-4">
           <div class="w-12 h-12 rounded-xl flex items-center justify-center text-xl shrink-0" style="background:rgba(34,197,94,0.12);border:1px solid rgba(34,197,94,0.3)">🏢</div>
-          <div><div class="font-bold text-lg">Клінінг офісів</div><div class="text-sm text-gray-500 mt-1">Щодня або за графіком. Індивідуально</div></div>
+          <div><div class="font-bold text-lg text-gray-900">Клінінг офісів</div><div class="text-sm text-gray-500 mt-1">Щодня або за графіком. Індивідуально</div></div>
         </a>
       </div>
     </div>
