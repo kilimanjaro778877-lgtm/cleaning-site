@@ -21,7 +21,7 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Raleway:wght@600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Raleway:wght@700;800;900&display=swap" onload="this.onload=null;this.rel='stylesheet'" /><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Raleway:wght@700;800;900&display=swap" /></noscript>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>tailwind.config={theme:{extend:{fontFamily:{sans:['Manrope','system-ui','sans-serif'],display:['Raleway','system-ui','sans-serif']},colors:{ink:{900:'#ffffff',800:'#f8fafc',700:'#f1f5f9',600:'#e2e8f0',500:'#cbd5e1'},gold:{50:'#f0fdf4',100:'#dcfce7',200:'#bbf7d0',300:'#4ade80',400:'#22c55e',500:'#16a34a',600:'#15803d',700:'#166534'},warm:{50:'#ffffff',100:'#f0ede8'}}}}}</script>
   <style>
@@ -37,6 +37,10 @@
     .orb{position:fixed;border-radius:50%;pointer-events:none;z-index:0;filter:blur(80px);will-change:transform}
     .orb-1{width:600px;height:600px;background:radial-gradient(circle,rgba(34,197,94,0.12),rgba(51,85,255,0) 70%);top:-150px;right:-100px;animation:od1 16s ease-in-out infinite}
     .orb-2{width:450px;height:450px;background:radial-gradient(circle,rgba(34,197,94,0.08),rgba(100,51,255,0) 70%);bottom:-120px;left:-80px;animation:od2 20s ease-in-out infinite}
+    
+    @media (prefers-reduced-motion: reduce) {
+      .orb-1, .orb-2 { animation: none; }
+    }
     @keyframes od1{0%,100%{transform:translate(0,0) scale(1)}35%{transform:translate(-50px,35px) scale(1.08)}70%{transform:translate(35px,-50px) scale(0.94)}}
     @keyframes od2{0%,100%{transform:translate(0,0) scale(1)}45%{transform:translate(60px,-35px) scale(1.1)}75%{transform:translate(-25px,45px) scale(0.93)}}
     header,section,footer,nav{position:relative;z-index:1}
@@ -83,7 +87,7 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
   <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-lg border-b border-gray-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
       <a href="index.html" class="flex items-center gap-2 font-bold text-xl">
-        <span class="w-9 h-9 rounded-xl flex items-center justify-center font-black text-lg text-white" style="background:linear-gradient(135deg,#3355ff,#0011ee)">CC</span>
+        <span class="w-9 h-9 rounded-xl flex items-center justify-center font-black text-lg text-white" style="background:linear-gradient(135deg,#22c55e,#16a34a)">CC</span>
         <span>Clean-<span class="text-gold-400">Clean</span></span>
       </a>
       <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-gray-500">
@@ -92,14 +96,44 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
         <a href="blog.html" class="hover:text-gray-900 transition">Блог</a>
         <a href="faq.html" class="hover:text-gray-900 transition">FAQ</a>
       </nav>
+      <button id="mobile-menu-btn" class="md:hidden p-2 text-gray-500 hover:text-gray-900 transition" aria-label="Меню" aria-expanded="false" aria-controls="mobile-nav"><svg id="icon-menu" width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
       <div class="flex items-center gap-3"><a href="tel:+380731312228" class="hidden sm:flex items-center gap-1.5 text-sm font-semibold hover:text-gold-400 transition"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 010 2.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>+38 073 131 22 28</a><a href="#order" class="btn-3d" style="padding:0.6rem 1.25rem;font-size:0.875rem">Замовити</a></div>
     </div>
   </header>
+  <!-- Mobile nav drawer -->
+  <div id="mobile-nav" class="hidden md:hidden sticky top-16 z-40 bg-white/98 backdrop-blur-lg border-b border-gray-200">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex flex-col gap-1">
+      <a href="index.html#services" class="px-4 py-3 rounded-xl text-gray-700 hover:text-gray-900 hover:bg-gray-50 font-medium transition">Послуги</a>
+      <a href="prices.html" class="px-4 py-3 rounded-xl text-gray-700 hover:text-gray-900 hover:bg-gray-50 font-medium transition">Ціни</a>
+      <a href="blog.html" class="px-4 py-3 rounded-xl text-gray-700 hover:text-gray-900 hover:bg-gray-50 font-medium transition">Блог</a>
+      <a href="faq.html" class="px-4 py-3 rounded-xl text-gray-700 hover:text-gray-900 hover:bg-gray-50 font-medium transition">FAQ</a>
+      <div class="border-t border-gray-100 pt-2 mt-1">
+        <a href="tel:+380731312228" class="flex items-center gap-2 px-4 py-3 rounded-xl text-gray-900 font-semibold hover:bg-gray-50 transition">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 010 2.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
+          +38 073 131 22 28
+        </a>
+      </div>
+    </div>
+  </div>
+  <script>
+    (function(){
+      var btn = document.getElementById('mobile-menu-btn');
+      var nav = document.getElementById('mobile-nav');
+      if(!btn || !nav) return;
+      btn.addEventListener('click', function(){
+        var open = nav.classList.toggle('hidden');
+        btn.setAttribute('aria-expanded', !open);
+      });
+      nav.querySelectorAll('a').forEach(function(a){
+        a.addEventListener('click', function(){ nav.classList.add('hidden'); btn.setAttribute('aria-expanded','false'); });
+      });
+    })();
+  </script>
 
   <div class="max-w-7xl mx-auto px-4 sm:px-6 pt-6">
     <nav class="text-sm text-gray-400">
       <a href="index.html" class="hover:text-gold-400">Головна</a>
-      <span class="mx-2">/</span>
+      <span class="mx-2" aria-hidden="true">/</span>
       <span class="text-gray-900 font-medium">Київ</span>
     </nav>
   </div>
@@ -221,19 +255,19 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
       <h2 class="font-display text-3xl font-black tracking-tight mb-8 text-center">Питання про прибирання <span class="gold-gradient-text italic">в Києві</span></h2>
       <div class="space-y-3">
         <details class="group bg-gray-50 border border-gray-200 hover:border-gold-400/40 rounded-2xl overflow-hidden transition">
-          <summary class="flex items-center justify-between p-5 cursor-pointer font-semibold list-none">Скільки коштує прибирання квартири в Києві?<span class="text-gold-400 transition group-open:rotate-45 text-2xl ml-4">+</span></summary>
+          <summary class="flex items-center justify-between p-5 cursor-pointer font-semibold list-none" role="button">Скільки коштує прибирання квартири в Києві?<span class="text-gold-400 transition group-open:rotate-45 text-2xl ml-4">+</span></summary>
           <div class="px-5 pb-5 text-gray-500">Підтримуюче — від 50 ₴/м² (мін. 2 500 ₴), генеральне — від 70 ₴/м² (мін. 3 500 ₴). Точну суму визначаємо після короткого дзвінка або фото квартири.</div>
         </details>
         <details class="group bg-gray-50 border border-gray-200 hover:border-gold-400/40 rounded-2xl overflow-hidden transition">
-          <summary class="flex items-center justify-between p-5 cursor-pointer font-semibold list-none">Чи є виїзд на лівий берег?<span class="text-gold-400 transition group-open:rotate-45 text-2xl ml-4">+</span></summary>
+          <summary class="flex items-center justify-between p-5 cursor-pointer font-semibold list-none" role="button">Чи є виїзд на лівий берег?<span class="text-gold-400 transition group-open:rotate-45 text-2xl ml-4">+</span></summary>
           <div class="px-5 pb-5 text-gray-500">Так, працюємо в усіх районах Києва — Дарниця, Деснянський, Дніпровський, Троєщина. Виїзд безкоштовний по всьому місту.</div>
         </details>
         <details class="group bg-gray-50 border border-gray-200 hover:border-gold-400/40 rounded-2xl overflow-hidden transition">
-          <summary class="flex items-center justify-between p-5 cursor-pointer font-semibold list-none">Як швидко ви приїдете до Києва?<span class="text-gold-400 transition group-open:rotate-45 text-2xl ml-4">+</span></summary>
+          <summary class="flex items-center justify-between p-5 cursor-pointer font-semibold list-none" role="button">Як швидко ви приїдете до Києва?<span class="text-gold-400 transition group-open:rotate-45 text-2xl ml-4">+</span></summary>
           <div class="px-5 pb-5 text-gray-500">У робочий день з 8:00 до 21:00 — в середньому 2 години після підтвердження. У вихідні час може збільшитись.</div>
         </details>
         <details class="group bg-gray-50 border border-gray-200 hover:border-gold-400/40 rounded-2xl overflow-hidden transition">
-          <summary class="flex items-center justify-between p-5 cursor-pointer font-semibold list-none">Прибирання в новобудовах Києва — ви робите?<span class="text-gold-400 transition group-open:rotate-45 text-2xl ml-4">+</span></summary>
+          <summary class="flex items-center justify-between p-5 cursor-pointer font-semibold list-none" role="button">Прибирання в новобудовах Києва — ви робите?<span class="text-gold-400 transition group-open:rotate-45 text-2xl ml-4">+</span></summary>
           <div class="px-5 pb-5 text-gray-500">Так, спеціалізуємось на прибиранні після ремонту та в новобудовах. Видаляємо будівельний пил, залишки фарби, наклейки на склі.</div>
         </details>
       </div>
@@ -262,7 +296,7 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
   <footer class="bg-white border-t border-gray-200 text-gray-400 py-12">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col md:flex-row justify-between gap-6">
       <a href="index.html" class="flex items-center gap-2 font-bold text-xl text-gray-900">
-        <span class="w-9 h-9 rounded-xl flex items-center justify-center font-black text-lg text-white" style="background:linear-gradient(135deg,#3355ff,#0011ee)">CC</span>
+        <span class="w-9 h-9 rounded-xl flex items-center justify-center font-black text-lg text-white" style="background:linear-gradient(135deg,#22c55e,#16a34a)">CC</span>
         Clean-<span class="text-gold-400">Clean</span>
       </a>
       <div class="flex flex-wrap gap-5 text-sm">
@@ -278,7 +312,7 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
   </footer>
 
   <div class="fixed bottom-6 right-5 z-50 flex flex-col gap-3">
-    <a href="https://t.me/jamboss8" target="_blank" rel="noopener noreferrer" class="w-14 h-14 rounded-full shadow-2xl hover:scale-110 active:scale-95 transition-transform flex items-center justify-center" style="background:#2AABEE"><svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.56 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"/></svg></a>
+    <a href="https://t.me/jamboss8" target="_blank" rel="noopener noreferrer" aria-label="Написати в Telegram" class="w-14 h-14 rounded-full shadow-2xl hover:scale-110 active:scale-95 transition-transform flex items-center justify-center" style="background:#2AABEE"><svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.56 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"/></svg></a>
     <a href="tel:+380731312228" class="w-14 h-14 rounded-full shadow-2xl hover:scale-110 active:scale-95 transition-transform flex items-center justify-center" style="background:#166534"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.0 2.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg></a>
   </div>
 
