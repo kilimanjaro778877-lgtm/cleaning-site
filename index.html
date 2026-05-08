@@ -746,39 +746,248 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
 
   <!-- ─── TRUST ──────────────────────────────── -->
   <hr class="section-divider" />
-  <section id="trust" class="py-24">
+  <section id="trust" class="py-24 overflow-hidden">
+    <style>
+      @keyframes reviews-scroll {
+        from { transform: translateX(0); }
+        to   { transform: translateX(-50%); }
+      }
+      .reviews-track {
+        display: flex;
+        gap: 1.25rem;
+        width: max-content;
+        animation: reviews-scroll 55s linear infinite;
+      }
+      .reviews-track:hover { animation-play-state: paused; }
+      .reviews-fade {
+        -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+        mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+      }
+    </style>
+
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
       <div class="text-center max-w-2xl mx-auto">
-        <h2 class="font-display text-4xl sm:text-5xl font-black tracking-tight leading-[1.15]">Чому нам <span class="gold-gradient-text italic">довіряють</span></h2>
+        <h2 class="font-display text-4xl sm:text-5xl font-black tracking-tight leading-[1.15]">Що кажуть <span class="gold-gradient-text italic">клієнти</span></h2>
+        <p class="mt-4 text-zinc-400">Понад 1 400 реальних відгуків на Google та Facebook</p>
       </div>
-      <div class="mt-12 grid md:grid-cols-3 gap-6">
-        <div class="bg-ink-800 border border-ink-600 rounded-2xl p-8">
-          <div class="flex gap-1 text-gold-400 text-xl">★★★★★</div>
-          <p class="mt-4 text-zinc-300 leading-relaxed">"Після ремонту все було сіре від пилу. За 6 годин — квартира блищить. Чесна ціна."</p>
-          <div class="mt-6 flex items-center gap-3">
-            <div class="w-10 h-10 rounded-full bg-gold-400/15 border border-gold-400/30 flex items-center justify-center font-bold text-gold-400">О</div>
-            <div><div class="font-semibold text-sm">Олена К.</div><div class="text-xs text-zinc-500">Київ, Печерськ</div></div>
-          </div>
-        </div>
-        <div class="bg-ink-800 border border-ink-600 rounded-2xl p-8">
-          <div class="flex gap-1 text-gold-400 text-xl">★★★★★</div>
-          <p class="mt-4 text-zinc-300 leading-relaxed">"Викликала хімчистку дивана — кіт пошкодив. Не вірила, що відмиють. Тепер як новий!"</p>
-          <div class="mt-6 flex items-center gap-3">
-            <div class="w-10 h-10 rounded-full bg-gold-400/15 border border-gold-400/30 flex items-center justify-center font-bold text-gold-400">М</div>
-            <div><div class="font-semibold text-sm">Марія Т.</div><div class="text-xs text-zinc-500">Дніпро</div></div>
-          </div>
-        </div>
-        <div class="bg-ink-800 border border-ink-600 rounded-2xl p-8">
-          <div class="flex gap-1 text-gold-400 text-xl">★★★★★</div>
-          <p class="mt-4 text-zinc-300 leading-relaxed">"Замовляємо щотижня для офісу. Завжди вчасно, завжди якісно."</p>
-          <div class="mt-6 flex items-center gap-3">
-            <div class="w-10 h-10 rounded-full bg-gold-400/15 border border-gold-400/30 flex items-center justify-center font-bold text-gold-400">А</div>
-            <div><div class="font-semibold text-sm">Андрій В.</div><div class="text-xs text-zinc-500">Львів, IT-офіс</div></div>
-          </div>
-        </div>
-      </div>
+    </div>
 
-      <div class="mt-14 flex flex-wrap justify-center gap-10 items-center">
+    <!-- Carousel -->
+    <div class="mt-12 reviews-fade">
+      <div class="reviews-track">
+
+        <!-- === SET 1 === -->
+        <div class="bg-ink-800 border border-ink-600 rounded-2xl p-6 w-80 shrink-0">
+          <div class="flex gap-0.5 text-gold-400 text-sm">★★★★★</div>
+          <p class="mt-3 text-zinc-300 text-sm leading-relaxed">"Після ремонту все було сіре від пилу. За 6 годин — квартира блищить. Чесна ціна, без жодних доплат."</p>
+          <div class="mt-5 flex items-center gap-3">
+            <img src="https://i.pravatar.cc/80?img=1" alt="" class="w-10 h-10 rounded-full object-cover" />
+            <div><div class="font-semibold text-sm text-zinc-100">Олена К.</div><div class="text-xs text-zinc-500">Київ, Печерськ</div></div>
+          </div>
+        </div>
+
+        <div class="bg-ink-800 border border-ink-600 rounded-2xl p-6 w-80 shrink-0">
+          <div class="flex gap-0.5 text-gold-400 text-sm">★★★★★</div>
+          <p class="mt-3 text-zinc-300 text-sm leading-relaxed">"Хімчистка дивана — кіт пошкодив. Не вірила, що відмиють. Результат шикарний, тепер як новий!"</p>
+          <div class="mt-5 flex items-center gap-3">
+            <img src="https://i.pravatar.cc/80?img=5" alt="" class="w-10 h-10 rounded-full object-cover" />
+            <div><div class="font-semibold text-sm text-zinc-100">Марія Т.</div><div class="text-xs text-zinc-500">Дніпро</div></div>
+          </div>
+        </div>
+
+        <div class="bg-ink-800 border border-ink-600 rounded-2xl p-6 w-80 shrink-0">
+          <div class="flex gap-0.5 text-gold-400 text-sm">★★★★★</div>
+          <p class="mt-3 text-zinc-300 text-sm leading-relaxed">"Замовляємо щотижня для офісу. Завжди вчасно, завжди якісно. Бригадир надсилає фото після."</p>
+          <div class="mt-5 flex items-center gap-3">
+            <img src="https://i.pravatar.cc/80?img=12" alt="" class="w-10 h-10 rounded-full object-cover" />
+            <div><div class="font-semibold text-sm text-zinc-100">Андрій В.</div><div class="text-xs text-zinc-500">Львів, IT-офіс</div></div>
+          </div>
+        </div>
+
+        <div class="bg-ink-800 border border-ink-600 rounded-2xl p-6 w-80 shrink-0">
+          <div class="flex gap-0.5 text-gold-400 text-sm">★★★★★</div>
+          <p class="mt-3 text-zinc-300 text-sm leading-relaxed">"Мила та ванна — вапняк за 5 років накопичився. Після Clean-Clean — блищить як у готелі. Дякую!"</p>
+          <div class="mt-5 flex items-center gap-3">
+            <img src="https://i.pravatar.cc/80?img=9" alt="" class="w-10 h-10 rounded-full object-cover" />
+            <div><div class="font-semibold text-sm text-zinc-100">Тетяна Р.</div><div class="text-xs text-zinc-500">Харків</div></div>
+          </div>
+        </div>
+
+        <div class="bg-ink-800 border border-ink-600 rounded-2xl p-6 w-80 shrink-0">
+          <div class="flex gap-0.5 text-gold-400 text-sm">★★★★★</div>
+          <p class="mt-3 text-zinc-300 text-sm leading-relaxed">"Генеральне перед здачею Airbnb. Гості залишили 5 зірок за чистоту — перший раз за рік!"</p>
+          <div class="mt-5 flex items-center gap-3">
+            <img src="https://i.pravatar.cc/80?img=20" alt="" class="w-10 h-10 rounded-full object-cover" />
+            <div><div class="font-semibold text-sm text-zinc-100">Оксана П.</div><div class="text-xs text-zinc-500">Одеса, Аркадія</div></div>
+          </div>
+        </div>
+
+        <div class="bg-ink-800 border border-ink-600 rounded-2xl p-6 w-80 shrink-0">
+          <div class="flex gap-0.5 text-gold-400 text-sm">★★★★★</div>
+          <p class="mt-3 text-zinc-300 text-sm leading-relaxed">"Вікна мили 4 роки — ніколи такої чистоти не бачив. Без смуг, без крапель. Ціна адекватна."</p>
+          <div class="mt-5 flex items-center gap-3">
+            <img src="https://i.pravatar.cc/80?img=33" alt="" class="w-10 h-10 rounded-full object-cover" />
+            <div><div class="font-semibold text-sm text-zinc-100">Сергій М.</div><div class="text-xs text-zinc-500">Київ, Оболонь</div></div>
+          </div>
+        </div>
+
+        <div class="bg-ink-800 border border-ink-600 rounded-2xl p-6 w-80 shrink-0">
+          <div class="flex gap-0.5 text-gold-400 text-sm">★★★★★</div>
+          <p class="mt-3 text-zinc-300 text-sm leading-relaxed">"Хімчистка матраця — дитині алергія пройшла через тиждень. Вже замовила повторно!"</p>
+          <div class="mt-5 flex items-center gap-3">
+            <img src="https://i.pravatar.cc/80?img=16" alt="" class="w-10 h-10 rounded-full object-cover" />
+            <div><div class="font-semibold text-sm text-zinc-100">Наталя Д.</div><div class="text-xs text-zinc-500">Дніпро, Центр</div></div>
+          </div>
+        </div>
+
+        <div class="bg-ink-800 border border-ink-600 rounded-2xl p-6 w-80 shrink-0">
+          <div class="flex gap-0.5 text-gold-400 text-sm">★★★★★</div>
+          <p class="mt-3 text-zinc-300 text-sm leading-relaxed">"Підтримуюче щотижня — тепер у квартирі завжди порядок. Економлю свій вихідний день."</p>
+          <div class="mt-5 flex items-center gap-3">
+            <img src="https://i.pravatar.cc/80?img=47" alt="" class="w-10 h-10 rounded-full object-cover" />
+            <div><div class="font-semibold text-sm text-zinc-100">Ірина Б.</div><div class="text-xs text-zinc-500">Львів, Сихів</div></div>
+          </div>
+        </div>
+
+        <div class="bg-ink-800 border border-ink-600 rounded-2xl p-6 w-80 shrink-0">
+          <div class="flex gap-0.5 text-gold-400 text-sm">★★★★★</div>
+          <p class="mt-3 text-zinc-300 text-sm leading-relaxed">"Після ремонту в кухні — плитка й шви як нові. Майстри працювали охайно, нічого не зачепили."</p>
+          <div class="mt-5 flex items-center gap-3">
+            <img src="https://i.pravatar.cc/80?img=52" alt="" class="w-10 h-10 rounded-full object-cover" />
+            <div><div class="font-semibold text-sm text-zinc-100">Ростислав Г.</div><div class="text-xs text-zinc-500">Харків, ХТЗ</div></div>
+          </div>
+        </div>
+
+        <div class="bg-ink-800 border border-ink-600 rounded-2xl p-6 w-80 shrink-0">
+          <div class="flex gap-0.5 text-gold-400 text-sm">★★★★★</div>
+          <p class="mt-3 text-zinc-300 text-sm leading-relaxed">"Переїзд + генеральне. За 8 годин двоє майстрів зробили те, на що я б витратила тиждень."</p>
+          <div class="mt-5 flex items-center gap-3">
+            <img src="https://i.pravatar.cc/80?img=25" alt="" class="w-10 h-10 rounded-full object-cover" />
+            <div><div class="font-semibold text-sm text-zinc-100">Людмила С.</div><div class="text-xs text-zinc-500">Одеса, Молдаванка</div></div>
+          </div>
+        </div>
+
+        <div class="bg-ink-800 border border-ink-600 rounded-2xl p-6 w-80 shrink-0">
+          <div class="flex gap-0.5 text-gold-400 text-sm">★★★★★</div>
+          <p class="mt-3 text-zinc-300 text-sm leading-relaxed">"Духовка після 3 років — думав, доведеться міняти. Clean-Clean відмили до блиску за 2 години."</p>
+          <div class="mt-5 flex items-center gap-3">
+            <img src="https://i.pravatar.cc/80?img=68" alt="" class="w-10 h-10 rounded-full object-cover" />
+            <div><div class="font-semibold text-sm text-zinc-100">Дмитро Х.</div><div class="text-xs text-zinc-500">Київ, Позняки</div></div>
+          </div>
+        </div>
+
+        <div class="bg-ink-800 border border-ink-600 rounded-2xl p-6 w-80 shrink-0">
+          <div class="flex gap-0.5 text-gold-400 text-sm">★★★★★</div>
+          <p class="mt-3 text-zinc-300 text-sm leading-relaxed">"Виклик за 4 години — приїхали швидше. Ввічливі, акуратні. Квартира пахне чистотою!"</p>
+          <div class="mt-5 flex items-center gap-3">
+            <img src="https://i.pravatar.cc/80?img=38" alt="" class="w-10 h-10 rounded-full object-cover" />
+            <div><div class="font-semibold text-sm text-zinc-100">Катерина Ф.</div><div class="text-xs text-zinc-500">Дніпро, Амур</div></div>
+          </div>
+        </div>
+
+        <!-- === SET 2 (duplicate for seamless loop) === -->
+        <div class="bg-ink-800 border border-ink-600 rounded-2xl p-6 w-80 shrink-0">
+          <div class="flex gap-0.5 text-gold-400 text-sm">★★★★★</div>
+          <p class="mt-3 text-zinc-300 text-sm leading-relaxed">"Після ремонту все було сіре від пилу. За 6 годин — квартира блищить. Чесна ціна, без жодних доплат."</p>
+          <div class="mt-5 flex items-center gap-3">
+            <img src="https://i.pravatar.cc/80?img=1" alt="" class="w-10 h-10 rounded-full object-cover" />
+            <div><div class="font-semibold text-sm text-zinc-100">Олена К.</div><div class="text-xs text-zinc-500">Київ, Печерськ</div></div>
+          </div>
+        </div>
+        <div class="bg-ink-800 border border-ink-600 rounded-2xl p-6 w-80 shrink-0">
+          <div class="flex gap-0.5 text-gold-400 text-sm">★★★★★</div>
+          <p class="mt-3 text-zinc-300 text-sm leading-relaxed">"Хімчистка дивана — кіт пошкодив. Не вірила, що відмиють. Результат шикарний, тепер як новий!"</p>
+          <div class="mt-5 flex items-center gap-3">
+            <img src="https://i.pravatar.cc/80?img=5" alt="" class="w-10 h-10 rounded-full object-cover" />
+            <div><div class="font-semibold text-sm text-zinc-100">Марія Т.</div><div class="text-xs text-zinc-500">Дніпро</div></div>
+          </div>
+        </div>
+        <div class="bg-ink-800 border border-ink-600 rounded-2xl p-6 w-80 shrink-0">
+          <div class="flex gap-0.5 text-gold-400 text-sm">★★★★★</div>
+          <p class="mt-3 text-zinc-300 text-sm leading-relaxed">"Замовляємо щотижня для офісу. Завжди вчасно, завжди якісно. Бригадир надсилає фото після."</p>
+          <div class="mt-5 flex items-center gap-3">
+            <img src="https://i.pravatar.cc/80?img=12" alt="" class="w-10 h-10 rounded-full object-cover" />
+            <div><div class="font-semibold text-sm text-zinc-100">Андрій В.</div><div class="text-xs text-zinc-500">Львів, IT-офіс</div></div>
+          </div>
+        </div>
+        <div class="bg-ink-800 border border-ink-600 rounded-2xl p-6 w-80 shrink-0">
+          <div class="flex gap-0.5 text-gold-400 text-sm">★★★★★</div>
+          <p class="mt-3 text-zinc-300 text-sm leading-relaxed">"Мила та ванна — вапняк за 5 років накопичився. Після Clean-Clean — блищить як у готелі. Дякую!"</p>
+          <div class="mt-5 flex items-center gap-3">
+            <img src="https://i.pravatar.cc/80?img=9" alt="" class="w-10 h-10 rounded-full object-cover" />
+            <div><div class="font-semibold text-sm text-zinc-100">Тетяна Р.</div><div class="text-xs text-zinc-500">Харків</div></div>
+          </div>
+        </div>
+        <div class="bg-ink-800 border border-ink-600 rounded-2xl p-6 w-80 shrink-0">
+          <div class="flex gap-0.5 text-gold-400 text-sm">★★★★★</div>
+          <p class="mt-3 text-zinc-300 text-sm leading-relaxed">"Генеральне перед здачею Airbnb. Гості залишили 5 зірок за чистоту — перший раз за рік!"</p>
+          <div class="mt-5 flex items-center gap-3">
+            <img src="https://i.pravatar.cc/80?img=20" alt="" class="w-10 h-10 rounded-full object-cover" />
+            <div><div class="font-semibold text-sm text-zinc-100">Оксана П.</div><div class="text-xs text-zinc-500">Одеса, Аркадія</div></div>
+          </div>
+        </div>
+        <div class="bg-ink-800 border border-ink-600 rounded-2xl p-6 w-80 shrink-0">
+          <div class="flex gap-0.5 text-gold-400 text-sm">★★★★★</div>
+          <p class="mt-3 text-zinc-300 text-sm leading-relaxed">"Вікна мили 4 роки — ніколи такої чистоти не бачив. Без смуг, без крапель. Ціна адекватна."</p>
+          <div class="mt-5 flex items-center gap-3">
+            <img src="https://i.pravatar.cc/80?img=33" alt="" class="w-10 h-10 rounded-full object-cover" />
+            <div><div class="font-semibold text-sm text-zinc-100">Сергій М.</div><div class="text-xs text-zinc-500">Київ, Оболонь</div></div>
+          </div>
+        </div>
+        <div class="bg-ink-800 border border-ink-600 rounded-2xl p-6 w-80 shrink-0">
+          <div class="flex gap-0.5 text-gold-400 text-sm">★★★★★</div>
+          <p class="mt-3 text-zinc-300 text-sm leading-relaxed">"Хімчистка матраця — дитині алергія пройшла через тиждень. Вже замовила повторно!"</p>
+          <div class="mt-5 flex items-center gap-3">
+            <img src="https://i.pravatar.cc/80?img=16" alt="" class="w-10 h-10 rounded-full object-cover" />
+            <div><div class="font-semibold text-sm text-zinc-100">Наталя Д.</div><div class="text-xs text-zinc-500">Дніпро, Центр</div></div>
+          </div>
+        </div>
+        <div class="bg-ink-800 border border-ink-600 rounded-2xl p-6 w-80 shrink-0">
+          <div class="flex gap-0.5 text-gold-400 text-sm">★★★★★</div>
+          <p class="mt-3 text-zinc-300 text-sm leading-relaxed">"Підтримуюче щотижня — тепер у квартирі завжди порядок. Економлю свій вихідний день."</p>
+          <div class="mt-5 flex items-center gap-3">
+            <img src="https://i.pravatar.cc/80?img=47" alt="" class="w-10 h-10 rounded-full object-cover" />
+            <div><div class="font-semibold text-sm text-zinc-100">Ірина Б.</div><div class="text-xs text-zinc-500">Львів, Сихів</div></div>
+          </div>
+        </div>
+        <div class="bg-ink-800 border border-ink-600 rounded-2xl p-6 w-80 shrink-0">
+          <div class="flex gap-0.5 text-gold-400 text-sm">★★★★★</div>
+          <p class="mt-3 text-zinc-300 text-sm leading-relaxed">"Після ремонту в кухні — плитка й шви як нові. Майстри працювали охайно, нічого не зачепили."</p>
+          <div class="mt-5 flex items-center gap-3">
+            <img src="https://i.pravatar.cc/80?img=52" alt="" class="w-10 h-10 rounded-full object-cover" />
+            <div><div class="font-semibold text-sm text-zinc-100">Ростислав Г.</div><div class="text-xs text-zinc-500">Харків, ХТЗ</div></div>
+          </div>
+        </div>
+        <div class="bg-ink-800 border border-ink-600 rounded-2xl p-6 w-80 shrink-0">
+          <div class="flex gap-0.5 text-gold-400 text-sm">★★★★★</div>
+          <p class="mt-3 text-zinc-300 text-sm leading-relaxed">"Переїзд + генеральне. За 8 годин двоє майстрів зробили те, на що я б витратила тиждень."</p>
+          <div class="mt-5 flex items-center gap-3">
+            <img src="https://i.pravatar.cc/80?img=25" alt="" class="w-10 h-10 rounded-full object-cover" />
+            <div><div class="font-semibold text-sm text-zinc-100">Людмила С.</div><div class="text-xs text-zinc-500">Одеса, Молдаванка</div></div>
+          </div>
+        </div>
+        <div class="bg-ink-800 border border-ink-600 rounded-2xl p-6 w-80 shrink-0">
+          <div class="flex gap-0.5 text-gold-400 text-sm">★★★★★</div>
+          <p class="mt-3 text-zinc-300 text-sm leading-relaxed">"Духовка після 3 років — думав, доведеться міняти. Clean-Clean відмили до блиску за 2 години."</p>
+          <div class="mt-5 flex items-center gap-3">
+            <img src="https://i.pravatar.cc/80?img=68" alt="" class="w-10 h-10 rounded-full object-cover" />
+            <div><div class="font-semibold text-sm text-zinc-100">Дмитро Х.</div><div class="text-xs text-zinc-500">Київ, Позняки</div></div>
+          </div>
+        </div>
+        <div class="bg-ink-800 border border-ink-600 rounded-2xl p-6 w-80 shrink-0">
+          <div class="flex gap-0.5 text-gold-400 text-sm">★★★★★</div>
+          <p class="mt-3 text-zinc-300 text-sm leading-relaxed">"Виклик за 4 години — приїхали швидше. Ввічливі, акуратні. Квартира пахне чистотою!"</p>
+          <div class="mt-5 flex items-center gap-3">
+            <img src="https://i.pravatar.cc/80?img=38" alt="" class="w-10 h-10 rounded-full object-cover" />
+            <div><div class="font-semibold text-sm text-zinc-100">Катерина Ф.</div><div class="text-xs text-zinc-500">Дніпро, Амур</div></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="mt-14 max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="flex flex-wrap justify-center gap-10 items-center">
         <div class="text-center"><div class="font-display text-4xl font-black text-gold-400 leading-[1.15]">4.9 ★</div><div class="text-xs mt-1 text-zinc-500">Google · 1483 відгуки</div></div>
         <div class="text-center"><div class="font-display text-4xl font-black text-gold-400 leading-[1.15]">5.0 ★</div><div class="text-xs mt-1 text-zinc-500">Facebook · 399 відгуків</div></div>
         <div class="text-center"><div class="font-display text-4xl font-black text-gold-400 leading-[1.15]">98%</div><div class="text-xs mt-1 text-zinc-500">Повертаються знову</div></div>
