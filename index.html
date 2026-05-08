@@ -98,7 +98,7 @@
           },
           colors: {
             ink: { 900: '#03040f', 800: '#07091e', 700: '#0d1030', 600: '#151840', 500: '#1e2254' },
-            gold: { 50:'#fef9e7', 100:'#fdf2c8', 200:'#fbe590', 300:'#f7d04d', 400:'#f4c027', 500:'#d4a017', 600:'#a37809', 700:'#7a5a08' },
+            gold: { 50:'#f0fdf4', 100:'#dcfce7', 200:'#bbf7d0', 300:'#4ade80', 400:'#22c55e', 500:'#16a34a', 600:'#15803d', 700:'#166534' },
             warm: { 50:'#ffffff', 100:'#FFFAFA', 200:'rgba(255,250,250,0.75)', 300:'rgba(255,250,250,0.5)' },
           },
         },
@@ -139,7 +139,7 @@
        - padding-left small to keep visual balance
        - overflow visible so the box never crops glyphs */
     .gold-gradient-text {
-      background: linear-gradient(135deg, #FFFAFA 0%, #b3bbff 50%, #6680ff 100%);
+      background: linear-gradient(135deg, #86efac 0%, #22c55e 50%, #16a34a 100%);
       -webkit-background-clip: text; background-clip: text; color: transparent;
       display: inline-block;
       padding: 0 0.18em 0.35em 0.05em;
@@ -175,13 +175,13 @@
       padding: 1rem 1.75rem;
       font-weight: 800;
       color: #ffffff;
-      background: #0022dd;
+      background: #166534;
       border-radius: 9999px;
       box-shadow:
-        0 6px 0 #000077,
-        0 14px 28px -8px rgba(0,34,221,0.6),
+        0 6px 0 #052e16,
+        0 14px 28px -8px rgba(22,101,52,0.7),
         inset 0 1px 0 rgba(255,255,255,0.15),
-        inset 0 -2px 0 rgba(0,0,80,0.5);
+        inset 0 -2px 0 rgba(5,46,22,0.5);
       transform: translateY(0);
       transition: all 0.15s cubic-bezier(0.34, 1.56, 0.64, 1);
       cursor: pointer;
@@ -229,15 +229,15 @@
       font-size: 1.25rem;
       line-height: 1;
       border-radius: 0.625rem;
-      background: rgba(244,192,39,0.1);
-      border: 1px solid rgba(244,192,39,0.2);
+      background: rgba(34,197,94,0.1);
+      border: 1px solid rgba(34,197,94,0.2);
       transition: background 0.2s ease, border-color 0.2s ease;
       flex-shrink: 0;
     }
     .service-card:hover .icon-3d,
     .service-card.active .icon-3d {
-      background: rgba(244,192,39,0.18);
-      border-color: rgba(244,192,39,0.45);
+      background: rgba(34,197,94,0.18);
+      border-color: rgba(34,197,94,0.45);
     }
 
     /* Hero accent */
@@ -261,16 +261,16 @@
       cursor: pointer;
     }
     .service-card:hover {
-      border-color: rgba(244,192,39,0.35);
+      border-color: rgba(34,197,94,0.35);
       transform: translateY(-2px);
-      box-shadow: 0 0 0 1px rgba(244,192,39,0.12), 0 12px 32px -8px rgba(0,0,0,0.5);
+      box-shadow: 0 0 0 1px rgba(34,197,94,0.12), 0 12px 32px -8px rgba(0,0,0,0.5);
     }
     .service-card.active {
-      background: linear-gradient(145deg, rgba(244,192,39,0.1) 0%, rgba(212,160,23,0.05) 100%);
-      border-color: rgba(244,192,39,0.6);
-      box-shadow: 0 0 0 1px rgba(244,192,39,0.2), 0 8px 32px -8px rgba(244,192,39,0.25);
+      background: linear-gradient(145deg, rgba(34,197,94,0.1) 0%, rgba(22,163,74,0.05) 100%);
+      border-color: rgba(34,197,94,0.6);
+      box-shadow: 0 0 0 1px rgba(34,197,94,0.2), 0 8px 32px -8px rgba(34,197,94,0.25);
     }
-    .service-card.active .service-name { color: #f4c027; }
+    .service-card.active .service-name { color: #22c55e; }
 
     /* Animated background orbs */
     .orb {
@@ -323,19 +323,19 @@
     /* Custom slider */
     input[type=range].calc-slider {
       -webkit-appearance: none; width: 100%; height: 6px; border-radius: 3px;
-      background: linear-gradient(to right, #f4c027 var(--p, 50%), #262629 var(--p, 50%));
+      background: linear-gradient(to right, #22c55e var(--p, 50%), #262629 var(--p, 50%));
       outline: none;
     }
     input[type=range].calc-slider::-webkit-slider-thumb {
       -webkit-appearance: none; appearance: none;
-      width: 26px; height: 26px; border-radius: 50%; background: #f4c027;
+      width: 26px; height: 26px; border-radius: 50%; background: #22c55e;
       cursor: pointer; border: 4px solid #0a0a0b;
-      box-shadow: 0 0 0 2px #f4c027, 0 4px 12px rgba(244,192,39,0.4);
+      box-shadow: 0 0 0 2px #22c55e, 0 4px 12px rgba(34,197,94,0.4);
     }
     input[type=range].calc-slider::-moz-range-thumb {
-      width: 26px; height: 26px; border-radius: 50%; background: #f4c027;
+      width: 26px; height: 26px; border-radius: 50%; background: #22c55e;
       cursor: pointer; border: 4px solid #0a0a0b;
-      box-shadow: 0 0 0 2px #f4c027, 0 4px 12px rgba(244,192,39,0.4);
+      box-shadow: 0 0 0 2px #22c55e, 0 4px 12px rgba(34,197,94,0.4);
     }
   </style>
 <!-- Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=G-G33DY3N39L"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-G33DY3N39L");</script>
@@ -555,21 +555,21 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
         <div class="grid sm:grid-cols-2 gap-4">
           <div>
             <label class="block text-sm font-semibold mb-2 text-zinc-300">Ваше ім'я</label>
-            <input type="text" name="name" required class="w-full px-4 py-3 rounded-xl bg-ink-700 border border-ink-600 focus:border-gold-400 focus:ring-2 focus:ring-gold-400/20 outline-none transition text-zinc-100" placeholder="Олена" />
+            <input type="text" name="name" required class="w-full px-4 py-3 rounded-xl bg-ink-700 border border-ink-600 focus:border-gold-400 focus:ring-2 focus:ring-green-400/20 outline-none transition text-zinc-100" placeholder="Олена" />
           </div>
           <div>
             <label class="block text-sm font-semibold mb-2 text-zinc-300">Телефон</label>
-            <input type="tel" name="phone" required class="w-full px-4 py-3 rounded-xl bg-ink-700 border border-ink-600 focus:border-gold-400 focus:ring-2 focus:ring-gold-400/20 outline-none transition text-zinc-100" placeholder="+380 50 123 45 67" />
+            <input type="tel" name="phone" required class="w-full px-4 py-3 rounded-xl bg-ink-700 border border-ink-600 focus:border-gold-400 focus:ring-2 focus:ring-green-400/20 outline-none transition text-zinc-100" placeholder="+380 50 123 45 67" />
           </div>
           <div>
             <label class="block text-sm font-semibold mb-2 text-zinc-300">Місто</label>
-            <select name="city" class="w-full px-4 py-3 rounded-xl bg-ink-700 border border-ink-600 focus:border-gold-400 focus:ring-2 focus:ring-gold-400/20 outline-none text-zinc-100">
+            <select name="city" class="w-full px-4 py-3 rounded-xl bg-ink-700 border border-ink-600 focus:border-gold-400 focus:ring-2 focus:ring-green-400/20 outline-none text-zinc-100">
               <option>Київ</option><option>Дніпро</option><option>Львів</option><option>Харків</option>
             </select>
           </div>
           <div>
             <label class="block text-sm font-semibold mb-2 text-zinc-300">Послуга</label>
-            <select name="service" id="form-service" class="w-full px-4 py-3 rounded-xl bg-ink-700 border border-ink-600 focus:border-gold-400 focus:ring-2 focus:ring-gold-400/20 outline-none text-zinc-100">
+            <select name="service" id="form-service" class="w-full px-4 py-3 rounded-xl bg-ink-700 border border-ink-600 focus:border-gold-400 focus:ring-2 focus:ring-green-400/20 outline-none text-zinc-100">
               <option>Генеральне прибирання</option>
               <option>Підтримуюче прибирання</option>
               <option>Миття вікон</option>
@@ -584,7 +584,7 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
         </div>
         <div class="mt-4">
           <label class="block text-sm font-semibold mb-2 text-zinc-300">Деталі (необов'язково)</label>
-          <textarea rows="3" name="details" class="w-full px-4 py-3 rounded-xl bg-ink-700 border border-ink-600 focus:border-gold-400 focus:ring-2 focus:ring-gold-400/20 outline-none transition text-zinc-100" placeholder="Площа, поверх, особливості об'єкту..."></textarea>
+          <textarea rows="3" name="details" class="w-full px-4 py-3 rounded-xl bg-ink-700 border border-ink-600 focus:border-gold-400 focus:ring-2 focus:ring-green-400/20 outline-none transition text-zinc-100" placeholder="Площа, поверх, особливості об'єкту..."></textarea>
         </div>
         <button type="submit" class="btn-3d mt-6 w-full text-lg" style="border-radius: 0.75rem">
           Замовити прибирання
@@ -636,22 +636,22 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
       </div>
       <div class="mt-16 grid md:grid-cols-4 gap-6">
         <div class="relative bg-ink-800 border border-ink-600 rounded-2xl p-6 hover:border-gold-400/40 transition">
-          <div class="absolute -top-4 -left-4 w-12 h-12 rounded-2xl bg-gold-400 text-ink-900 flex items-center justify-center font-black text-xl shadow-lg shadow-gold-500/30">1</div>
+          <div class="absolute -top-4 -left-4 w-12 h-12 rounded-2xl bg-gold-400 text-ink-900 flex items-center justify-center font-black text-xl shadow-lg shadow-green-500/30">1</div>
           <h3 class="mt-4 font-bold text-lg">Заявка</h3>
           <p class="mt-2 text-sm text-zinc-400">Залишаєте телефон через форму або одразу пишете в Telegram.</p>
         </div>
         <div class="relative bg-ink-800 border border-ink-600 rounded-2xl p-6 hover:border-gold-400/40 transition">
-          <div class="absolute -top-4 -left-4 w-12 h-12 rounded-2xl bg-gold-400 text-ink-900 flex items-center justify-center font-black text-xl shadow-lg shadow-gold-500/30">2</div>
+          <div class="absolute -top-4 -left-4 w-12 h-12 rounded-2xl bg-gold-400 text-ink-900 flex items-center justify-center font-black text-xl shadow-lg shadow-green-500/30">2</div>
           <h3 class="mt-4 font-bold text-lg">Розрахунок</h3>
           <p class="mt-2 text-sm text-zinc-400">Менеджер уточнює деталі, фіксує ціну. Без прихованих доплат.</p>
         </div>
         <div class="relative bg-ink-800 border border-ink-600 rounded-2xl p-6 hover:border-gold-400/40 transition">
-          <div class="absolute -top-4 -left-4 w-12 h-12 rounded-2xl bg-gold-400 text-ink-900 flex items-center justify-center font-black text-xl shadow-lg shadow-gold-500/30">3</div>
+          <div class="absolute -top-4 -left-4 w-12 h-12 rounded-2xl bg-gold-400 text-ink-900 flex items-center justify-center font-black text-xl shadow-lg shadow-green-500/30">3</div>
           <h3 class="mt-4 font-bold text-lg">Робота</h3>
           <p class="mt-2 text-sm text-zinc-400">Бригада приїжджає у домовлений час зі своїм обладнанням.</p>
         </div>
         <div class="relative bg-ink-800 border border-ink-600 rounded-2xl p-6 hover:border-gold-400/40 transition">
-          <div class="absolute -top-4 -left-4 w-12 h-12 rounded-2xl bg-gold-400 text-ink-900 flex items-center justify-center font-black text-xl shadow-lg shadow-gold-500/30">4</div>
+          <div class="absolute -top-4 -left-4 w-12 h-12 rounded-2xl bg-gold-400 text-ink-900 flex items-center justify-center font-black text-xl shadow-lg shadow-green-500/30">4</div>
           <h3 class="mt-4 font-bold text-lg">Гарантія</h3>
           <p class="mt-2 text-sm text-zinc-400">Не сподобалось — переробимо безкоштовно. Гроші повертаємо.</p>
         </div>
