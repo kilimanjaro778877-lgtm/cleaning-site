@@ -102,6 +102,8 @@
     @keyframes od1{0%,100%{transform:translate(0,0) scale(1)}35%{transform:translate(-50px,35px) scale(1.08)}70%{transform:translate(35px,-50px) scale(0.94)}}@keyframes od2{0%,100%{transform:translate(0,0) scale(1)}45%{transform:translate(60px,-35px) scale(1.1)}75%{transform:translate(-25px,45px) scale(0.93)}}header,section,footer{position:relative;z-index:1}
   .btn-3d{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:0.5rem;padding:1rem 1.75rem;font-weight:800;color:#ffffff;background:#166534;border-radius:9999px;box-shadow:0 6px 0 #052e16,0 14px 28px -8px rgba(22,101,52,0.7),inset 0 1px 0 rgba(255,255,255,0.15),inset 0 -2px 0 rgba(5,46,22,0.5);transform:translateY(0);transition:all 0.15s cubic-bezier(0.34,1.56,0.64,1);cursor:pointer;border:none}.btn-3d:hover{transform:translateY(-2px);box-shadow:0 8px 0 #052e16,0 18px 36px -8px rgba(22,101,52,0.8),inset 0 1px 0 rgba(255,255,255,0.25),inset 0 -2px 0 rgba(5,46,22,0.4)}.btn-3d:active{transform:translateY(4px);box-shadow:0 2px 0 #052e16,0 4px 8px rgba(0,0,0,0.3),inset 0 1px 0 rgba(255,255,255,0.2)}.btn-sm{padding:0.6rem 1.25rem!important}
   .feat-card{background:#ffffff;border:1px solid #e5e7eb;border-radius:1rem;padding:1.5rem;transition:border-color 0.2s ease,box-shadow 0.2s ease,transform 0.2s ease}.feat-card:hover{border-color:rgba(34,197,94,0.45);transform:translateY(-2px);box-shadow:0 0 0 1px rgba(34,197,94,0.15),0 12px 32px -8px rgba(34,197,94,0.12)}
+  
+    .tabular-nums { font-variant-numeric: tabular-nums; letter-spacing: -0.02em; }
   </style>
 <!-- Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=G-G33DY3N39L"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-G33DY3N39L");</script>
 <!-- TikTok Pixel Code Start -->
@@ -216,9 +218,9 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
             <a href="#price" class="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full font-semibold transition border" style="border-color:rgba(34,197,94,0.35);color:#16a34a;background:rgba(34,197,94,0.06)">Ціни</a>
           </div>
           <div class="mt-10 grid grid-cols-3 gap-6 max-w-lg">
-            <div><div class="font-display text-2xl font-extrabold text-gold-400">80 ₴/м²</div><div class="text-sm text-gray-400 mt-1">площі скла</div></div>
-            <div><div class="font-display text-2xl font-extrabold text-gold-400">від 800 ₴</div><div class="text-sm text-gray-400 mt-1">мінімум</div></div>
-            <div><div class="font-display text-2xl font-extrabold text-gold-400">0 розводів</div><div class="text-sm text-gray-400 mt-1">гарантуємо</div></div>
+            <div><div class="font-sans text-2xl font-extrabold text-gold-400 tabular-nums">80 ₴/м²</div><div class="text-sm text-gray-400 mt-1">площі скла</div></div>
+            <div><div class="font-sans text-2xl font-extrabold text-gold-400 tabular-nums">від 800 ₴</div><div class="text-sm text-gray-400 mt-1">мінімум</div></div>
+            <div><div class="font-sans text-2xl font-extrabold text-gold-400 tabular-nums">0 розводів</div><div class="text-sm text-gray-400 mt-1">гарантуємо</div></div>
           </div>
         </div>
         <div class="relative">
@@ -279,7 +281,7 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
         <div class="mt-8 bg-white border border-gold-400/30 rounded-2xl p-6 text-center">
           <div class="text-sm uppercase tracking-wider text-gold-400 font-bold">Орієнтовна вартість</div>
           <div class="mt-2 flex items-baseline justify-center gap-2">
-            <span class="font-display text-5xl sm:text-6xl font-black text-gray-900" id="pg-price">800</span>
+            <span class="font-sans text-5xl sm:text-6xl font-black text-gray-900 tabular-nums" id="pg-price">800</span>
             <span class="text-2xl font-bold text-gray-500">₴</span>
           </div>
           <p id="pg-note" class="mt-2 text-sm text-gray-400">80 ₴/м²</p>
