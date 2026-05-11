@@ -19,6 +19,49 @@
     .price-card:hover{border-color:rgba(34,197,94,0.35);box-shadow:0 0 0 1px rgba(34,197,94,0.12),0 12px 32px -8px rgba(0,0,0,0.5)}
     .check{color:#16a34a}
     .cross{color:#555}
+    @media (max-width: 640px) {
+      .compare-table { display: none; }
+      .compare-cards { display: block; }
+    }
+    @media (min-width: 641px) {
+      .compare-table { display: table; }
+      .compare-cards { display: none; }
+    }
+    .compare-cards .cc-card {
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 0.75rem;
+      padding: 1rem 1.25rem;
+      margin-bottom: 0.75rem;
+    }
+    .compare-cards .cc-card-title {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: #374151;
+      margin-bottom: 0.625rem;
+    }
+    .compare-cards .cc-card-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.8rem;
+    }
+    .compare-cards .cc-col {
+      flex: 1;
+      text-align: center;
+      padding: 0.25rem 0;
+    }
+    .compare-cards .cc-col-header {
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      margin-bottom: 0.25rem;
+    }
+    .compare-cards .cc-col-cc { color: #16a34a; }
+    .compare-cards .cc-col-free { color: #6b7280; }
+    .compare-cards .cc-col-self { color: #6b7280; }
       .orb{position:fixed;border-radius:50%;pointer-events:none;z-index:0;filter:blur(80px);will-change:transform}.orb-1{width:600px;height:600px;background:radial-gradient(circle,rgba(34,197,94,0.12),rgba(34,197,94,0) 70%);top:-150px;right:-100px;animation:od1 16s ease-in-out infinite}.orb-2{width:450px;height:450px;background:radial-gradient(circle,rgba(34,197,94,0.08),rgba(34,197,94,0) 70%);bottom:-120px;left:-80px;animation:od2 20s ease-in-out infinite}
     @media (prefers-reduced-motion: reduce) {
       .orb-1, .orb-2 { animation: none; }
@@ -206,7 +249,7 @@
       <h2 class="text-2xl font-black mb-2">Чому <span class="gold-gradient-text italic">Clean-Clean</span>?</h2>
       <p class="text-gray-500 mb-8">Порівняння з альтернативами</p>
       <div class="bg-gray-50 border border-gray-200 rounded-2xl overflow-hidden">
-        <table class="w-full text-sm">
+        <table class="compare-table w-full text-sm">
           <thead>
             <tr class="border-b border-gray-200">
               <th class="text-left p-4 text-gray-500 font-medium w-1/2">Критерій</th>
@@ -224,6 +267,116 @@
             <tr class="hover:bg-white/30"><td class="p-4">Економія часу</td><td class="p-4 text-center check font-bold">✓</td><td class="p-4 text-center check">✓</td><td class="p-4 text-center cross">✗</td></tr>
           </tbody>
         </table>
+        <div class="compare-cards p-3">
+          <!-- Card 1 -->
+          <div class="cc-card">
+            <div class="cc-card-title">Власна профхімія та обладнання</div>
+            <div class="cc-card-row">
+              <div class="cc-col cc-col-cc">
+                <div class="cc-col-header">Clean-Clean</div>
+                <span class="check font-bold">✓</span>
+              </div>
+              <div class="cc-col cc-col-free">
+                <div class="cc-col-header">Фрілансер</div>
+                <span>іноді</span>
+              </div>
+              <div class="cc-col cc-col-self">
+                <div class="cc-col-header">Самостійно</div>
+                <span class="cross">✗</span>
+              </div>
+            </div>
+          </div>
+          <!-- Card 2 -->
+          <div class="cc-card">
+            <div class="cc-card-title">Оплата після результату</div>
+            <div class="cc-card-row">
+              <div class="cc-col cc-col-cc">
+                <div class="cc-col-header">Clean-Clean</div>
+                <span class="check font-bold">✓</span>
+              </div>
+              <div class="cc-col cc-col-free">
+                <div class="cc-col-header">Фрілансер</div>
+                <span>рідко</span>
+              </div>
+              <div class="cc-col cc-col-self">
+                <div class="cc-col-header">Самостійно</div>
+                <span>—</span>
+              </div>
+            </div>
+          </div>
+          <!-- Card 3 -->
+          <div class="cc-card">
+            <div class="cc-card-title">Фіксована бригада (не рандом)</div>
+            <div class="cc-card-row">
+              <div class="cc-col cc-col-cc">
+                <div class="cc-col-header">Clean-Clean</div>
+                <span class="check font-bold">✓</span>
+              </div>
+              <div class="cc-col cc-col-free">
+                <div class="cc-col-header">Фрілансер</div>
+                <span class="check">✓</span>
+              </div>
+              <div class="cc-col cc-col-self">
+                <div class="cc-col-header">Самостійно</div>
+                <span>—</span>
+              </div>
+            </div>
+          </div>
+          <!-- Card 4 -->
+          <div class="cc-card">
+            <div class="cc-card-title">Страхування майна</div>
+            <div class="cc-card-row">
+              <div class="cc-col cc-col-cc">
+                <div class="cc-col-header">Clean-Clean</div>
+                <span class="check font-bold">✓</span>
+              </div>
+              <div class="cc-col cc-col-free">
+                <div class="cc-col-header">Фрілансер</div>
+                <span class="cross">✗</span>
+              </div>
+              <div class="cc-col cc-col-self">
+                <div class="cc-col-header">Самостійно</div>
+                <span>—</span>
+              </div>
+            </div>
+          </div>
+          <!-- Card 5 -->
+          <div class="cc-card">
+            <div class="cc-card-title">Виклик за 2 години</div>
+            <div class="cc-card-row">
+              <div class="cc-col cc-col-cc">
+                <div class="cc-col-header">Clean-Clean</div>
+                <span class="check font-bold">✓</span>
+              </div>
+              <div class="cc-col cc-col-free">
+                <div class="cc-col-header">Фрілансер</div>
+                <span>іноді</span>
+              </div>
+              <div class="cc-col cc-col-self">
+                <div class="cc-col-header">Самостійно</div>
+                <span>—</span>
+              </div>
+            </div>
+          </div>
+          <!-- Card 6 -->
+          <div class="cc-card" style="margin-bottom:0">
+            <div class="cc-card-title">Економія часу</div>
+            <div class="cc-card-row">
+              <div class="cc-col cc-col-cc">
+                <div class="cc-col-header">Clean-Clean</div>
+                <span class="check font-bold">✓</span>
+              </div>
+              <div class="cc-col cc-col-free">
+                <div class="cc-col-header">Фрілансер</div>
+                <span class="check">✓</span>
+              </div>
+              <div class="cc-col cc-col-self">
+                <div class="cc-col-header">Самостійно</div>
+                <span class="cross">✗</span>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
