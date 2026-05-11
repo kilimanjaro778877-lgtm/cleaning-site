@@ -340,6 +340,8 @@
     }
   
     .tabular-nums { font-variant-numeric: tabular-nums; letter-spacing: -0.02em; }
+    .field-error{display:none;font-size:0.75rem;color:#dc2626;margin-top:0.25rem}
+    input:user-invalid + .field-error, input.invalid + .field-error{display:block}
   </style>
 <!-- Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=G-G33DY3N39L"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-G33DY3N39L");</script>
 <!-- TikTok Pixel Code Start -->
@@ -454,8 +456,8 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
         Київ · Дніпро · Львів · Харків · Одеса · виїзд за 2 години
       </div>
       <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight">
-        Чистота, що <span class="gold-gradient-text italic">повертає час</span>
-        <span class="hero-3d ml-2">✨</span>
+        Професійний клінінг<br>
+        <span class="gold-gradient-text italic">у 5 містах України</span>
       </h1>
       <p class="mt-5 text-base sm:text-lg text-gray-500 max-w-2xl mx-auto">
         Виберіть послугу — побачите ціну й відразу залишите заявку.
@@ -547,7 +549,7 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
 
     <div class="relative max-w-3xl mx-auto px-4 sm:px-6 text-center">
       <h2 class="font-display text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.15]">
-        Залиште заявку — <span class="gold-gradient-text italic">передзвонимо за 5 хв</span>
+        Залиште заявку — <span class="gold-gradient-text italic">передзвонимо протягом дня, узгодимо час</span>
       </h2>
       <p class="mt-4 text-lg text-gray-500">
         Розрахуємо вартість, погодимо час. Жодних спам-дзвінків.
@@ -559,10 +561,12 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
           <div>
             <label class="block text-sm font-semibold mb-2 text-gray-700">Ваше ім'я</label>
             <input type="text" name="name" required class="w-full px-4 py-3 rounded-xl bg-white border border-gray-200 focus:border-green-400 focus:ring-2 focus:ring-green-400/20 outline-none transition text-gray-900" placeholder="Олена" />
+            <span class="field-error">Введіть ваше ім'я</span>
           </div>
           <div>
             <label class="block text-sm font-semibold mb-2 text-gray-700">Телефон</label>
             <input type="tel" name="phone" required class="w-full px-4 py-3 rounded-xl bg-white border border-gray-200 focus:border-green-400 focus:ring-2 focus:ring-green-400/20 outline-none transition text-gray-900" placeholder="+380 50 123 45 67" />
+            <span class="field-error">Введіть коректний номер телефону</span>
           </div>
           <div>
             <label class="block text-sm font-semibold mb-2 text-gray-700">Місто</label>
@@ -1372,7 +1376,7 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
           b.textContent = v + ' ' + s.unit;
           b.addEventListener('click', () => {
             refs.areaSlider.value = v;
-            updatePrice();
+            refs.areaSlider.dispatchEvent(new Event('input'));
           });
           refs.quickButtons.appendChild(b);
         });
