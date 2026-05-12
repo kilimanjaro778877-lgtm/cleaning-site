@@ -269,7 +269,10 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
 
         <div class="calc__extras">
           <span class="calc__extras-title">Додатково:</span>
-          <label class="calc__extra"><input type="checkbox" data-price="80" data-perm="1"><span>Миття вікон <em>+80₴/м²</em></span></label>
+          <label class="calc__extra"><input type="checkbox" id="windowCheck" data-price="0"><span>Миття вікон <em>+80₴/м²</em></span></label>
+          <div id="windowAreaRow" style="display:none;margin-top:6px;margin-left:24px">
+            <label style="font-size:13px;color:var(--ink-soft)">Площа вікон:&nbsp;<input type="number" id="windowArea" value="10" min="1" max="100" style="width:56px;padding:3px 6px;border:1px solid #ccc;border-radius:6px;font-size:13px">&nbsp;м²</label>
+          </div>
           <label class="calc__extra"><input type="checkbox" data-price="600"><span>Духовка <em>+600₴</em></span></label>
           <label class="calc__extra"><input type="checkbox" data-price="500"><span>Холодильник <em>+500₴</em></span></label>
           <label class="calc__extra"><input type="checkbox" data-price="500"><span>Витяжка <em>+500₴</em></span></label>
@@ -312,8 +315,8 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
         </li>
         <li class="how__step" data-reveal>
           <span class="how__num">04</span>
-          <h3 class="how__title">Гарантія</h3>
-          <p class="how__desc">Якщо щось не так — переробимо безкоштовно протягом 24 годин.</p>
+          <h3 class="how__title">Чистота</h3>
+          <p class="how__desc">Ви повертаєтесь у чисту квартиру. Якщо щось не так — переробимо безкоштовно.</p>
         </li>
         <div class="how__line"><div class="how__line-fill" id="howLineFill"></div></div>
       </ol>
@@ -391,7 +394,7 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
 
       <div class="cities">
         <a href="#order" class="city" data-city="kyiv">
-          <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?w=800&q=75&auto=format&fit=crop" alt="Київ — професійне прибирання" width="800" height="600" loading="lazy" />
+          <img src="img/cities/kyiv.webp" alt="Київ — професійне прибирання" width="800" height="600" loading="lazy" />
           <div class="city__shade"></div>
           <div class="city__body">
             <h3 class="city__name">Київ</h3>
@@ -399,7 +402,7 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
           </div>
         </a>
         <a href="#order" class="city" data-city="dnipro">
-          <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&q=75&auto=format&fit=crop" alt="Дніпро — професійне прибирання" width="800" height="600" loading="lazy" />
+          <img src="img/cities/dnipro.jpg" alt="Дніпро — професійне прибирання" width="800" height="600" loading="lazy" />
           <div class="city__shade"></div>
           <div class="city__body">
             <h3 class="city__name">Дніпро</h3>
@@ -407,7 +410,7 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
           </div>
         </a>
         <a href="#order" class="city" data-city="lviv">
-          <img src="https://images.unsplash.com/photo-1567016526105-22da7c13161a?w=800&q=75&auto=format&fit=crop" alt="Львів — професійне прибирання" width="800" height="600" loading="lazy" />
+          <img src="img/cities/lviv.jpg" alt="Львів — професійне прибирання" width="800" height="600" loading="lazy" />
           <div class="city__shade"></div>
           <div class="city__body">
             <h3 class="city__name">Львів</h3>
@@ -415,7 +418,7 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
           </div>
         </a>
         <a href="#order" class="city" data-city="kharkiv">
-          <img src="https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?w=800&q=75&auto=format&fit=crop" alt="Харків — професійне прибирання" width="800" height="600" loading="lazy" />
+          <img src="img/cities/kharkiv.jpg" alt="Харків — професійне прибирання" width="800" height="600" loading="lazy" />
           <div class="city__shade"></div>
           <div class="city__body">
             <h3 class="city__name">Харків</h3>
@@ -423,54 +426,13 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
           </div>
         </a>
         <a href="#order" class="city" data-city="odessa">
-          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=75&auto=format&fit=crop" alt="Одеса — професійне прибирання" width="800" height="600" loading="lazy" />
+          <img src="img/cities/odessa.jpg" alt="Одеса — професійне прибирання" width="800" height="600" loading="lazy" />
           <div class="city__shade"></div>
           <div class="city__body">
             <h3 class="city__name">Одеса</h3>
             <p class="city__cap">Від Центру до Аркадії</p>
           </div>
         </a>
-      </div>
-    </section>
-
-    <!-- ─── FAQ ─────────────────────────────── -->
-    <section class="section section--tint" id="faq">
-      <div class="section__head">
-        <span class="section__kicker">Питання</span>
-        <h2 class="section__title">Часті <span class="section__title-accent">питання</span></h2>
-      </div>
-
-      <div class="faq">
-        <details class="faq__item">
-          <summary class="faq__q">Скільки коштує прибирання моєї квартири?
-            <svg class="faq__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
-          </summary>
-          <div class="faq__a">Скористайтеся калькулятором вище — він покаже орієнтовну ціну за 10 секунд. Точну суму погодимо після короткого дзвінка.</div>
-        </details>
-        <details class="faq__item">
-          <summary class="faq__q">Чи привозите ви хімію та обладнання?
-            <svg class="faq__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
-          </summary>
-          <div class="faq__a">Так. Привозимо все необхідне — професійну хімію, пилососи, пароочисники, тряпки. Вам нічого готувати не треба.</div>
-        </details>
-        <details class="faq__item">
-          <summary class="faq__q">Що, якщо результат не сподобається?
-            <svg class="faq__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
-          </summary>
-          <div class="faq__a">Переробимо безкоштовно протягом 24 годин. Якщо проблема залишиться — повернемо гроші повністю.</div>
-        </details>
-        <details class="faq__item">
-          <summary class="faq__q">Як швидко ви приїдете?
-            <svg class="faq__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
-          </summary>
-          <div class="faq__a">У робочий день з 8:00 до 21:00 — у середньому через 2 години після підтвердження заявки.</div>
-        </details>
-        <details class="faq__item">
-          <summary class="faq__q">Чи можна оплатити карткою?
-            <svg class="faq__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
-          </summary>
-          <div class="faq__a">Так — приймаємо готівку, переказ на картку Mono/Privat, або через Apple/Google Pay після прибирання.</div>
-        </details>
       </div>
     </section>
 
@@ -544,6 +506,47 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
         </div>
         <h3 class="form-success__title">Заявку прийнято</h3>
         <p class="form-success__text">Менеджер передзвонить протягом дня. Дякуємо за довіру!</p>
+      </div>
+    </section>
+
+    <!-- ─── FAQ ─────────────────────────────── -->
+    <section class="section section--tint" id="faq">
+      <div class="section__head">
+        <span class="section__kicker">Питання</span>
+        <h2 class="section__title">Часті <span class="section__title-accent">питання</span></h2>
+      </div>
+
+      <div class="faq">
+        <details class="faq__item">
+          <summary class="faq__q">Скільки коштує прибирання моєї квартири?
+            <svg class="faq__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+          </summary>
+          <div class="faq__a">Скористайтеся калькулятором вище — він покаже орієнтовну ціну за 10 секунд. Точну суму погодимо після короткого дзвінка.</div>
+        </details>
+        <details class="faq__item">
+          <summary class="faq__q">Чи привозите ви хімію та обладнання?
+            <svg class="faq__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+          </summary>
+          <div class="faq__a">Так. Привозимо все необхідне — професійну хімію, пилососи, пароочисники, тряпки. Вам нічого готувати не треба.</div>
+        </details>
+        <details class="faq__item">
+          <summary class="faq__q">Що, якщо результат не сподобається?
+            <svg class="faq__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+          </summary>
+          <div class="faq__a">Переробимо безкоштовно. Якщо проблема залишиться — повернемо гроші повністю.</div>
+        </details>
+        <details class="faq__item">
+          <summary class="faq__q">Як швидко ви приїдете?
+            <svg class="faq__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+          </summary>
+          <div class="faq__a">У робочий день з 8:00 до 21:00 — у середньому через 2 години після підтвердження заявки.</div>
+        </details>
+        <details class="faq__item">
+          <summary class="faq__q">Чи можна оплатити карткою?
+            <svg class="faq__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+          </summary>
+          <div class="faq__a">Так — приймаємо готівку, переказ на картку Mono/Privat, або через Apple/Google Pay після прибирання.</div>
+        </details>
       </div>
     </section>
 

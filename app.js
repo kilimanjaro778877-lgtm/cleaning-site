@@ -228,14 +228,29 @@
   };
   const formatPrice = (n) => n.toLocaleString('uk-UA').replace(/,/g, ' ');
 
+  // Window area logic
+  const windowCheck = $('#windowCheck');
+  const windowAreaRow = $('#windowAreaRow');
+  const windowAreaInput = $('#windowArea');
+  if (windowCheck) {
+    windowCheck.addEventListener('change', () => {
+      windowAreaRow.style.display = windowCheck.checked ? 'block' : 'none';
+      recalc();
+    });
+    windowAreaInput && windowAreaInput.addEventListener('input', recalc);
+  }
+
   const recalc = () => {
     const area = currentArea;
     let price = area * PRICE_PER_SQM;
     extras.forEach((cb) => {
-      if (cb.checked) {
-        const p = parseInt(cb.dataset.price, 10);
-        const perm = cb.dataset.perm === '1';
-        price += perm ? area * p : p;
+      if (!cb.checked) return;
+      if (cb.id === 'windowCheck') {
+        // Use separate window area, not house area
+        const winArea = windowAreaInput ? (parseInt(windowAreaInput.value, 10) || 10) : 10;
+        price += winArea * 80;
+      } else {
+        price += parseInt(cb.dataset.price, 10) || 0;
       }
     });
     price = Math.round(price / 50) * 50;
