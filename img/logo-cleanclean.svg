@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 48" width="220" height="48">
+  <defs>
+    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#22c55e"/>
+      <stop offset="100%" stop-color="#16a34a"/>
+    </linearGradient>
+  </defs>
+  <!-- CC square -->
+  <rect x="0" y="0" width="48" height="48" rx="10" fill="url(#g)"/>
+  <text x="24" y="33" font-family="Arial,sans-serif" font-weight="900" font-size="18" fill="white" text-anchor="middle">CC</text>
+  <!-- Clean-Clean text -->
+  <text x="60" y="31" font-family="Arial,sans-serif" font-weight="700" font-size="22" fill="#111827">Clean-</text>
+  <text x="141" y="31" font-family="Arial,sans-serif" font-weight="700" font-size="22" fill="#22c55e">Clean</text>
+</svg>
