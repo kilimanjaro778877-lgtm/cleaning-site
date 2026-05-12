@@ -285,14 +285,14 @@
   // ── FORM SUBMIT ─────────────────────────────
   // TikTok funnel events helper
   const ttqTrack = (event, params = {}) => {
-    try { if (typeof ttq !== 'undefined') ttq.track(event, params); } catch(_) {}
+    try { if (typeof ttq !== 'undefined') ttq.track(event, { content_id: 'cleaning-service', content_type: 'product', ...params }); } catch(_) {}
   };
 
   // ViewContent — user saw the calculator/services
   const calcSection = $('#calc');
   if (calcSection) {
     const calcObs = new IntersectionObserver((entries) => {
-      entries.forEach(e => { if (e.isIntersecting) { ttqTrack('ViewContent', { content_name: 'calculator' }); calcObs.disconnect(); } });
+      entries.forEach(e => { if (e.isIntersecting) { ttqTrack('ViewContent', { content_name: 'Калькулятор прибирання', value: 0, currency: 'UAH' }); calcObs.disconnect(); } });
     }, { threshold: 0.3 });
     calcObs.observe(calcSection);
   }
@@ -357,11 +357,13 @@
       });
       const data = await res.json().catch(() => ({ ok: false }));
       if (data.ok || data.stub) {
+        ttqTrack('CompleteRegistration', { content_name: payload.service, value: 0, currency: 'UAH' });
         ttqTrack('SubmitForm', { content_name: payload.service });
         showSuccess();
       } else throw new Error(data.msg || 'unknown');
     } catch (err) {
       console.warn('[order]', err);
+      ttqTrack('CompleteRegistration');
       ttqTrack('SubmitForm');
       showSuccess();
     }
