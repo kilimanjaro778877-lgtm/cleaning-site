@@ -268,9 +268,28 @@
   priceEl.textContent = formatPrice(displayedPrice);
 
   // ── FORM SUBMIT ─────────────────────────────
+  // TikTok funnel events helper
+  const ttqTrack = (event, params = {}) => {
+    try { if (typeof ttq !== 'undefined') ttq.track(event, params); } catch(_) {}
+  };
+
+  // ViewContent — user saw the calculator/services
+  const calcSection = $('#calc');
+  if (calcSection) {
+    const calcObs = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { ttqTrack('ViewContent', { content_name: 'calculator' }); calcObs.disconnect(); } });
+    }, { threshold: 0.3 });
+    calcObs.observe(calcSection);
+  }
+
   const form = $('#orderForm');
   const submitBtn = $('#formSubmit');
   const successBox = $('#formSuccess');
+
+  // InitiateCheckout — user focused on form
+  form && form.addEventListener('focusin', () => {
+    ttqTrack('InitiateCheckout');
+  }, { once: true });
 
   const validatePhone = (v) => /^\+?[0-9\s()-]{10,18}$/.test(v.trim());
   const validateName = (v) => v.trim().length >= 2;
@@ -322,10 +341,13 @@
         body: JSON.stringify(payload)
       });
       const data = await res.json().catch(() => ({ ok: false }));
-      if (data.ok || data.stub) showSuccess();
-      else throw new Error(data.msg || 'unknown');
+      if (data.ok || data.stub) {
+        ttqTrack('SubmitForm', { content_name: payload.service });
+        showSuccess();
+      } else throw new Error(data.msg || 'unknown');
     } catch (err) {
       console.warn('[order]', err);
+      ttqTrack('SubmitForm');
       showSuccess();
     }
   });
