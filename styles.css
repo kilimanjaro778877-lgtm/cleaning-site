@@ -44,7 +44,7 @@
 
 /* ── RESET ─────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; }
-html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; overflow-x: hidden; }
 body {
   margin: 0;
   font-family: var(--font-body);
@@ -794,10 +794,13 @@ input, textarea, select, button { font-family: inherit; }
 
 /* ── CITIES (compact 2-col grid) ────────────── */
 .cities {
-  padding: 0 20px;
+  padding: 0 16px;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 10px;
+  gap: 8px;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 .cities .city:first-child {
   grid-column: 1 / -1;
