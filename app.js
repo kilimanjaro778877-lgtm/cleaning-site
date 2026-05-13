@@ -245,7 +245,7 @@
         price += parseInt(cb.dataset.price, 10) || 0;
       }
     });
-    price = Math.round(price / 10) * 10;
+    price = Math.round(price);
     animateNumber(priceEl, displayedPrice, price);
     displayedPrice = price;
   };
