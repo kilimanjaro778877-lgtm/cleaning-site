@@ -228,17 +228,9 @@
   };
   const formatPrice = (n) => n.toLocaleString('uk-UA').replace(/,/g, ' ');
 
-  // Window area logic
   const windowCheck = $('#windowCheck');
   const windowAreaRow = $('#windowAreaRow');
   const windowAreaInput = $('#windowArea');
-  if (windowCheck) {
-    windowCheck.addEventListener('change', () => {
-      windowAreaRow.style.display = windowCheck.checked ? 'block' : 'none';
-      recalc();
-    });
-    windowAreaInput && windowAreaInput.addEventListener('input', recalc);
-  }
 
   const recalc = () => {
     const area = currentArea;
@@ -277,6 +269,15 @@
   slider.addEventListener('input', () => setArea(slider.value));
   chips.forEach((c) => c.addEventListener('click', () => setArea(c.dataset.area)));
   extras.forEach((cb) => cb.addEventListener('change', recalc));
+
+  // Window area logic (after recalc is defined)
+  if (windowCheck) {
+    windowCheck.addEventListener('change', () => {
+      windowAreaRow.style.display = windowCheck.checked ? 'block' : 'none';
+      recalc();
+    });
+    windowAreaInput && windowAreaInput.addEventListener('input', recalc);
+  }
 
   setArea(currentArea);
   displayedPrice = currentArea * PRICE_PER_SQM;
