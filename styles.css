@@ -1044,3 +1044,58 @@ input, textarea, select, button { font-family: inherit; }
   }
   .hdr { border-left: 1px solid var(--border); border-right: 1px solid var(--border); }
 }
+
+/* ── SERVICE CARD CTA ───────────────────────── */
+.service-card__cta {
+  margin-top: 10px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--brand);
+  letter-spacing: 0.02em;
+}
+.service-card:hover { border-color: var(--brand-soft); box-shadow: var(--shadow-deep); }
+
+/* ── SERVICE MODAL ──────────────────────────── */
+.svc-modal {
+  position: fixed; inset: 0; z-index: 200;
+  display: flex; align-items: flex-end;
+  opacity: 0; pointer-events: none;
+  transition: opacity 0.25s;
+}
+.svc-modal.is-open { opacity: 1; pointer-events: auto; }
+.svc-modal__backdrop {
+  position: absolute; inset: 0;
+  background: rgba(11,20,16,0.5);
+  backdrop-filter: blur(4px);
+}
+.svc-modal__sheet {
+  position: relative; z-index: 1;
+  width: 100%; background: white;
+  border-radius: 20px 20px 0 0;
+  padding: 24px 20px 40px;
+  transform: translateY(100%);
+  transition: transform 0.35s cubic-bezier(0.16,1,0.3,1);
+}
+.svc-modal.is-open .svc-modal__sheet { transform: translateY(0); }
+.svc-modal__close {
+  position: absolute; top: 16px; right: 16px;
+  width: 36px; height: 36px;
+  border-radius: 50%; background: var(--bg-soft);
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+}
+.svc-modal__title { font-size: 20px; font-weight: 800; margin: 0 0 4px; }
+.svc-modal__sub { font-size: 13px; color: var(--ink-soft); margin: 0 0 20px; }
+.svc-modal__options { display: flex; flex-direction: column; gap: 10px; }
+.svc-opt {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 14px 16px;
+  background: var(--bg-soft);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+  font-weight: 600;
+}
+.svc-opt:active { background: var(--brand-glass); border-color: var(--brand); }
+.svc-opt__price { color: var(--brand); font-weight: 700; }

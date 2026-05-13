@@ -13,6 +13,100 @@
   const M = window.Motion || null;
   const animate = M?.animate;
   const stagger = M?.stagger;
+
+  // ── SERVICE CARD CLICKS ──────────────────────
+  const MODAL_DATA = {
+    sofa: {
+      title: 'Хімчистка диванів',
+      service: 'Хімчистка диванів',
+      options: [
+        { label: '2-місний', price: '1 100 ₴' },
+        { label: '3-місний', price: '1 650 ₴' },
+        { label: '4-місний', price: '2 200 ₴' },
+        { label: 'Кутовий', price: '2 400 ₴' },
+        { label: 'Модульний', price: '2 700 ₴' },
+      ]
+    },
+    mattress: {
+      title: 'Хімчистка матраців',
+      service: 'Хімчистка матраців',
+      options: [
+        { label: 'Дитячий', price: '300 ₴' },
+        { label: 'Односпальний', price: '550 ₴' },
+        { label: 'Полуторний', price: '800 ₴' },
+        { label: 'Двоспальний', price: '1 100 ₴' },
+      ]
+    }
+  };
+
+  const modal = $('#serviceModal');
+  const modalTitle = $('#modalTitle');
+  const modalOptions = $('#modalOptions');
+
+  const openModal = (type) => {
+    const data = MODAL_DATA[type];
+    if (!data || !modal) return;
+    modalTitle.textContent = data.title;
+    modalOptions.innerHTML = data.options.map(o => `
+      <button class="svc-opt" data-service="${data.service}" data-label="${o.label}" data-price="${o.price}">
+        <span>${o.label}</span>
+        <span class="svc-opt__price">${o.price}</span>
+      </button>`).join('');
+    modal.classList.add('is-open');
+    modal.setAttribute('aria-hidden', 'false');
+  };
+
+  const closeModal = () => {
+    modal && modal.classList.remove('is-open');
+    modal && modal.setAttribute('aria-hidden', 'true');
+  };
+
+  $('#modalClose') && $('#modalClose').addEventListener('click', closeModal);
+  $('#modalBackdrop') && $('#modalBackdrop').addEventListener('click', closeModal);
+
+  modalOptions && modalOptions.addEventListener('click', (e) => {
+    const btn = e.target.closest('.svc-opt');
+    if (!btn) return;
+    const service = btn.dataset.service;
+    const label = btn.dataset.label;
+    const price = btn.dataset.price;
+    // Pre-fill form
+    const fService = $('#fService');
+    if (fService) {
+      for (let opt of fService.options) {
+        if (opt.value.toLowerCase().includes(service.toLowerCase().split(' ')[0])) {
+          fService.value = opt.value; break;
+        }
+      }
+    }
+    const fDetails = $('#fDetails');
+    if (fDetails) fDetails.value = label + ' — ' + price;
+    closeModal();
+    document.getElementById('order') && document.getElementById('order').scrollIntoView({ behavior: 'smooth' });
+  });
+
+  // Service cards → calc or modal
+  $$('.service-card[data-action]').forEach((card) => {
+    card.addEventListener('click', () => {
+      const action = card.dataset.action;
+      if (action === 'calc') {
+        const rate = parseInt(card.dataset.rate, 10);
+        const service = card.dataset.service;
+        // Update calculator rate
+        if (window._setCalcRate) window._setCalcRate(rate);
+        // Pre-select service in form
+        const fService = $('#fService');
+        if (fService && service) {
+          for (let opt of fService.options) {
+            if (opt.value === service) { fService.value = service; break; }
+          }
+        }
+        document.getElementById('calc') && document.getElementById('calc').scrollIntoView({ behavior: 'smooth' });
+      } else if (action === 'modal') {
+        openModal(card.dataset.modal);
+      }
+    });
+  });
   const inView = M?.inView;
 
   // ── DRAWER ──────────────────────────────────
@@ -210,7 +304,8 @@
   const chips = $$('.calc__chip');
   const extras = $$('.calc__extra input');
 
-  const PRICE_PER_SQM = 50;
+  let PRICE_PER_SQM = 50;
+  window._setCalcRate = (rate) => { PRICE_PER_SQM = rate; recalc && recalc(); };
   let currentArea = parseInt(slider.value, 10);
   let displayedPrice = 0;
 

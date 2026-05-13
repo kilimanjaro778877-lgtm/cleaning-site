@@ -184,58 +184,64 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
       </div>
 
       <div class="services" id="servicesScroll">
-        <article class="service-card" data-color="leaf">
+        <article class="service-card" data-color="leaf" data-action="calc" data-rate="50" data-service="Підтримуюче прибирання" role="button" tabindex="0">
           <div class="service-card__icon">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
           </div>
           <h3 class="service-card__title">Підтримуюче прибирання</h3>
           <p class="service-card__desc">Регулярна чистота — щотижня або за вашим графіком.</p>
           <div class="service-card__price">від <strong>50 ₴</strong> / м²</div>
+          <div class="service-card__cta">Розрахувати →</div>
         </article>
 
-        <article class="service-card" data-color="moss">
+        <article class="service-card" data-color="moss" data-action="calc" data-rate="80" data-service="Генеральне прибирання" role="button" tabindex="0">
           <div class="service-card__icon">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v20M2 12h20"/><circle cx="12" cy="12" r="9"/></svg>
           </div>
           <h3 class="service-card__title">Генеральне прибирання</h3>
           <p class="service-card__desc">Глибока чистка з милею кожного куточка, плінтусів і шаф.</p>
           <div class="service-card__price">від <strong>80 ₴</strong> / м²</div>
+          <div class="service-card__cta">Розрахувати →</div>
         </article>
 
-        <article class="service-card" data-color="fern">
+        <article class="service-card" data-color="fern" data-action="modal" data-modal="sofa" role="button" tabindex="0">
           <div class="service-card__icon">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="8" width="18" height="10" rx="2"/><path d="M7 8V6a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v2"/></svg>
           </div>
           <h3 class="service-card__title">Хімчистка диванів</h3>
           <p class="service-card__desc">Глибоке вичищення тканини, виведення плям без розводів.</p>
           <div class="service-card__price">від <strong>1100 ₴</strong></div>
+          <div class="service-card__cta">Вибрати тип →</div>
         </article>
 
-        <article class="service-card" data-color="leaf">
+        <article class="service-card" data-color="leaf" data-action="calc" data-rate="80" data-service="Миття вікон" role="button" tabindex="0">
           <div class="service-card__icon">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 12h18M12 3v18"/></svg>
           </div>
           <h3 class="service-card__title">Миття вікон</h3>
           <p class="service-card__desc">Кришталево чисті вікна та профіль. Зсередини та зовні.</p>
           <div class="service-card__price">від <strong>80 ₴</strong> / м²</div>
+          <div class="service-card__cta">Розрахувати →</div>
         </article>
 
-        <article class="service-card" data-color="moss">
+        <article class="service-card" data-color="moss" data-action="modal" data-modal="mattress" role="button" tabindex="0">
           <div class="service-card__icon">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16v12H4z"/><path d="M4 10h16"/></svg>
           </div>
           <h3 class="service-card__title">Хімчистка матраців</h3>
           <p class="service-card__desc">Знищення пилових кліщів, освіження тканини без хімії.</p>
           <div class="service-card__price">від <strong>550 ₴</strong></div>
+          <div class="service-card__cta">Вибрати розмір →</div>
         </article>
 
-        <article class="service-card" data-color="fern">
+        <article class="service-card" data-color="fern" data-action="calc" data-rate="100" data-service="Прибирання після ремонту" role="button" tabindex="0">
           <div class="service-card__icon">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V9l9-7 9 7v12"/><path d="M9 22V12h6v10"/></svg>
           </div>
           <h3 class="service-card__title">Прибирання після ремонту</h3>
           <p class="service-card__desc">Прибираємо будівельний пил, плями фарби та клею.</p>
           <div class="service-card__price">від <strong>100 ₴</strong> / м²</div>
+          <div class="service-card__cta">Розрахувати →</div>
         </article>
       </div>
 
@@ -555,6 +561,19 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
     </section>
 
   </main>
+
+  <!-- ─── SERVICE MODAL ──────────────────────── -->
+  <div id="serviceModal" class="svc-modal" aria-hidden="true" role="dialog">
+    <div class="svc-modal__backdrop" id="modalBackdrop"></div>
+    <div class="svc-modal__sheet">
+      <button class="svc-modal__close" id="modalClose" aria-label="Закрити">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+      <h3 class="svc-modal__title" id="modalTitle">Хімчистка диванів</h3>
+      <p class="svc-modal__sub">Виберіть тип — і перейдіть до заявки</p>
+      <div class="svc-modal__options" id="modalOptions"></div>
+    </div>
+  </div>
 
   <!-- ─── FOOTER ──────────────────────────────── -->
   <footer class="ftr">
