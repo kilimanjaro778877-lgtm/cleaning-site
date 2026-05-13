@@ -1099,3 +1099,5 @@ input, textarea, select, button { font-family: inherit; }
 }
 .svc-opt:active { background: var(--brand-glass); border-color: var(--brand); }
 .svc-opt__price { color: var(--brand); font-weight: 700; }
+
+.drawer__divider { height: 1px; background: var(--border); margin: 8px 0; }
