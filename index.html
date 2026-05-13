@@ -26,16 +26,55 @@
   <link rel="stylesheet" href="styles.css" />
 
   <!-- Schema.org -->
-  <script type="application/ld+json">
+    <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "Clean Clean",
     "url": "https://clean-clean.com.ua/",
+    "logo": "https://clean-clean.com.ua/img/cities/kyiv.webp",
+    "image": "https://clean-clean.com.ua/img/cities/kyiv.webp",
     "telephone": "+380731312228",
+    "email": "kilimanjaro778877@gmail.com",
     "priceRange": "₴₴",
-    "areaServed": ["Київ", "Дніпро", "Львів", "Харків", "Одеса"],
-    "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1483"}
+    "description": "Професійна клінінгова компанія. Прибирання квартир, хімчистка диванів і матраців, миття вікон. Виїзд за 2 години.",
+    "areaServed": [
+      {"@type": "City", "name": "Київ"},
+      {"@type": "City", "name": "Дніпро"},
+      {"@type": "City", "name": "Львів"},
+      {"@type": "City", "name": "Харків"},
+      {"@type": "City", "name": "Одеса"}
+    ],
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+      "opens": "08:00",
+      "closes": "21:00"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "Customer Service",
+      "telephone": "+380731312228",
+      "availableLanguage": ["Ukrainian", "Russian"]
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "1483",
+      "bestRating": "5"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Клінінгові послуги",
+      "itemListElement": [
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Підтримуюче прибирання", "url": "https://clean-clean.com.ua/services/pidtrymuyuche-prybyrannia.html"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Генеральне прибирання", "url": "https://clean-clean.com.ua/services/generalna-prybyrannia.html"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Хімчистка диванів", "url": "https://clean-clean.com.ua/services/himchistka-divana.html"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Миття вікон", "url": "https://clean-clean.com.ua/services/mytia-vikon.html"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Хімчистка матраців", "url": "https://clean-clean.com.ua/services/himchistka-matratsa.html"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Прибирання після ремонту", "url": "https://clean-clean.com.ua/services/pislia-remontu.html"}}
+      ]
+    }
   }
   </script>
 <!-- Google Analytics -->
