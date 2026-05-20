@@ -2,3 +2,5 @@ User-agent: *
 Allow: /
 
 Sitemap: https://clean-clean.com.ua/sitemap.xml
+
+IndexNow: https://clean-clean.com.ua/cc1779281688ua2026.txt
