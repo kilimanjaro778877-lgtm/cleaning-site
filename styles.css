@@ -465,6 +465,11 @@ input, textarea, select, button { font-family: inherit; }
   cursor: pointer;
 }
 .service-card:active { transform: scale(0.98); }
+.service-card.is-active {
+  border-color: var(--brand);
+  box-shadow: 0 0 0 2px var(--brand-soft), var(--shadow-deep);
+  background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+}
 .service-card::before {
   content: ''; position: absolute; top: 0; right: 0; width: 90px; height: 90px;
   background: radial-gradient(circle at top right, var(--brand-glass), transparent 70%);

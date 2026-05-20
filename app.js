@@ -86,12 +86,16 @@
   });
 
   // Service cards → calc or modal
-  $$('.service-card[data-action]').forEach((card) => {
+  const allServiceCards = $$('.service-card[data-action]');
+  allServiceCards.forEach((card) => {
     card.addEventListener('click', () => {
       const action = card.dataset.action;
       if (action === 'calc') {
         const rate = parseInt(card.dataset.rate, 10);
         const service = card.dataset.service;
+        // Highlight selected card
+        allServiceCards.forEach(c => c.classList.remove('is-active'));
+        card.classList.add('is-active');
         // Update calculator rate
         if (window._setCalcRate) window._setCalcRate(rate);
         // Pre-select service in form
