@@ -30,15 +30,26 @@
     <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
+    "@type": "CleaningService",
+    "@id": "https://clean-clean.com.ua/#business",
     "name": "Clean-Clean",
     "url": "https://clean-clean.com.ua/",
-    "logo": "https://clean-clean.com.ua/img/cities/kyiv.webp",
-    "image": "https://clean-clean.com.ua/img/cities/kyiv.webp",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://clean-clean.com.ua/img/logo-cleanclean.svg",
+      "width": 200,
+      "height": 60
+    },
+    "image": "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=1200&h=630&auto=format&fit=crop&q=80",
     "telephone": "+380731312228",
     "email": "kilimanjaro778877@gmail.com",
     "priceRange": "₴₴",
-    "description": "Професійна клінінгова компанія. Прибирання квартир, хімчистка диванів і матраців, миття вікон. Виїзд за 2 години.",
+    "description": "Професійна клінінгова компанія. Прибирання квартир, хімчистка диванів і матраців, миття вікон. Виїзд за 2 години у 5 містах України.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Київ",
+      "addressCountry": "UA"
+    },
     "areaServed": [
       {"@type": "City", "name": "Київ"},
       {"@type": "City", "name": "Дніпро"},
@@ -46,6 +57,13 @@
       {"@type": "City", "name": "Харків"},
       {"@type": "City", "name": "Одеса"}
     ],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "bestRating": "5",
+      "worstRating": "1",
+      "ratingCount": "2"
+    },
     "openingHoursSpecification": {
       "@type": "OpeningHoursSpecification",
       "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
@@ -54,10 +72,14 @@
     },
     "contactPoint": {
       "@type": "ContactPoint",
-      "contactType": "Customer Service",
+      "contactType": "customer service",
       "telephone": "+380731312228",
       "availableLanguage": ["Ukrainian", "Russian"]
     },
+    "sameAs": [
+      "https://g.page/r/CcuiKcWaRxt2EAE",
+      "https://t.me/jamboss8"
+    ],
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
       "name": "Клінінгові послуги",
@@ -638,7 +660,7 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
   </div>
 
   <!-- ─── SCRIPTS ──────────────────────────── -->
-  <script src="https://cdn.jsdelivr.net/npm/motion@10.16.4/dist/motion.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/motion@10.16.4/dist/motion.min.js"></script>
   <script src="app.js" defer></script>
 </body>
 </html>
