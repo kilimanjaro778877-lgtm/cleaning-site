@@ -21,26 +21,53 @@
   <meta name="twitter:description" content="Глибоке прибирання квартири. Від 70 ₴/м². Київ, Дніпро, Львів, Харків." />
 
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "Генеральне прибирання квартири",
-    "description": "Глибоке прибирання квартири: плінтуси, люстри, шафки зсередини, балкон, техніка.",
-    "url": "https://clean-clean.com.ua/services/generalna-prybyrannia.html",
-    "provider": {
-      "@type": "LocalBusiness",
-      "name": "Clean-Clean",
-      "url": "https://clean-clean.com.ua/",
-      "areaServed": ["Київ", "Дніпро", "Львів", "Харків"]
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Генеральне прибирання квартири",
+  "serviceType": "General House Cleaning",
+  "description": "Глибоке прибирання квартири: плінтуси, люстри, шафки зсередини, балкон, техніка зовні. Від 70 ₴/м².",
+  "url": "https://clean-clean.com.ua/services/generalna-prybyrannia.html",
+  "areaServed": [
+    {
+      "@type": "City",
+      "name": "Київ"
     },
-    "offers": {
-      "@type": "Offer",
+    {
+      "@type": "City",
+      "name": "Дніпро"
+    },
+    {
+      "@type": "City",
+      "name": "Львів"
+    },
+    {
+      "@type": "City",
+      "name": "Харків"
+    },
+    {
+      "@type": "City",
+      "name": "Одеса"
+    }
+  ],
+  "provider": {
+    "@type": "CleaningService",
+    "@id": "https://clean-clean.com.ua/#business",
+    "name": "Clean-Clean",
+    "url": "https://clean-clean.com.ua/"
+  },
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "UAH",
+    "priceSpecification": {
+      "@type": "UnitPriceSpecification",
       "priceCurrency": "UAH",
-      "price": "3500",
+      "minPrice": "3500",
       "description": "від 70 ₴/м², мінімум 3 500 ₴"
     }
   }
-  </script>
+}
+</script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
