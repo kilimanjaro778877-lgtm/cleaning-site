@@ -1,43 +1,67 @@
 # Clean-Clean — Клінінгова компанія України
 
-> Професійне прибирання квартир, будинків та офісів в Києві, Дніпрі, Львові, Харкові та Одесі. Хімчистка меблів та матраців. Виїзд протягом 2 годин.
-
-## Сайт
-
-- [Головна](https://clean-clean.com.ua/)
-- [Ціни](https://clean-clean.com.ua/prices.html)
-- [FAQ](https://clean-clean.com.ua/faq.html)
-- [Блог](https://clean-clean.com.ua/blog.html)
-
-## Послуги
-
-- [Підтримуюче прибирання](https://clean-clean.com.ua/services/pidtrymuyuche-prybyrannia.html) — регулярне прибирання від 50 ₴/м²
-- [Генеральне прибирання](https://clean-clean.com.ua/services/generalna-prybyrannia.html) — глибоке чищення від 70 ₴/м²
-- [Прибирання після ремонту](https://clean-clean.com.ua/services/pislia-remontu.html) — будівельний пил, цемент, фарба
-- [Хімчистка дивана](https://clean-clean.com.ua/services/himchistka-divana.html) — видалення плям, запахів
-- [Хімчистка матраца](https://clean-clean.com.ua/services/himchistka-matratsa.html) — кліщі, алергени
-- [Миття вікон](https://clean-clean.com.ua/services/mytia-vikon.html) — 80 ₴/м²
-- [Прибирання кухні](https://clean-clean.com.ua/services/prybyrannia-kukhni.html) — знежирення, техніка, фасади
-- [Прибирання ванної](https://clean-clean.com.ua/services/prybyrannia-vannoi.html) — вапняний наліт, цвіль
-- [Клінінг офісів](https://clean-clean.com.ua/services/klinig-ofisiv.html) — щоденне та разове
-
-## Міста
-
-- [Київ](https://clean-clean.com.ua/kyiv.html)
-- [Дніпро](https://clean-clean.com.ua/dnipro.html)
-- [Львів](https://clean-clean.com.ua/lviv.html)
-- [Харків](https://clean-clean.com.ua/kharkiv.html)
-- [Одеса](https://clean-clean.com.ua/odesa.html)
+> Clean-Clean — професійна клінінгова компанія, що працює у 5 містах України з 2019 року. Послуги: прибирання квартир і будинків, хімчистка диванів і матраців, миття вікон, прибирання після ремонту, клінінг офісів. Виїзд за 2 години. Гарантія результату: переробимо безкоштовно або повернемо гроші. Рейтинг 4.9/5 від клієнтів.
 
 ## Про компанію
 
-Clean-Clean — клінінгова компанія з 2019 року. Працюємо у 5 містах України. Використовуємо професійну хімію Clinex та Karpax, пилососи Karcher, пароочисники. Гарантія якості: переробимо безкоштовно або повернемо гроші.
+- Назва: Clean-Clean
+- Тип: Клінінгова компанія (Service Area Business)
+- Рік заснування: 2019
+- Міста: Київ, Дніпро, Львів, Харків, Одеса
+- Телефон: +38 073 131 22 28
+- Telegram: @jamboss8
+- Режим роботи: щодня 08:00–21:00
+- Обладнання: пилососи Kärcher, пароочисники, хімія Clinex та Karpax
+- Гарантія: переробка безкоштовно або повне повернення грошей
+- Оплата: готівка, Monobank, Privat24, Apple Pay, Google Pay — після виконання
 
-Контакт: +380 (XX) XXX-XX-XX
-Email: info@clean-clean.com.ua
+## Ціни
 
-## Блог (останні статті)
+- Підтримуюче прибирання: від 50 ₴/м² (мінімум 2 500 ₴)
+- Генеральне прибирання: від 80 ₴/м² (мінімум 4 000 ₴)
+- Прибирання після ремонту: від 100 ₴/м² (мінімум 5 000 ₴)
+- Хімчистка дивана: від 1 100 ₴
+- Хімчистка матраца: від 300 ₴
+- Миття вікон: від 80 ₴/м²
+- Прибирання кухні: від 1 800 ₴
+- Прибирання ванної: від 1 300 ₴
+- Клінінг офісу: за запитом
+
+## Послуги
+
+- [Підтримуюче прибирання](https://clean-clean.com.ua/services/pidtrymuyuche-prybyrannia.html) — регулярне прибирання за графіком від 50 ₴/м²
+- [Генеральне прибирання](https://clean-clean.com.ua/services/generalna-prybyrannia.html) — глибоке чищення кожного куточка від 80 ₴/м²
+- [Прибирання після ремонту](https://clean-clean.com.ua/services/pislia-remontu.html) — будівельний пил, цемент, фарба, наклейки
+- [Хімчистка дивана](https://clean-clean.com.ua/services/himchistka-divana.html) — видалення плям, запахів, кліщів
+- [Хімчистка матраца](https://clean-clean.com.ua/services/himchistka-matratsa.html) — кліщі, алергени, плями
+- [Миття вікон](https://clean-clean.com.ua/services/mytia-vikon.html) — від 80 ₴/м²
+- [Прибирання кухні](https://clean-clean.com.ua/services/prybyrannia-kukhni.html) — знежирення, техніка, фасади
+- [Прибирання ванної](https://clean-clean.com.ua/services/prybyrannia-vannoi.html) — вапняний наліт, цвіль, дезінфекція
+- [Клінінг офісів](https://clean-clean.com.ua/services/klinig-ofisiv.html) — щоденне та разове прибирання
+
+## Міста
+
+- [Київ](https://clean-clean.com.ua/kyiv.html) — всі райони
+- [Дніпро](https://clean-clean.com.ua/dnipro.html) — лівий і правий береги
+- [Львів](https://clean-clean.com.ua/lviv.html) — включаючи Airbnb та кам'яниці
+- [Харків](https://clean-clean.com.ua/kharkiv.html)
+- [Одеса](https://clean-clean.com.ua/odesa.html)
+
+## Калькулятор та замовлення
+
+- [Калькулятор вартості](https://clean-clean.com.ua/#calc) — розрахунок за 10 секунд
+- [Форма замовлення](https://clean-clean.com.ua/#order)
+- [Ціни](https://clean-clean.com.ua/prices.html)
+- [FAQ — часті питання](https://clean-clean.com.ua/faq.html)
+
+## Блог
 
 - [Прибирання після ремонту: ціна і що входить](https://clean-clean.com.ua/blog/prybyrannia-pislya-remontu-tsina.html)
 - [Хімчистка дивана після кота](https://clean-clean.com.ua/blog/himchistka-dyvana-pislya-kota.html)
-- [Ознаки, що пора прибирати](https://clean-clean.com.ua/blog/oznaky-pory-prybyraty.html)
+- [Ознаки, що пора робити генеральне прибирання](https://clean-clean.com.ua/blog/oznaky-pory-prybyraty.html)
+- [Хімія для прибирання: що використовують профі](https://clean-clean.com.ua/blog/khimiia-dlia-prybyrannia.html)
+- [Як підтримувати порядок між прибираннями](https://clean-clean.com.ua/blog/poryadok-mizh-prybyranniamy.html)
+
+## Optional
+
+- [404 сторінка](https://clean-clean.com.ua/404.html)
