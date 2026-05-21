@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f0fdf4"/>
+      <stop offset="100%" style="stop-color:#dcfce7"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#4ade80"/>
+      <stop offset="50%" style="stop-color:#22c55e"/>
+      <stop offset="100%" style="stop-color:#16a34a"/>
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="12" flood-color="#16a34a" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- Dot pattern -->
+  <pattern id="dots" x="0" y="0" width="26" height="26" patternUnits="userSpaceOnUse">
+    <circle cx="1" cy="1" r="1" fill="#22c55e" fill-opacity="0.08"/>
+  </pattern>
+  <rect width="1200" height="630" fill="url(#dots)"/>
+
+  <!-- Green orb top right -->
+  <circle cx="1050" cy="120" r="280" fill="radial-gradient" opacity="0.06">
+    <animate attributeName="opacity" values="0.06;0.1;0.06" dur="4s" repeatCount="indefinite"/>
+  </circle>
+  <radialGradient id="orb1" cx="50%" cy="50%" r="50%">
+    <stop offset="0%" style="stop-color:#22c55e;stop-opacity:0.12"/>
+    <stop offset="100%" style="stop-color:#22c55e;stop-opacity:0"/>
+  </radialGradient>
+  <ellipse cx="1050" cy="120" rx="350" ry="350" fill="url(#orb1)"/>
+
+  <!-- Green orb bottom left -->
+  <radialGradient id="orb2" cx="50%" cy="50%" r="50%">
+    <stop offset="0%" style="stop-color:#22c55e;stop-opacity:0.08"/>
+    <stop offset="100%" style="stop-color:#22c55e;stop-opacity:0"/>
+  </radialGradient>
+  <ellipse cx="150" cy="520" rx="280" ry="280" fill="url(#orb2)"/>
+
+  <!-- Logo mark -->
+  <rect x="80" y="70" width="72" height="72" rx="20" fill="url(#accent)" filter="url(#shadow)"/>
+  <path d="M97 118c8-32 42-32 50 0" stroke="white" stroke-width="4.5" stroke-linecap="round" fill="none"/>
+  <circle cx="122" cy="100" r="6" fill="white"/>
+
+  <!-- Brand name -->
+  <text x="172" y="120" font-family="system-ui, -apple-system, sans-serif" font-size="36" font-weight="800" fill="#111827" letter-spacing="-0.5">Clean-</text>
+  <text x="172" y="120" font-family="system-ui, -apple-system, sans-serif" font-size="36" font-weight="800" fill="url(#accent)" letter-spacing="-0.5" dx="106">Clean</text>
+
+  <!-- Main headline -->
+  <text x="80" y="240" font-family="system-ui, -apple-system, sans-serif" font-size="68" font-weight="900" fill="#111827" letter-spacing="-2">Професійний</text>
+  <text x="80" y="318" font-family="system-ui, -apple-system, sans-serif" font-size="68" font-weight="900" fill="url(#accent)" letter-spacing="-2">клінінг</text>
+  <text x="340" y="318" font-family="system-ui, -apple-system, sans-serif" font-size="68" font-weight="900" fill="#111827" letter-spacing="-2"> у 5 містах</text>
+
+  <!-- Subline -->
+  <text x="80" y="375" font-family="system-ui, -apple-system, sans-serif" font-size="26" fill="#6b7280" letter-spacing="-0.3">Київ · Дніпро · Львів · Харків · Одеса</text>
+
+  <!-- Divider -->
+  <rect x="80" y="410" width="200" height="4" rx="2" fill="url(#accent)"/>
+
+  <!-- Stats row -->
+  <text x="80" y="470" font-family="system-ui, -apple-system, sans-serif" font-size="38" font-weight="900" fill="#111827">4.9★</text>
+  <text x="80" y="500" font-family="system-ui, -apple-system, sans-serif" font-size="16" fill="#9ca3af">Google рейтинг</text>
+
+  <text x="260" y="470" font-family="system-ui, -apple-system, sans-serif" font-size="38" font-weight="900" fill="#111827">12 000+</text>
+  <text x="260" y="500" font-family="system-ui, -apple-system, sans-serif" font-size="16" fill="#9ca3af">замовлень</text>
+
+  <text x="490" y="470" font-family="system-ui, -apple-system, sans-serif" font-size="38" font-weight="900" fill="#111827">2 години</text>
+  <text x="490" y="500" font-family="system-ui, -apple-system, sans-serif" font-size="16" fill="#9ca3af">виїзд</text>
+
+  <!-- CTA pill -->
+  <rect x="80" y="540" width="300" height="52" rx="26" fill="#166534"/>
+  <text x="230" y="573" font-family="system-ui, -apple-system, sans-serif" font-size="20" font-weight="700" fill="white" text-anchor="middle">Замовити прибирання</text>
+
+  <!-- Domain -->
+  <text x="1120" y="595" font-family="system-ui, -apple-system, sans-serif" font-size="18" fill="#9ca3af" text-anchor="end">clean-clean.com.ua</text>
+</svg>
