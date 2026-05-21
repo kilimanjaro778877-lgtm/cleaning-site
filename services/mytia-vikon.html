@@ -23,26 +23,53 @@
   <meta name="twitter:description" content="Миття вікон без розводів. Від 80 ₴/м². Київ, Дніпро, Львів, Харків." />
 
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "Миття вікон",
-    "description": "Миття вікон зсередини й зовні, без розводів. Очищення рам і підвіконь.",
-    "url": "https://clean-clean.com.ua/services/mytia-vikon.html",
-    "provider": {
-      "@type": "LocalBusiness",
-      "name": "Clean-Clean",
-      "url": "https://clean-clean.com.ua/",
-      "areaServed": ["Київ", "Дніпро", "Львів", "Харків", "Одеса"]
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Миття вікон без розводів",
+  "serviceType": "Window Cleaning",
+  "description": "Миття вікон зсередини і зовні без розводів. Рами, підвіконня, москітні сітки. Від 80 ₴/м².",
+  "url": "https://clean-clean.com.ua/services/mytia-vikon.html",
+  "areaServed": [
+    {
+      "@type": "City",
+      "name": "Київ"
     },
-    "offers": {
-      "@type": "Offer",
+    {
+      "@type": "City",
+      "name": "Дніпро"
+    },
+    {
+      "@type": "City",
+      "name": "Львів"
+    },
+    {
+      "@type": "City",
+      "name": "Харків"
+    },
+    {
+      "@type": "City",
+      "name": "Одеса"
+    }
+  ],
+  "provider": {
+    "@type": "CleaningService",
+    "@id": "https://clean-clean.com.ua/#business",
+    "name": "Clean-Clean",
+    "url": "https://clean-clean.com.ua/"
+  },
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "UAH",
+    "priceSpecification": {
+      "@type": "UnitPriceSpecification",
       "priceCurrency": "UAH",
-      "price": "800",
+      "minPrice": "800",
       "description": "від 80 ₴/м², мінімум 800 ₴"
     }
   }
-  </script>
+}
+</script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
